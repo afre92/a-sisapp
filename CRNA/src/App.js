@@ -18,6 +18,7 @@ import Timeline from "./screens/Timeline";
 import Feedback from "./screens/Feedback/";
 import Profile from "./screens/Profile/";
 import Settings from "./screens/Settings";
+import SetUpStepOne from "./screens/SetUpStepOne";
 
 const Drawer = createDrawerNavigator(
   {
@@ -38,6 +39,7 @@ const Drawer = createDrawerNavigator(
 
 const App = createStackNavigator(
   {
+    SetUpStepOne: { screen: SetUpStepOne },
     Login: { screen: Login },
     SignUp: { screen: SignUp },
     ForgotPassword: { screen: ForgotPassword },
@@ -49,7 +51,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Walkthrough",
+    initialRouteName: "SetUpStepOne",
     headerMode: "none"
   }
 );

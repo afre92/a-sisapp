@@ -1,38 +1,34 @@
 const React = require("react-native");
 const { Dimensions, Platform } = React;
-const commonColor = require("../../theme/variables/commonColor");
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
-
 const primary = require("../../theme/variables/commonColor").brandPrimary;
+const commonColor = require("../../theme/variables/commonColor");
 
 export default {
-  signupContainer: {
+  forgotPasswordContainer: {
     paddingLeft: 20,
     paddingRight: 20,
     marginTop:
       deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 9 - 100
-          : deviceHeight / 10 - 100
+          ? deviceHeight / 9 - 30
+          : deviceHeight / 8 - 15
         : Platform.OS === "android"
-          ? deviceHeight / 9 - 100
-          : deviceHeight / 8 - 100
+          ? deviceHeight / 7 - 30
+          : deviceHeight / 6 - 50
   },
-  signupHeader: {
-    paddingBottom: 20,
+  welcome: {
     alignSelf: "center",
-    fontSize: 22,
     padding: 10,
-    fontWeight: "bold",
-    color: "#FFF",
-  
+    marginTop:
+      Platform.OS === "android" ? deviceHeight / 6 : deviceHeight / 6 - 20
   },
   background: {
     flex: 1,
     width: null,
-    height: null,
+    height: deviceHeight,
     backgroundColor: primary
   },
   formErrorIcon: {
@@ -64,22 +60,11 @@ export default {
     paddingLeft: 10,
     color: "#FFF"
   },
-  signupBtn: {
+  emailBtn: {
     height: 50,
     marginTop: 10,
     borderWidth: 1,
     borderColor: "#ddd"
-  },
-  otherLinkText: {
-    alignSelf: "center",
-    opacity: 0.8,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#EFF"
-  },
-  otherLinksContainer: {
-    flexDirection: "row",
-    marginTop: 10
   },
   helpBtns: {
     opacity: 0.9,
@@ -88,6 +73,7 @@ export default {
     color: "#FFF"
   },
   imageContainer: {
+    paddingTop: '15%',
     flexDirection: "row",
     alignSelf: "center"
   },
@@ -96,5 +82,20 @@ export default {
     resizeMode: "contain",
     height: deviceHeight / 4.5,
     alignSelf: "center"
+  },
+  headerText: {
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 22
+  },
+  welcomeText: {
+    textAlign: 'center',
+    fontSize: 22
+  },
+  welcomeHeader: {
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 30,
+    paddingBottom: 20
   }
 };
