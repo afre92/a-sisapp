@@ -14,20 +14,20 @@ export default {
     marginTop:
       deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 9 - 20
-          : deviceHeight / 10 - 20
+          ? deviceHeight / 9 - 100
+          : deviceHeight / 10 - 100
         : Platform.OS === "android"
-          ? deviceHeight / 9 - 20
-          : deviceHeight / 8 - 20
+          ? deviceHeight / 9 - 100
+          : deviceHeight / 8 - 100
   },
   signupHeader: {
+    paddingBottom: 20,
     alignSelf: "center",
     fontSize: 22,
     padding: 10,
     fontWeight: "bold",
     color: "#FFF",
-    marginTop:
-      Platform.OS === "android" ? deviceHeight / 6 : deviceHeight / 6 + 10
+  
   },
   background: {
     flex: 1,
@@ -86,5 +86,19 @@ export default {
     fontSize: 14,
     fontWeight: "bold",
     color: "#FFF"
+  },
+  imageContainer: {
+    paddingTop: '35%',
+    flexDirection: "row",
+    alignSelf: "center"
+  },
+  logo: {
+    flex: 1,
+    resizeMode: "contain",
+    height: deviceHeight / 4.5,
+    alignSelf: "center"
+  },
+  Content: {
+
   }
 };

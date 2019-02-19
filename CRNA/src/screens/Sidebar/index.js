@@ -135,7 +135,7 @@ class SideBar extends Component {
                       LOG OUT
                     </Text>
                     <Text note style={{ color: "#fff" }}>
-                      Kumar Sanket
+                      User Name
                     </Text>
                   </TouchableOpacity>
                 </Col>

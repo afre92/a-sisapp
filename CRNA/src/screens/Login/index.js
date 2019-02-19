@@ -78,22 +78,22 @@ class LoginForm extends Component {
     );
   }
   skip() {
-    this.props.navigation.navigate("Walkthrough");
+    this.props.navigation.navigate("Drawer");
     return this.props.navigation.dispatch(
       StackActions.reset({
         index: 0,
-        actions: [NavigationActions.navigate({ routeName: "Walkthrough" })]
+        actions: [NavigationActions.navigate({ routeName: "Drawer" })]
       })
     );
   }
 
   login() {
     if (this.props.valid) {
-      this.props.navigation.navigate("Walkthrough");
+      this.props.navigation.navigate("Drawer");
       return this.props.navigation.dispatch(
         StackActions.reset({
           index: 0,
-          actions: [NavigationActions.navigate({ routeName: "Walkthrough" })]
+          actions: [NavigationActions.navigate({ routeName: "Drawer" })]
         })
       );
     } else {

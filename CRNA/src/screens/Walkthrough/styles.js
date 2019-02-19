@@ -70,8 +70,10 @@ export default {
     fontSize: 120
   },
   Button: {
+    width: '80%', 
     alignSelf: "center",
     paddingHorizontal: 20,
-    backgroundColor: "rgba(0,0,0,0.2)"
+    backgroundColor: "rgba(0,0,0,0.2)",
+    marginBottom: 10,
   }
 };

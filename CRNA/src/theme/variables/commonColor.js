@@ -102,7 +102,7 @@ module.exports = {
 
   // Color
   brandPrimary: primary,
-  brandSecondary: "#00c497",
+  brandSecondary: "red",
   brandInfo: "#62B1F6",
   brandSuccess: "#5cb85c",
   brandDanger: "#d9534f",

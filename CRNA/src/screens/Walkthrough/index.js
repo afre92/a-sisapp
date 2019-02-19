@@ -46,12 +46,27 @@ class Walkthrough extends Component {
               <Button
                 transparent
                 rounded
-                onPress={() => this.props.navigation.navigate("Drawer")}
+                onPress={() => this.props.navigation.navigate("SignUp")}
                 style={styles.Button}
               >
-                <Text style={{ color: "#FFF", fontWeight: "600" }}>
-                  Skip To App
+                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                  <Text style={{ color: "#FFF", fontWeight: "600"}}>
+                    Create Account
+                  </Text>
+                </View>
+              </Button>
+
+              <Button
+                transparent
+                rounded
+                onPress={() => this.props.navigation.navigate("Login")}
+                style={styles.Button}
+              >
+              <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                <Text style={{ color: "#FFF", fontWeight: "600"}}>
+                  Login
                 </Text>
+              </View>
               </Button>
             </View>
 
@@ -80,12 +95,26 @@ class Walkthrough extends Component {
               <Button
                 transparent
                 rounded
-                onPress={() => this.props.navigation.openDrawer()}
+                onPress={() => this.props.navigation.navigate("SignUp")}
                 style={styles.Button}
               >
-                <Text style={{ color: "#FFF", fontWeight: "600" }}>
-                  Skip To App
-                </Text>
+                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                  <Text style={{ color: "#FFF", fontWeight: "600"}}>
+                    Create Account
+                  </Text>
+                </View>
+              </Button>
+              <Button
+                transparent
+                rounded
+                onPress={() => this.props.navigation.navigate("Login")}
+                style={styles.Button}
+              >
+                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                  <Text style={{ color: "#FFF", fontWeight: "600"}}>
+                    Login
+                  </Text>
+                </View>
               </Button>
             </View>
 
@@ -111,12 +140,26 @@ class Walkthrough extends Component {
               <Button
                 transparent
                 rounded
-                onPress={() => this.props.navigation.navigate("Drawer")}
+                onPress={() => this.props.navigation.navigate("SignUp")}
                 style={styles.Button}
               >
-                <Text style={{ color: "#FFF", fontWeight: "600" }}>
-                  Continue To App
-                </Text>
+                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                  <Text style={{ color: "#FFF", fontWeight: "600"}}>
+                    Create Account
+                  </Text>
+                </View>
+              </Button>
+              <Button
+                transparent
+                rounded
+                onPress={() => this.props.navigation.navigate("Login")}
+                style={styles.Button}
+              >
+                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                  <Text style={{ color: "#FFF", fontWeight: "600"}}>
+                    Login
+                  </Text>
+                </View>
               </Button>
             </View>
           </Carousel>

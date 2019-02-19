@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from "react";
-import { ImageBackground, StatusBar } from "react-native";
+import { ImageBackground, StatusBar, Image } from "react-native";
 import {
   Container,
   Content,
@@ -17,6 +17,7 @@ import {
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
+// const logo = require("../../../assets/logo.png");
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 
@@ -106,8 +107,12 @@ class SignUpForm extends Component {
           style={styles.background}
         >
           <Content padder>
-            <Text style={styles.signupHeader}>CREATE ACCOUNT</Text>
+            <View style={styles.imageContainer}>
+              <Image source={require("../../../assets/logo.png")} style={styles.logo}/>
+            </View>
+
             <View style={styles.signupContainer}>
+            <Text style={styles.signupHeader}>CREATE ACCOUNT</Text>
               <Field
                 name="username"
                 component={this.renderInput}
@@ -154,7 +159,7 @@ class SignUpForm extends Component {
               <Button
                 small
                 transparent
-                onPress={() => this.props.navigation.goBack()}
+                onPress={() => this.props.navigation.navigate("Login")}
               >
                 <Text style={styles.helpBtns}>SignIn</Text>
               </Button>
