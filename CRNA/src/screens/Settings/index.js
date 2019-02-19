@@ -98,7 +98,7 @@ class Settings extends Component {
               </Button>
               <TouchableOpacity style={{ alignSelf: "center" }}>
                 <Thumbnail
-                  source={require("../../../assets/Contacts/sanket.png")}
+                  source={require("../../../assets/Contacts/profile.png")}
                   style={styles.profilePic}
                 />
               </TouchableOpacity>

@@ -147,7 +147,7 @@ class SideBar extends Component {
                     }}
                   >
                     <Thumbnail
-                      source={require("../../../assets/Contacts/sanket.png")}
+                      source={require("../../../assets/Contacts/profile.png")}
                       style={styles.profilePic}
                     />
                   </TouchableOpacity>

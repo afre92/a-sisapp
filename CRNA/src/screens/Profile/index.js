@@ -55,12 +55,12 @@ class Profile extends Component {
           <View style={styles.profileInfoContainer}>
             <View style={{ alignSelf: "center" }}>
               <Thumbnail
-                source={require("../../../assets/Contacts/sanket.png")}
+                source={require("../../../assets/Contacts/profile.png")}
                 style={styles.profilePic}
               />
             </View>
             <View style={styles.profileInfo}>
-              <Text style={styles.profileUser}>Kumar Sanket</Text>
+              <Text style={styles.profileUser}>User Name</Text>
               <Text note style={styles.profileUserInfo}>
                 CEO, GeekyAnts
               </Text>
