@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import { Col, Row, Grid } from "react-native-easy-grid";
-import { ImageBackground, StatusBar, Image, Dimensions } from "react-native";
+import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS } from "react-native";
 import {
   Container,
   Content,
@@ -45,8 +45,13 @@ const alphaNumeric = value =>
 class AlarmForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true }
+    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date() }
   }
+
+  setDate(newDate) {
+    this.setState({chosenDate: newDate});
+  }
+
   textInput: any;
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
@@ -178,19 +183,10 @@ class AlarmForm extends Component {
             </View>
 
             <View style={styles.signupContainer}>
-            <Text style={styles.signupHeader}>CREATE ACCOUNT</Text>
-              <Field
-                name="username"
-                component={this.renderInput}
-                type="text"
-                validate={[required, alphaNumeric, minLength5]}
-              />
 
-              <Field
-                name="email"
-                component={this.renderInput}
-                type="email"
-                validate={[email, required]}
+              <DatePickerIOS
+                style={styles.datePicker}
+                date={this.state.chosenDate}
               />
               <Field
                 name="password"

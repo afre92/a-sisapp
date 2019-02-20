@@ -108,5 +108,10 @@ export default {
     flex: 1,
     textAlign: 'center',
     paddingBottom: deviceWidth / 20 - 10
+  },
+  datePicker: {
+    marginVertical: deviceHeight / 10,
+    backgroundColor: 'white',
+    borderRadius: 20
   }
 };
