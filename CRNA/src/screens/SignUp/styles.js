@@ -88,6 +88,7 @@ export default {
     color: "#FFF"
   },
   imageContainer: {
+    paddingTop: '35%',
     flexDirection: "row",
     alignSelf: "center"
   },
@@ -96,5 +97,8 @@ export default {
     resizeMode: "contain",
     height: deviceHeight / 4.5,
     alignSelf: "center"
+  },
+  Content: {
+
   }
 };
