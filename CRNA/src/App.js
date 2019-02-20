@@ -19,6 +19,7 @@ import Feedback from "./screens/Feedback/";
 import Profile from "./screens/Profile/";
 import Settings from "./screens/Settings";
 import SetUpStepOne from "./screens/SetUpStepOne";
+import Alarm from "./screens/Alarm";
 
 const Drawer = createDrawerNavigator(
   {
@@ -39,6 +40,7 @@ const Drawer = createDrawerNavigator(
 
 const App = createStackNavigator(
   {
+    Alarm: { screen: Alarm},
     SetUpStepOne: { screen: SetUpStepOne },
     Login: { screen: Login },
     SignUp: { screen: SignUp },
@@ -51,7 +53,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "SetUpStepOne",
+    initialRouteName: "Alarm",
     headerMode: "none"
   }
 );

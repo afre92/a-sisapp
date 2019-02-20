@@ -1,7 +1,7 @@
-// @flow
 
 import React, { Component } from "react";
-import { ImageBackground, StatusBar, Image } from "react-native";
+import { Col, Row, Grid } from "react-native-easy-grid";
+import { ImageBackground, StatusBar, Image, Dimensions } from "react-native";
 import {
   Container,
   Content,
@@ -14,7 +14,9 @@ import {
   Toast,
   Left,
   Right,
-  Footer
+  Footer,
+  CheckBox,
+  Body
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
@@ -22,6 +24,7 @@ import { Field, reduxForm } from "redux-form";
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 
+const deviceWidth = Dimensions.get("window").width;
 const required = value => (value ? undefined : "Required");
 const maxLength = max => value =>
   value && value.length > max ? `Must be ${max} characters or less` : undefined;
@@ -39,7 +42,7 @@ const alphaNumeric = value =>
     ? "Only alphanumeric characters"
     : undefined;
 
-class SignUpForm extends Component {
+class AlarmForm extends Component {
   textInput: any;
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
@@ -109,7 +112,65 @@ class SignUpForm extends Component {
         >
           <Content padder>
             <View style={styles.imageContainer}>
-              <Image source={require("../../../assets/logo.png")} style={styles.logo}/>
+            <Grid>
+              <Col>
+                <Row>
+                  <Text style={styles.weekDay}>Mon</Text>
+                </Row>
+                <Row>
+                  <CheckBox checked={false} color="white" style={styles.checkbox} />
+                </Row>
+              </Col>
+              <Col>
+                <Row>
+                  <Text style={styles.weekDay}>Tue</Text>
+                </Row>
+                <Row>
+                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                </Row>
+              </Col>
+              <Col>
+              <Row>
+                  <Text style={styles.weekDay}>Wed</Text>
+                </Row>
+                <Row>
+                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                </Row>
+              </Col>
+              <Col>    
+                <Row>
+                  <Text style={styles.weekDay}>Thu</Text>
+                </Row>
+                <Row>
+                  <CheckBox checked={false} color="white" style={styles.checkbox} />
+                </Row>
+              </Col>
+              <Col>    
+                <Row>
+                  <Text style={styles.weekDay}>Fri</Text>
+                </Row>
+                <Row>
+                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                </Row>
+              </Col>
+              <Col>    
+                <Row>
+                  <Text style={styles.weekDay}> Sat </Text>
+                </Row>
+                <Row>
+                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                </Row>
+              </Col>
+              <Col>    
+                <Row>
+                  <Text style={styles.weekDay}> Sun </Text>
+                </Row>
+                <Row>
+                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                </Row>
+              </Col>
+          </Grid>
+
             </View>
 
             <View style={styles.signupContainer}>
@@ -172,7 +233,7 @@ class SignUpForm extends Component {
   }
 }
 
-const SignUp = reduxForm({
-  form: "signup"
-})(SignUpForm);
-export default SignUp;
+const Alarm = reduxForm({
+  form: "alarm"
+})(AlarmForm);
+export default Alarm;
