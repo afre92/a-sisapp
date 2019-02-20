@@ -43,6 +43,10 @@ const alphaNumeric = value =>
     : undefined;
 
 class AlarmForm extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true }
+  }
   textInput: any;
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
@@ -118,7 +122,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}>Mon</Text>
                 </Row>
                 <Row>
-                  <CheckBox checked={false} color="white" style={styles.checkbox} />
+                  <CheckBox color= "white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
                 </Row>
               </Col>
               <Col>
@@ -126,7 +130,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}>Tue</Text>
                 </Row>
                 <Row>
-                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                  <CheckBox color= "white" checked={this.state.day2} onPress={() => this.setState({ day2: !this.state.day2 })} />
                 </Row>
               </Col>
               <Col>
@@ -134,7 +138,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}>Wed</Text>
                 </Row>
                 <Row>
-                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                  <CheckBox color= "white" checked={this.state.day3} onPress={() => this.setState({ day3: !this.state.day3 })} />
                 </Row>
               </Col>
               <Col>    
@@ -142,7 +146,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}>Thu</Text>
                 </Row>
                 <Row>
-                  <CheckBox checked={false} color="white" style={styles.checkbox} />
+                  <CheckBox color= "white" checked={this.state.day4} onPress={() => this.setState({ day4: !this.state.day4 })} />
                 </Row>
               </Col>
               <Col>    
@@ -150,7 +154,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}>Fri</Text>
                 </Row>
                 <Row>
-                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                  <CheckBox color= "white" checked={this.state.day5} onPress={() => this.setState({ day5: !this.state.day5 })} />
                 </Row>
               </Col>
               <Col>    
@@ -158,7 +162,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}> Sat </Text>
                 </Row>
                 <Row>
-                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                  <CheckBox color= "white" checked={this.state.day6} onPress={() => this.setState({ day6: !this.state.day6 })} />
                 </Row>
               </Col>
               <Col>    
@@ -166,7 +170,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}> Sun </Text>
                 </Row>
                 <Row>
-                  <CheckBox checked={true} color="white" style={styles.checkbox} />
+                  <CheckBox color= "white" checked={this.state.day7} onPress={() => this.setState({ day7: !this.state.day7 })} />
                 </Row>
               </Col>
           </Grid>
