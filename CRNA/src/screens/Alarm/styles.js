@@ -113,5 +113,17 @@ export default {
     marginVertical: deviceHeight / 10,
     backgroundColor: 'white',
     borderRadius: 20
-  }
+  },
+  moodContainer: {
+  },
+  mood: {
+    justifyContent: 'center',
+    alignSelf: "center",
+
+  },
+  moodText: {
+    textAlign: 'center'
+  },
+
+
 };

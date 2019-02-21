@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import { Col, Row, Grid } from "react-native-easy-grid";
+import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS } from "react-native";
 import {
   Container,
@@ -16,13 +17,27 @@ import {
   Right,
   Footer,
   CheckBox,
-  Body
+  Body,
+  Radio
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
 // const logo = require("../../../assets/logo.png");
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
+
+
+
+var radio_props = [
+  {label: 'param1', value: 0 },
+  {label: 'param1', value: 0 },
+  {label: 'param1', value: 0 },
+  {label: 'param1', value: 0 },
+  {label: 'param1', value: 0 },
+  {label: 'param2', value: 1 }
+];
+
+
 
 const deviceWidth = Dimensions.get("window").width;
 const required = value => (value ? undefined : "Required");
@@ -45,7 +60,7 @@ const alphaNumeric = value =>
 class AlarmForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date() }
+    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
   }
 
   setDate(newDate) {
@@ -96,6 +111,19 @@ class AlarmForm extends Component {
     );
   }
   signUp() {
+    if (this.props.valid) {
+      this.props.navigation.goBack();
+    } else {
+      Toast.show({
+        text: "All the fields are compulsory!",
+        duration: 2500,
+        position: "top",
+        textStyle: { textAlign: "center" }
+      });
+    }
+  }
+
+  check() {
     if (this.props.valid) {
       this.props.navigation.goBack();
     } else {
@@ -175,25 +203,83 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}> Sun </Text>
                 </Row>
                 <Row>
-                  <CheckBox color= "white" checked={this.state.day7} onPress={() => this.setState({ day7: !this.state.day7 })} />
+                  <CheckBox color="white" checked={this.state.day7} onPress={() => this.setState({ day7: !this.state.day7 })} />
                 </Row>
               </Col>
           </Grid>
+
 
             </View>
 
             <View style={styles.signupContainer}>
 
+
               <DatePickerIOS
                 style={styles.datePicker}
                 date={this.state.chosenDate}
               />
-              <Field
-                name="password"
-                component={this.renderInput}
-                type="password"
-                validate={[alphaNumeric, minLength8, maxLength15, required]}
-              />
+
+
+
+            <View style={styles.moodContainer}>
+
+              <Grid>
+                <Row>
+                  <Col >
+                    <Row style={styles.mood}>
+                      <Text>CALM</Text>
+                    </Row>
+                    <Row style={styles.mood}>
+                      <CheckBox color= "white" checked={this.state.itemSelected == 'calm' } onPress={() => this.setState({ itemSelected: 'calm' })} />
+                    </Row>
+                  </Col>
+                  <Col >
+                   <Row style={styles.mood}>
+                      <Text>ENERGIZED</Text>
+                    </Row>
+                    <Row style={styles.mood}>
+                      <CheckBox color= "white" checked={this.state.itemSelected == 'energized' } onPress={() => this.setState({ itemSelected: 'energized' })} />
+                    </Row>
+                  </Col>
+                  <Col >
+                  <Row style={styles.mood}>
+                      <Text>RELAXED</Text>
+                    </Row>
+                    <Row style={styles.mood}>
+                      <CheckBox color= "white" checked={this.state.itemSelected == 'relaxed' } onPress={() => this.setState({ itemSelected: 'relaxed' })} />
+                    </Row>
+                  </Col>
+                </Row>
+               <Row>
+                  <Col>
+                    <Row  style={styles.mood}> 
+                      <Text>HAPPY</Text>
+                    </Row>
+                    <Row style={styles.mood}>
+                      <CheckBox color="white" checked={this.state.itemSelected == 'happy' } onPress={() => this.setState({ itemSelected: 'happy' })} />
+                    </Row>
+                  </Col>
+                  <Col >
+                   <Row style={styles.mood}>
+                      <Text>PEACEFUL</Text>
+                    </Row>
+                    <Row style={styles.mood}>
+                      <CheckBox color= "white" checked={this.state.itemSelected == 'peaceful' } onPress={() => this.setState({ itemSelected: 'peaceful' })} />
+                    </Row>
+                  </Col>
+                  <Col >
+                    <Row style={styles.mood}> 
+                      <Text>GREATFUL</Text>
+                    </Row>
+                    <Row style={styles.mood}>
+                      <CheckBox color= "white" checked={this.state.itemSelected == 'greateful' } onPress={() => this.setState({ itemSelected: 'greateful' })} />
+                    </Row>
+                  </Col>
+                </Row>
+              </Grid>
+            </View>
+
+
 
               <Button
                 rounded
@@ -205,6 +291,11 @@ class AlarmForm extends Component {
                 <Text style={{ color: "#FFF" }}>Continue</Text>
               </Button>
             </View>
+
+
+
+
+ 
           </Content>
           <Footer
             style={{
