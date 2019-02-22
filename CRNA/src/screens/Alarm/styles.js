@@ -26,8 +26,7 @@ export default {
     fontSize: 22,
     padding: 10,
     fontWeight: "bold",
-    color: "#FFF",
-  
+    color: "#FFF"
   },
   background: {
     flex: 1,
@@ -88,7 +87,7 @@ export default {
     color: "#FFF"
   },
   imageContainer: {
-    paddingTop: '35%',
+    paddingTop: '20%',
     flexDirection: "row",
     alignSelf: "center"
   },
@@ -97,11 +96,6 @@ export default {
     resizeMode: "contain",
     height: deviceHeight / 4.5,
     alignSelf: "center"
-  },
-  checkbox: {
-    // marginleft: 5
-    // flex: 1
-    // marginHorizontal: deviceWidth / 30 - 7
   },
   weekDay: {
     marginRight: deviceWidth / 20 - 15,
@@ -115,15 +109,23 @@ export default {
     borderRadius: 20
   },
   moodContainer: {
-  },
-  mood: {
-    justifyContent: 'center',
+    flex: 1,
+    justifyContent: "center",
     alignSelf: "center",
-
+    borderWidth: 2,
+    borderColor: "white",
+    borderRadius: 20,
+    paddingHorizontal: deviceWidth / 20,
+    paddingVertical: deviceWidth / 15
   },
-  moodText: {
-    textAlign: 'center'
+  labelStyle: {
+    fontSize: 20,
+    color: '#fff', 
+    paddingTop: 20, 
+    paddingBottom: 10, 
+    marginHorizontal: deviceWidth / 20 - 10
   },
-
-
+  buttonsContainer: {
+    paddingTop: deviceWidth / 5
+  }
 };

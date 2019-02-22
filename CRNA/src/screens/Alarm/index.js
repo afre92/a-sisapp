@@ -28,13 +28,16 @@ import commonColor from "../../theme/variables/commonColor";
 
 
 
-var radio_props = [
+var radio_props_one = [
   {label: 'param1', value: 0 },
   {label: 'param1', value: 0 },
+  {label: 'param1', value: 0 }
+];
+
+var radio_props_two = [
   {label: 'param1', value: 0 },
   {label: 'param1', value: 0 },
-  {label: 'param1', value: 0 },
-  {label: 'param2', value: 1 }
+  {label: 'param1', value: 0 }
 ];
 
 
@@ -223,63 +226,41 @@ class AlarmForm extends Component {
 
             <View style={styles.moodContainer}>
 
-              <Grid>
-                <Row>
-                  <Col >
-                    <Row style={styles.mood}>
-                      <Text>CALM</Text>
-                    </Row>
-                    <Row style={styles.mood}>
-                      <CheckBox color= "white" checked={this.state.itemSelected == 'calm' } onPress={() => this.setState({ itemSelected: 'calm' })} />
-                    </Row>
-                  </Col>
-                  <Col >
-                   <Row style={styles.mood}>
-                      <Text>ENERGIZED</Text>
-                    </Row>
-                    <Row style={styles.mood}>
-                      <CheckBox color= "white" checked={this.state.itemSelected == 'energized' } onPress={() => this.setState({ itemSelected: 'energized' })} />
-                    </Row>
-                  </Col>
-                  <Col >
-                  <Row style={styles.mood}>
-                      <Text>RELAXED</Text>
-                    </Row>
-                    <Row style={styles.mood}>
-                      <CheckBox color= "white" checked={this.state.itemSelected == 'relaxed' } onPress={() => this.setState({ itemSelected: 'relaxed' })} />
-                    </Row>
-                  </Col>
-                </Row>
-               <Row>
-                  <Col>
-                    <Row  style={styles.mood}> 
-                      <Text>HAPPY</Text>
-                    </Row>
-                    <Row style={styles.mood}>
-                      <CheckBox color="white" checked={this.state.itemSelected == 'happy' } onPress={() => this.setState({ itemSelected: 'happy' })} />
-                    </Row>
-                  </Col>
-                  <Col >
-                   <Row style={styles.mood}>
-                      <Text>PEACEFUL</Text>
-                    </Row>
-                    <Row style={styles.mood}>
-                      <CheckBox color= "white" checked={this.state.itemSelected == 'peaceful' } onPress={() => this.setState({ itemSelected: 'peaceful' })} />
-                    </Row>
-                  </Col>
-                  <Col >
-                    <Row style={styles.mood}> 
-                      <Text>GREATFUL</Text>
-                    </Row>
-                    <Row style={styles.mood}>
-                      <CheckBox color= "white" checked={this.state.itemSelected == 'greateful' } onPress={() => this.setState({ itemSelected: 'greateful' })} />
-                    </Row>
-                  </Col>
-                </Row>
-              </Grid>
+              <RadioForm
+                radio_props={radio_props_one}
+                buttonColor={'#FFFFFF'}
+                initial={-1}
+                labelHorizontal={false}
+                formHorizontal={true}
+                buttonSize={40}
+                selectedButtonColor={'#FFFFFF'}
+                labelStyle={styles.labelStyle}
+                onPress={(value) => {this.setState({value:value})}}
+              />
+
+              <RadioForm
+                radio_props={radio_props_two}
+                buttonColor={'#FFFFFF'}
+                initial={-1}
+                labelHorizontal={false}
+                formHorizontal={true}
+                buttonSize={40}
+                selectedButtonColor={'#FFFFFF'}
+                labelStyle={styles.labelStyle}
+                onPress={(value) => {this.setState({value:value})}}
+              />
             </View>
 
-
+            <View style={styles.buttonsContainer}>
+              <Button
+                rounded
+                bordered
+                block
+                onPress={() => this.signUp()}
+                style={styles.signupBtn}
+              >
+                <Text style={{ color: "#FFF" }}>Add Alarm</Text>
+              </Button>
 
               <Button
                 rounded
@@ -288,8 +269,9 @@ class AlarmForm extends Component {
                 onPress={() => this.signUp()}
                 style={styles.signupBtn}
               >
-                <Text style={{ color: "#FFF" }}>Continue</Text>
+               <Text style={{ color: "#FFF" }}>Continue</Text>
               </Button>
+              </View>
             </View>
 
 
