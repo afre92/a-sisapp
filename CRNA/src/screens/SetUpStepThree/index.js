@@ -27,22 +27,9 @@ import commonColor from "../../theme/variables/commonColor";
 import DaysAndTime from "../../components/DaysAndTime"
 
 
-
-var radio_props_one = [
-  {label: 'ENERGIZED', value: 0 },
-  {label: ' CALM ', value: 0 },
-  {label: 'RELAXED', value: 0 }
-];
-
-var radio_props_two = [
-  {label: 'PEACEFUL', value: 0 },
-  {label: ' HAPPY ', value: 0 },
-  {label: 'GREATFUL', value: 0 }
-];
-
 const deviceWidth = Dimensions.get("window").width;
 
-class SetUpStepTwo extends Component {
+class SetUpStepThree extends Component {
   constructor(props) {
     super(props)
     this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
@@ -71,7 +58,7 @@ class SetUpStepTwo extends Component {
               <Grid>
                 <Col style={styles.currentStep}>
                 </Col>
-                <Col style={styles.progressBar}>
+                <Col style={styles.currentStep}>
                 </Col>
                 <Col style={styles.progressBar}>
                 </Col>
@@ -81,33 +68,6 @@ class SetUpStepTwo extends Component {
           <DaysAndTime />
 
             <View style={styles.signupContainer}>
-              <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
-              <View style={styles.moodContainer}>
-
-                <RadioForm
-                  radio_props={radio_props_one}
-                  buttonColor={'#FFFFFF'}
-                  initial={-1}
-                  labelHorizontal={false}
-                  formHorizontal={true}
-                  buttonSize={50}
-                  selectedButtonColor={'#FFFFFF'}
-                  labelStyle={styles.labelStyle}
-                  onPress={(value) => {this.setState({value:value})}}
-                />
-
-                <RadioForm
-                  radio_props={radio_props_two}
-                  buttonColor={'#FFFFFF'}
-                  initial={-1}
-                  labelHorizontal={false}
-                  formHorizontal={true}
-                  buttonSize={50}
-                  selectedButtonColor={'#FFFFFF'}
-                  labelStyle={styles.labelStyle}
-                  onPress={(value) => {this.setState({value:value})}}
-                />
-              </View>
 
               <View style={styles.buttonsContainer}>
                 <Button
@@ -138,4 +98,4 @@ class SetUpStepTwo extends Component {
   }
 }
 
-export default SetUpStepTwo;
+export default SetUpStepThree;
