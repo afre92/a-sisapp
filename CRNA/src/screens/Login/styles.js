@@ -46,7 +46,8 @@ export default {
   },
   loginBtn: {
     marginTop: 7,
-    height: 50
+    height: 50,
+    marginBottom: deviceHeight / 1
   },
   otherLinksContainer: {
     paddingTop: deviceHeight < 600 ? 5 : Platform.OS === "android" ? 10 : 15,

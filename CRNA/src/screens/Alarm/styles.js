@@ -6,19 +6,20 @@ const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 
 const primary = require("../../theme/variables/commonColor").brandPrimary;
+const contentMarginVertical = deviceWidth < 330
+        ? Platform.OS === "android"
+          ? deviceHeight / 9 - 20
+          : deviceHeight / 10 - 20
+        : Platform.OS === "android"
+          ? deviceHeight / 12 - 20
+          : deviceHeight / 10 - 20
 
 export default {
   signupContainer: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop:
-      deviceWidth < 330
-        ? Platform.OS === "android"
-          ? deviceHeight / 9 - 100
-          : deviceHeight / 10 - 100
-        : Platform.OS === "android"
-          ? deviceHeight / 9 - 100
-          : deviceHeight / 8 - 100
+    paddingLeft: 10,
+    paddingBottom: 50,
+    paddingRight: 10,
+    marginVertical: contentMarginVertical,
   },
   signupHeader: {
     paddingBottom: 20,
@@ -66,8 +67,11 @@ export default {
   signupBtn: {
     height: 50,
     marginTop: 10,
-    borderWidth: 1,
-    borderColor: "#ddd"
+    borderTopWidth: 2,
+    borderRightWidth: 2,
+    borderLeftWidth: 2,
+    borderBottomWidth: 2,
+    borderColor: "#FFF",
   },
   otherLinkText: {
     alignSelf: "center",
@@ -87,7 +91,6 @@ export default {
     color: "#FFF"
   },
   imageContainer: {
-    paddingTop: '20%',
     flexDirection: "row",
     alignSelf: "center"
   },
@@ -98,34 +101,59 @@ export default {
     alignSelf: "center"
   },
   weekDay: {
-    marginRight: deviceWidth / 20 - 15,
+    fontSize: 18,
     flex: 1,
+    fontWeight: '600',
     textAlign: 'center',
-    paddingBottom: deviceWidth / 20 - 10
+    paddingBottom: deviceWidth / 20 - 10,
   },
   datePicker: {
-    marginVertical: deviceHeight / 10,
+    marginVertical: deviceHeight / 20,
     backgroundColor: 'white',
     borderRadius: 20
   },
   moodContainer: {
+    marginBottom: deviceHeight / 10,
+    marginTop: deviceHeight / 20,
     flex: 1,
     justifyContent: "center",
     alignSelf: "center",
     borderWidth: 2,
     borderColor: "white",
-    borderRadius: 20,
-    paddingHorizontal: deviceWidth / 20,
-    paddingVertical: deviceWidth / 15
+    borderRadius: 22,
+    paddingHorizontal: deviceWidth / 15,
+    paddingVertical: deviceWidth / 10
   },
   labelStyle: {
-    fontSize: 20,
+    fontSize: 15,
+    fontWeight: '600',
     color: '#fff', 
     paddingTop: 20, 
-    paddingBottom: 10, 
-    marginHorizontal: deviceWidth / 20 - 10
+    paddingBottom: 10,
+    width: deviceWidth / 5,
+    textAlign: 'center'
   },
   buttonsContainer: {
-    paddingTop: deviceWidth / 5
-  }
+  },
+  header: {
+    textAlign: 'center',
+    paddingVertical:  '10%',
+    fontSize: 20,
+    fontWeight: '600'
+  },
+  container: {
+    paddingTop: '15%'
+  },
+  checkBoxes: {
+    CheckboxIconSize: 50
+  },
+  subHeader: {
+    textAlign: 'center',
+    fontSize: deviceWidth / 22,
+    fontWeight: 'bold'
+  },
+    loginBtn: {
+    marginTop: 7,
+    height: 50
+  },
 };

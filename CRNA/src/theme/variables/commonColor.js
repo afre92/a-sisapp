@@ -28,16 +28,16 @@ module.exports = {
   btnDisabledClr: "#f1f1f1",
 
   // CheckBox
-  CheckboxRadius: platform === "ios" ? 13 : 0,
-  CheckboxBorderWidth: platform === "ios" ? 1 : 2,
-  CheckboxPaddingLeft: platform === "ios" ? 8 : 2,
+  CheckboxRadius: platform === "ios" ? 20 : 0,
+  CheckboxBorderWidth: platform === "ios" ? 2 : 2,
+  CheckboxPaddingLeft: platform === "ios" ? deviceWidth / 20 - 10 : 2,
   CheckboxPaddingBottom: platform === "ios" ? 0 : 5,
   CheckboxIconSize: platform === "ios" ? 30 : 14,
-  CheckboxIconMarginTop: platform === "ios" ? undefined : 1,
-  CheckboxFontSize: platform === "ios" ? 30 / 0.9 : 18,
-  DefaultFontSize: 18,
+  CheckboxIconMarginTop: platform === "ios" ? 10 : 1,
+  CheckboxFontSize: platform === "ios" ? 40 / 0.9 : 18,
+  DefaultFontSize: 30,
   checkboxBgColor: "#039BE5",
-  checkboxSize: 30,
+  checkboxSize: 40,
   checkboxTickColor: "#813270",
 
   // New Variable

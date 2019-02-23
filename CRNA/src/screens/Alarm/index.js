@@ -29,15 +29,15 @@ import commonColor from "../../theme/variables/commonColor";
 
 
 var radio_props_one = [
-  {label: 'param1', value: 0 },
-  {label: 'param1', value: 0 },
-  {label: 'param1', value: 0 }
+  {label: 'CALM', value: 0 },
+  {label: 'ENERGIZED', value: 0 },
+  {label: 'RELAXED', value: 0 }
 ];
 
 var radio_props_two = [
-  {label: 'param1', value: 0 },
-  {label: 'param1', value: 0 },
-  {label: 'param1', value: 0 }
+  {label: 'HAPPY', value: 0 },
+  {label: 'PEACEFUL', value: 0 },
+  {label: 'GREATFUL', value: 0 }
 ];
 
 
@@ -150,7 +150,11 @@ class AlarmForm extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-          <Content padder>
+          <Content padder style={styles.container}>
+          <Text style={styles.header}> CHOOSE YOUR DAYS </Text>
+          <View>
+
+          </View>
             <View style={styles.imageContainer}>
             <Grid>
               <Col>
@@ -158,7 +162,7 @@ class AlarmForm extends Component {
                   <Text style={styles.weekDay}>Mon</Text>
                 </Row>
                 <Row>
-                  <CheckBox color= "white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                  <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
                 </Row>
               </Col>
               <Col>
@@ -216,14 +220,15 @@ class AlarmForm extends Component {
 
             <View style={styles.signupContainer}>
 
-
+            <Text style={styles.subHeader}> What time would you like to wake up ? </Text>
               <DatePickerIOS
+                mode='time'
                 style={styles.datePicker}
                 date={this.state.chosenDate}
               />
 
 
-
+            <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
             <View style={styles.moodContainer}>
 
               <RadioForm
@@ -232,7 +237,7 @@ class AlarmForm extends Component {
                 initial={-1}
                 labelHorizontal={false}
                 formHorizontal={true}
-                buttonSize={40}
+                buttonSize={50}
                 selectedButtonColor={'#FFFFFF'}
                 labelStyle={styles.labelStyle}
                 onPress={(value) => {this.setState({value:value})}}
@@ -244,7 +249,7 @@ class AlarmForm extends Component {
                 initial={-1}
                 labelHorizontal={false}
                 formHorizontal={true}
-                buttonSize={40}
+                buttonSize={50}
                 selectedButtonColor={'#FFFFFF'}
                 labelStyle={styles.labelStyle}
                 onPress={(value) => {this.setState({value:value})}}
@@ -259,7 +264,7 @@ class AlarmForm extends Component {
                 onPress={() => this.signUp()}
                 style={styles.signupBtn}
               >
-                <Text style={{ color: "#FFF" }}>Add Alarm</Text>
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
               </Button>
 
               <Button
@@ -269,15 +274,10 @@ class AlarmForm extends Component {
                 onPress={() => this.signUp()}
                 style={styles.signupBtn}
               >
-               <Text style={{ color: "#FFF" }}>Continue</Text>
+               <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
               </Button>
               </View>
             </View>
-
-
-
-
- 
           </Content>
           <Footer
             style={{
