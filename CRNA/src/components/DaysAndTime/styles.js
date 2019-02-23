@@ -63,6 +63,7 @@ export default {
     fontWeight: '600',
     textAlign: 'center',
     paddingBottom: deviceWidth / 20 - 10,
+    paddingLeft: 10,
   },
   datePicker: {
     marginVertical: deviceHeight / 20,
@@ -76,7 +77,8 @@ export default {
     paddingTop: 20, 
     paddingBottom: 10,
     width: deviceWidth / 5,
-    textAlign: 'center'
+    textAlign: 'center',
+    paddingLeft: 10
   },
   buttonsContainer: {
   },
