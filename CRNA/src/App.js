@@ -19,7 +19,10 @@ import Feedback from "./screens/Feedback/";
 import Profile from "./screens/Profile/";
 import Settings from "./screens/Settings";
 import SetUpStepOne from "./screens/SetUpStepOne";
+import SetUpStepTwo from "./screens/SetUpStepTwo";
 import Alarm from "./screens/Alarm";
+import DaysAndTime from "./screens/DaysAndTime";
+
 
 const Drawer = createDrawerNavigator(
   {
@@ -40,8 +43,10 @@ const Drawer = createDrawerNavigator(
 
 const App = createStackNavigator(
   {
+    DaysAndTime: { screen: DaysAndTime },
     Alarm: { screen: Alarm},
     SetUpStepOne: { screen: SetUpStepOne },
+    SetUpStepTwo: { screen: SetUpStepTwo },
     Login: { screen: Login },
     SignUp: { screen: SignUp },
     ForgotPassword: { screen: ForgotPassword },
@@ -53,7 +58,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Alarm",
+    initialRouteName: "SetUpStepTwo",
     headerMode: "none"
   }
 );

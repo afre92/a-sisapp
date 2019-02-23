@@ -45,49 +45,6 @@ class SetUpStepOne extends Component {
     };
   }
 
-  renderInput({ input, label, type, meta: { touched, error, warning } }) {
-    return (
-      <View>
-        <Item error={error && touched} rounded style={styles.inputGrp}>
-          <Icon active name="mail" style={{ color: "#fff" }} />
-          <Input
-            placeholderTextColor="#FFF"
-            style={styles.input}
-            placeholder="Email"
-            {...input}
-            ref={c => (this.textInput = c)}
-          />
-          {touched && error
-            ? <Icon
-                active
-                style={styles.formErrorIcon}
-                onPress={() => this.textInput._root.clear()}
-                name="close"
-              />
-            : <Text />}
-        </Item>
-        {touched && error
-          ? <Text style={styles.formErrorText1}>
-              {error}
-            </Text>
-          : <Text style={styles.formErrorText2}>error here</Text>}
-      </View>
-    );
-  }
-
-  // forgotPassword() {
-  //   if (this.props.valid) {
-  //     this.props.navigation.goBack();
-  //   } else {
-  //     Toast.show({
-  //       text: "Enter Valid Email",
-  //       duration: 2500,
-  //       position: "top",
-  //       textStyle: { textAlign: "center" }
-  //     });
-  //   }
-  // }
-
   render() {
     return (
       <Container>
@@ -135,7 +92,3 @@ class SetUpStepOne extends Component {
   }
 }
 export default SetUpStepOne;
-// const ForgotPassword = reduxForm({
-//   form: "help"
-// })(ForgotPasswordForm);
-// export default ForgotPassword;
