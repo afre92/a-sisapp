@@ -74,7 +74,7 @@ class DaysAndTime extends Component {
 
   render() {
     return (
-        <Content padder style={styles.container}>
+        <View padder style={styles.container}>
           <Text style={styles.header}> CHOOSE YOUR DAYS </Text>
             <View style={styles.formContainer}>
               <Grid>
@@ -145,7 +145,7 @@ class DaysAndTime extends Component {
                 date={this.state.chosenDate}
               />
               </View>
-          </Content>
+          </View>
     );
   }
 }

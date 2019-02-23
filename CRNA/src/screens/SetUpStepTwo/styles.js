@@ -121,8 +121,9 @@ export default {
     borderWidth: 2,
     borderColor: "white",
     borderRadius: 22,
-    paddingHorizontal: deviceWidth / 15,
-    paddingVertical: deviceWidth / 10
+    paddingHorizontal: deviceWidth / 12,
+    paddingVertical: deviceWidth / 10,
+    backgroundColor: 'rgba(255, 255, 255, .2)'
   },
   labelStyle: {
     fontSize: 15,
@@ -156,4 +157,17 @@ export default {
     marginTop: 7,
     height: 50
   },
+  progressBar: {
+    height: 8,
+    color: '#FFFFFF',
+    borderColor: '#FFFFFF',
+    borderWidth: 1,
+    marginHorizontal: 12
+ },
+ currentStep: {
+    height: 8,
+    color: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
+    marginHorizontal: 12
+ }
 };

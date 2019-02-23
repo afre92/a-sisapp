@@ -29,14 +29,14 @@ import DaysAndTime from "../../components/DaysAndTime"
 
 
 var radio_props_one = [
-  {label: 'CALM', value: 0 },
   {label: 'ENERGIZED', value: 0 },
+  {label: ' CALM ', value: 0 },
   {label: 'RELAXED', value: 0 }
 ];
 
 var radio_props_two = [
-  {label: 'HAPPY', value: 0 },
   {label: 'PEACEFUL', value: 0 },
+  {label: ' HAPPY ', value: 0 },
   {label: 'GREATFUL', value: 0 }
 ];
 
@@ -65,7 +65,18 @@ class SetUpSteptwo extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
+
         <Content padder style={styles.container}>
+                <View>
+              <Grid>
+                <Col style={styles.currentStep}>
+                </Col>
+                <Col style={styles.progressBar}>
+                </Col>
+                <Col style={styles.progressBar}>
+                </Col>
+              </Grid>
+        </View>
 
           <DaysAndTime />
 

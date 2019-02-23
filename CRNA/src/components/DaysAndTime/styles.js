@@ -22,7 +22,6 @@ export default {
     paddingBottom: 20,
     alignSelf: "center",
     fontSize: 22,
-    padding: 10,
     fontWeight: "bold",
     color: "#FFF"
   },
@@ -62,8 +61,7 @@ export default {
     flex: 1,
     fontWeight: '600',
     textAlign: 'center',
-    paddingBottom: deviceWidth / 20 - 10,
-    paddingLeft: 10,
+    paddingBottom: deviceWidth / 20 - 10
   },
   datePicker: {
     marginVertical: deviceHeight / 20,
