@@ -29,7 +29,7 @@ import DaysAndTime from "../../components/DaysAndTime"
 
 const deviceWidth = Dimensions.get("window").width;
 
-class SetUpStepThree extends Component {
+class SetUpStepFour extends Component {
   constructor(props) {
     super(props)
     this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
@@ -54,8 +54,8 @@ class SetUpStepThree extends Component {
         >
 
         <Content padder style={styles.container}>
-        <View style={styles.backArrowContainer}>
-          <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
+        <View style={{marginVertical: 20, paddingLeft: 10}}>
+          <Icon type="FontAwesome" name="arrow-left" style={styles.backArrow} />
         </View>
         <View>
               <Grid>
@@ -70,7 +70,7 @@ class SetUpStepThree extends Component {
 
           <DaysAndTime />
 
-            <View style={styles.setUpStepThree}>
+            <View style={styles.setUpStepFour}>
 
               <View style={styles.buttonsContainer}>
                 <Button
@@ -101,4 +101,4 @@ class SetUpStepThree extends Component {
   }
 }
 
-export default SetUpStepThree;
+export default SetUpStepFour;

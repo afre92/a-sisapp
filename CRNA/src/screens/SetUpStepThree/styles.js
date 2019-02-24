@@ -15,19 +15,11 @@ const contentMarginVertical = deviceWidth < 330
           : deviceHeight / 10 - 20
 
 export default {
-  signupContainer: {
+  setUpStepThree: {
     paddingLeft: 10,
     paddingBottom: 50,
     paddingRight: 10,
     marginBottom: contentMarginVertical,
-  },
-  signupHeader: {
-    paddingBottom: 20,
-    alignSelf: "center",
-    fontSize: 22,
-    padding: 10,
-    fontWeight: "bold",
-    color: "#FFF"
   },
   background: {
     flex: 1,
@@ -52,14 +44,6 @@ export default {
     textAlign: "right",
     top: -10
   },
-  inputGrp: {
-    flexDirection: "row",
-    borderRadius: 25,
-    backgroundColor: "rgba(255,255,255,0.2)",
-    marginBottom: 10,
-    borderWidth: 0,
-    borderColor: "transparent"
-  },
   input: {
     paddingLeft: 10,
     color: "#FFF"
@@ -73,89 +57,15 @@ export default {
     borderBottomWidth: 2,
     borderColor: "#FFF",
   },
-  otherLinkText: {
-    alignSelf: "center",
-    opacity: 0.8,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#EFF"
-  },
-  otherLinksContainer: {
-    flexDirection: "row",
-    marginTop: 10
-  },
-  helpBtns: {
-    opacity: 0.9,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#FFF"
-  },
-  imageContainer: {
-    flexDirection: "row",
-    alignSelf: "center"
-  },
-  logo: {
-    flex: 1,
-    resizeMode: "contain",
-    height: deviceHeight / 4.5,
-    alignSelf: "center"
-  },
-  weekDay: {
-    fontSize: 18,
-    flex: 1,
-    fontWeight: '600',
-    textAlign: 'center',
-    paddingBottom: deviceWidth / 20 - 10,
-  },
   datePicker: {
     marginVertical: deviceHeight / 20,
     backgroundColor: 'white',
     borderRadius: 20
   },
-  moodContainer: {
-    marginBottom: deviceHeight / 10,
-    marginTop: deviceHeight / 20,
-    flex: 1,
-    justifyContent: "center",
-    alignSelf: "center",
-    borderWidth: 2,
-    borderColor: "white",
-    borderRadius: 22,
-    paddingHorizontal: deviceWidth / 12,
-    paddingVertical: deviceWidth / 10,
-    backgroundColor: 'rgba(255, 255, 255, .2)'
-  },
-  labelStyle: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: '#fff', 
-    paddingTop: 20, 
-    paddingBottom: 10,
-    width: deviceWidth / 5,
-    textAlign: 'center'
-  },
   buttonsContainer: {
-  },
-  header: {
-    textAlign: 'center',
-    paddingVertical:  '10%',
-    fontSize: 20,
-    fontWeight: '600'
+    marginTop: deviceHeight / 25
   },
   container: {
-    paddingTop: '15%'
-  },
-  checkBoxes: {
-    CheckboxIconSize: 50
-  },
-  subHeader: {
-    textAlign: 'center',
-    fontSize: deviceWidth / 22,
-    fontWeight: 'bold'
-  },
-    loginBtn: {
-    marginTop: 7,
-    height: 50
   },
   progressBar: {
     height: 8,
@@ -169,5 +79,9 @@ export default {
     color: '#FFFFFF',
     backgroundColor: '#FFFFFF',
     marginHorizontal: 12
- }
+ },
+  backArrowContainer: {
+    marginVertical: deviceHeight / 30,
+    paddingLeft: 10
+  }
 };

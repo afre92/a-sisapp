@@ -83,7 +83,7 @@ export default {
   },
   buttonsContainer: {
   },
-  header: {
+  headerr: {
     textAlign: 'center',
     paddingVertical:  '10%',
     fontSize: 20,
