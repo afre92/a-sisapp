@@ -77,7 +77,7 @@ class SetUpStepOne extends Component {
                   rounded
                   block
                   bordered
-                  onPress={() => this.props.navigation.navigate("SignUp")}
+                  onPress={() => this.props.navigation.navigate("SetUpStepTwo")}
                   style={styles.emailBtn}
                 >
                   <Text style={{ color: "#FFF" }}>Get Started</Text>

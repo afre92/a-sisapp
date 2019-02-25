@@ -115,7 +115,7 @@ class SetUpStepTwo extends Component {
                   bordered
                   block
                   onPress={() => this.signUp()}
-                  style={styles.signupBtn}
+                  style={{display: 'none'}}
                 >
                   <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
                 </Button>
@@ -124,7 +124,7 @@ class SetUpStepTwo extends Component {
                   rounded
                   bordered
                   block
-                  onPress={() => this.signUp()}
+                  onPress={() => this.props.navigation.navigate("SetUpStepThree")}
                   style={styles.signupBtn}
                 >
                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>

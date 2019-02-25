@@ -54,7 +54,7 @@ class SetUpStepThree extends Component {
         >
 
         <Content padder style={styles.container}>
-        <Button style={styles.backArrowContainer}>
+        <Button style={styles.backArrowContainer} onPress={() => this.props.navigation.goBack()}>
           <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
         </Button>
         <View>
@@ -63,7 +63,7 @@ class SetUpStepThree extends Component {
                 </Col>
                 <Col style={styles.currentStep}>
                 </Col>
-                <Col style={styles.currentStep}>
+                <Col style={styles.progressBar}>
                 </Col>
               </Grid>
         </View>
@@ -87,7 +87,7 @@ class SetUpStepThree extends Component {
                   rounded
                   bordered
                   block
-                  onPress={() => this.signUp()}
+                  onPress={() => this.props.navigation.navigate("SetUpStepFour")}
                   style={styles.signupBtn}
                 >
                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>

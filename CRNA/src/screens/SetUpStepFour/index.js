@@ -28,10 +28,6 @@ import DaysAndTime from "../../components/DaysAndTime"
 const deviceWidth = Dimensions.get("window").width;
 
 class SetUpStepFour extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
-  }
 
   setDate(newDate) {
     this.setState({chosenDate: newDate});
@@ -52,7 +48,9 @@ class SetUpStepFour extends Component {
         >
 
         <Content padder style={styles.container}>
-          <Button style={styles.backArrowContainer}>
+          <Button style={styles.backArrowContainer} 
+            onPress={() => this.props.navigation.goBack()}
+            >
             <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
           </Button>
           <View>
@@ -72,7 +70,7 @@ class SetUpStepFour extends Component {
                 </Row>
                 <Row style={styles.recapRow}>
                   <Col style={{width: '30%'}}>
-                    <Icon type="FontAwesome" name="arrow-left" style={styles.recapIcons} />
+                    <Icon type="FontAwesome" name="check-circle" style={styles.recapIcons} />
                   </Col>
                   <Col style={{width: '70%'}}>
                     <Text style={styles.recapText}>So, To Recap So, To Recap So, To Recap</Text>
@@ -80,7 +78,7 @@ class SetUpStepFour extends Component {
                 </Row>
                 <Row style={styles.recapRow}>
                   <Col style={{width: '30%'}}>
-                    <Icon type="FontAwesome" name="arrow-left" style={styles.recapIcons} />
+                    <Icon type="FontAwesome" name="check-circle" style={styles.recapIcons} />
                   </Col>
                   <Col style={{width: '70%'}}>
                     <Text style={styles.recapText}>So, To Recap So, To Recap So, To Recap</Text>
@@ -88,7 +86,7 @@ class SetUpStepFour extends Component {
                 </Row>
                 <Row style={styles.recapRow}>
                   <Col style={{width: '30%'}}>
-                    <Icon type="FontAwesome" name="arrow-left" style={styles.recapIcons} />
+                    <Icon type="FontAwesome" name="check-circle" style={styles.recapIcons} />
                   </Col>
                   <Col style={{width: '70%'}}>
                     <Text style={styles.recapText}>So, To Recap So, To Recap So, To Recap</Text>
@@ -103,7 +101,7 @@ class SetUpStepFour extends Component {
                     rounded
                     bordered
                     block
-                    onPress={() => this.signUp()}
+                    onPress={() => this.props.navigation.navigate('Drawer')}
                     style={styles.signupBtn}
                   >
                    <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>

@@ -62,7 +62,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "SetUpStepFour",
+    initialRouteName: "Login",
     headerMode: "none"
   }
 );

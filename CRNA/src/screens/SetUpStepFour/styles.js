@@ -85,7 +85,7 @@ export default {
     backgroundColor: 'transparent'
   },
   recapIcons: {
-    fontSize: 40,
+    fontSize: 50,
     textAlign: 'center',
   },
   recapText: {

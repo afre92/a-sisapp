@@ -35,7 +35,7 @@ module.exports = {
   CheckboxIconSize: platform === "ios" ? 30 : 14,
   CheckboxIconMarginTop: platform === "ios" ? 10 : 1,
   CheckboxFontSize: platform === "ios" ? 40 / 0.9 : 18,
-  DefaultFontSize: 30,
+  DefaultFontSize: 20,
   checkboxBgColor: "#039BE5",
   checkboxSize: 40,
   checkboxTickColor: "#813270",

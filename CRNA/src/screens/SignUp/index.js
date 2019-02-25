@@ -138,7 +138,7 @@ class SignUpForm extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.signUp()}
+                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
                 style={styles.signupBtn}
               >
                 <Text style={{ color: "#FFF" }}>Continue</Text>
