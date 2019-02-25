@@ -21,6 +21,7 @@ import Settings from "./screens/Settings";
 import SetUpStepOne from "./screens/SetUpStepOne";
 import SetUpStepTwo from "./screens/SetUpStepTwo";
 import SetUpStepThree from "./screens/SetUpStepThree";
+import SetUpStepFour from "./screens/SetUpStepFour";
 import Alarm from "./screens/Alarm";
 import DaysAndTime from "./screens/DaysAndTime";
 
@@ -49,6 +50,7 @@ const App = createStackNavigator(
     SetUpStepOne: { screen: SetUpStepOne },
     SetUpStepTwo: { screen: SetUpStepTwo },
     SetUpStepThree: { screen: SetUpStepThree },
+    SetUpStepFour: { screen: SetUpStepFour },
     Login: { screen: Login },
     SignUp: { screen: SignUp },
     ForgotPassword: { screen: ForgotPassword },
@@ -60,7 +62,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "SetUpStepThree",
+    initialRouteName: "SetUpStepFour",
     headerMode: "none"
   }
 );

@@ -81,7 +81,7 @@ export default {
     marginHorizontal: 12
  },
   backArrowContainer: {
-    marginVertical: deviceHeight / 30,
-    paddingLeft: 10
+    paddingLeft: 10,
+    backgroundColor: 'transparent'
   }
 };

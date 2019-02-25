@@ -15,7 +15,7 @@ const contentMarginVertical = deviceWidth < 330
           : deviceHeight / 10 - 20
 
 export default {
-  setUpStepFour: {
+  setUpStepThree: {
     paddingLeft: 10,
     paddingBottom: 50,
     paddingRight: 10,
@@ -80,7 +80,25 @@ export default {
     backgroundColor: '#FFFFFF',
     marginHorizontal: 12
  },
- backArrow: {
-  fontSize: 20
- }
+  backArrowContainer: {
+    paddingLeft: 10,
+    backgroundColor: 'transparent'
+  },
+  recapIcons: {
+    fontSize: 40,
+    textAlign: 'center',
+  },
+  recapText: {
+    fontSize: 17
+  },
+  setUpReview: {
+    paddingHorizontal: deviceWidth / 20,
+    marginVertical: deviceHeight / 6,
+  },
+  recapRow: {
+    paddingVertical: deviceHeight / 60,
+  },
+  title: {
+    paddingVertical: deviceHeight / 30,
+  }
 };

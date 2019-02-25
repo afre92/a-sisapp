@@ -15,10 +15,8 @@ import {
   Toast,
   Left,
   Right,
-  Footer,
   CheckBox,
-  Body,
-  Radio
+  Body
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
@@ -54,46 +52,64 @@ class SetUpStepFour extends Component {
         >
 
         <Content padder style={styles.container}>
-        <View style={{marginVertical: 20, paddingLeft: 10}}>
-          <Icon type="FontAwesome" name="arrow-left" style={styles.backArrow} />
-        </View>
-        <View>
-              <Grid>
-                <Col style={styles.currentStep}>
-                </Col>
-                <Col style={styles.currentStep}>
-                </Col>
-                <Col style={styles.progressBar}>
-                </Col>
+          <Button style={styles.backArrowContainer}>
+            <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
+          </Button>
+          <View>
+            <Grid>
+              <Col style={styles.currentStep}>
+              </Col>
+              <Col style={styles.currentStep}>
+              </Col>
+              <Col style={styles.currentStep}>
+              </Col>
+            </Grid>
+          </View>
+            <View style={styles.setUpReview}>
+              <Grid style={{textAlign: 'center', justifyContent: 'center', alignItems: 'center'}}>
+                <Row>
+                  <Text style={styles.title}> So, To Recap</Text>
+                </Row>
+                <Row style={styles.recapRow}>
+                  <Col style={{width: '30%'}}>
+                    <Icon type="FontAwesome" name="arrow-left" style={styles.recapIcons} />
+                  </Col>
+                  <Col style={{width: '70%'}}>
+                    <Text style={styles.recapText}>So, To Recap So, To Recap So, To Recap</Text>
+                  </Col>
+                </Row>
+                <Row style={styles.recapRow}>
+                  <Col style={{width: '30%'}}>
+                    <Icon type="FontAwesome" name="arrow-left" style={styles.recapIcons} />
+                  </Col>
+                  <Col style={{width: '70%'}}>
+                    <Text style={styles.recapText}>So, To Recap So, To Recap So, To Recap</Text>
+                  </Col>
+                </Row>
+                <Row style={styles.recapRow}>
+                  <Col style={{width: '30%'}}>
+                    <Icon type="FontAwesome" name="arrow-left" style={styles.recapIcons} />
+                  </Col>
+                  <Col style={{width: '70%'}}>
+                    <Text style={styles.recapText}>So, To Recap So, To Recap So, To Recap</Text>
+                  </Col>
+                </Row>
               </Grid>
-        </View>
 
-          <DaysAndTime />
-
-            <View style={styles.setUpStepFour}>
-
-              <View style={styles.buttonsContainer}>
-                <Button
-                  rounded
-                  bordered
-                  block
-                  onPress={() => this.signUp()}
-                  style={{display: 'none'}}
-                >
-                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
-                </Button>
-
-                <Button
-                  rounded
-                  bordered
-                  block
-                  onPress={() => this.signUp()}
-                  style={styles.signupBtn}
-                >
-                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
-                </Button>
-                </View>
             </View>
+              <View style={styles.setUpStepFour}>
+                <View style={styles.buttonsContainer}>
+                  <Button
+                    rounded
+                    bordered
+                    block
+                    onPress={() => this.signUp()}
+                    style={styles.signupBtn}
+                  >
+                   <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
+                  </Button>
+                  </View>
+              </View>
           </Content>
         </ImageBackground>
       </Container>

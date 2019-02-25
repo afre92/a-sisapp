@@ -54,16 +54,16 @@ class SetUpStepThree extends Component {
         >
 
         <Content padder style={styles.container}>
-        <View style={styles.backArrowContainer}>
+        <Button style={styles.backArrowContainer}>
           <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
-        </View>
+        </Button>
         <View>
               <Grid>
                 <Col style={styles.currentStep}>
                 </Col>
                 <Col style={styles.currentStep}>
                 </Col>
-                <Col style={styles.progressBar}>
+                <Col style={styles.currentStep}>
                 </Col>
               </Grid>
         </View>
