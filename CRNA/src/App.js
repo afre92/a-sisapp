@@ -24,6 +24,7 @@ import SetUpStepThree from "./screens/SetUpStepThree";
 import SetUpStepFour from "./screens/SetUpStepFour";
 import Alarm from "./screens/Alarm";
 import DaysAndTime from "./screens/DaysAndTime";
+import Dashboard from "./screens/Dashboard";
 
 
 const Drawer = createDrawerNavigator(
@@ -58,11 +59,12 @@ const App = createStackNavigator(
     Story: { screen: Story },
     Comments: { screen: Comments },
     Channel: { screen: Channel },
-    Drawer: { screen: Drawer }
+    Drawer: { screen: Drawer },
+    Dashboard: { screen: Dashboard}
   },
   {
     index: 0,
-    initialRouteName: "Login",
+    initialRouteName: "SignUp",
     headerMode: "none"
   }
 );
