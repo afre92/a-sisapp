@@ -36,10 +36,11 @@ const Drawer = createDrawerNavigator(
     Timeline: { screen: Timeline },
     Feedback: { screen: Feedback },
     Profile: { screen: Profile },
-    Settings: { screen: Settings }
+    Settings: { screen: Settings },
+    Dashboard: { screen: Dashboard }
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Dashboard",
     contentComponent: props => <Sidebar {...props} />
   }
 );
@@ -64,7 +65,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "SignUp",
+    initialRouteName: "Drawer",
     headerMode: "none"
   }
 );

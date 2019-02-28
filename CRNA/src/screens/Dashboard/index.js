@@ -47,7 +47,7 @@ class Dashboard extends Component {
           barStyle="light-content"
         />
         <ImageBackground
-          source={require("../../../assets/bg-signup.png")}
+          source={require("../../../assets/dashboardBg.png")}
           style={styles.background}
         >
 
@@ -68,23 +68,23 @@ class Dashboard extends Component {
         <Content padder style={styles.container}>
           <Content >
               <View style={{paddingBottom: 40}}>
-                <Text style={{textAlign: 'center'}}>
+                <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
                     Good Morning!
                 </Text>
                 <Text style={{textAlign: 'center'}}>
-                    date
+                    27/02/2018
                 </Text>
               </View>
               <View style={{paddingBottom: 70}}>
-                <Text style={{textAlign: 'center'}}>
+                <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: '22'}}>
                     Some text here asdfasdf asdfasdf asdfasdf dsafasdf
                 </Text>
               </View>
           </Content>
             <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
-              <CardItem header>
-              <Text style={{fontColor: 'black', color: 'black'}}>NativeBase</Text>
-              </CardItem>
+              <View style={{textAlign: 'center', justifyContent: 'center'}} >
+                <Text style={styles.cardTittle}>My Journey</Text>
+              </View>
               <CardItem>
                 <Body>
                   <Text style={{fontColor: 'black', color: 'black'}}>
@@ -96,9 +96,9 @@ class Dashboard extends Component {
             </Card>
 
             <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
-              <CardItem header>
-              <Text style={{fontColor: 'black', color: 'black'}}>NativeBase</Text>
-              </CardItem>
+              <View style={{textAlign: 'center', justifyContent: 'center'}} >
+                <Text style={styles.cardTittle}>My Stats </Text>
+              </View>
               <CardItem>
                 <Body>
                   <Text style={{fontColor: 'black', color: 'black'}}>
@@ -109,9 +109,9 @@ class Dashboard extends Component {
             </Card>
 
             <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
-              <CardItem header>
-              <Text style={{fontColor: 'black', color: 'black'}}>NativeBase</Text>
-              </CardItem>
+              <View style={{textAlign: 'center', justifyContent: 'center'}} >
+                <Text style={styles.cardTittle}>Others</Text>
+              </View>
               <CardItem>
                 <Body>
                   <Text style={{fontColor: 'black', color: 'black'}}>

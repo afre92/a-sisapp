@@ -32,7 +32,7 @@ class SideBar extends Component {
             <ListItem
               button
               onPress={() => {
-                navigation.navigate("Home");
+                navigation.navigate("Dashboard");
               }}
               iconLeft
               style={styles.links}

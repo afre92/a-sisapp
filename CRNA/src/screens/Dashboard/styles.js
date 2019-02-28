@@ -8,11 +8,11 @@ const deviceWidth = Dimensions.get("window").width;
 const primary = require("../../theme/variables/commonColor").brandPrimary;
 const contentMarginVertical = deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 9 - 20
-          : deviceHeight / 10 - 20
+          ? deviceHeight / 6 - 20
+          : deviceHeight / 8 - 20
         : Platform.OS === "android"
-          ? deviceHeight / 12 - 20
-          : deviceHeight / 10 - 20
+          ? deviceHeight / 9 - 20
+          : deviceHeight / 8 - 20
 
 export default {
   setUpStepThree: {
@@ -66,7 +66,8 @@ export default {
     marginTop: deviceHeight / 25
   },
   container: {
-    paddingTop: 100
+    paddingVertical: 50,
+    marginBottom: 10
   },
   progressBar: {
     height: 8,
@@ -106,5 +107,13 @@ export default {
     height: 25,
     width: 95,
     resizeMode: "contain"
+  },
+  cardTittle: {
+    fontColor: 'black',
+    color: 'black',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    paddingVertical: 10
   }
 };
