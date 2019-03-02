@@ -85,7 +85,7 @@ export default {
   slide: {
     flex: 1,
     width: deviceWidth,
-    height: 250,
+    height: 300,
     backgroundColor: "transparent"
   },
   swiperTextContent: {
@@ -156,5 +156,19 @@ export default {
     width: null,
     height: deviceHeight,
     backgroundColor: primary
+  },
+  buttonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  recordInfo: {
+    paddingHorizontal: deviceWidth / 12,
+    marginVertical: deviceHeight / 40
+  },
+  recordInfoNames: {
+    marginBottom: deviceHeight / 50
+  },
+  recordCover: {
+    marginVertical: deviceHeight / 25
   }
 };
