@@ -95,13 +95,13 @@ class Playlist extends Component {
                         style={styles.newsPoster}
                         source={require("../../../assets/NewsIcons/4.jpg")}
                       >
-                        <Header style={{backgroundColor: 'transparent'}}>
+                        <Header style={{backgroundColor: 'transparent',borderBottomColor: 'transparent'}}>
                           <Left>
                             <Button
                               transparent
-                              onPress={() => this.props.navigation.openDrawer()}
+                              onPress={() => this.props.navigation.goBack()}
                             >
-                              <Icon active name="menu" />
+                              <Icon active name="arrow-back" />
                             </Button>
                           </Left>
                           <Body>

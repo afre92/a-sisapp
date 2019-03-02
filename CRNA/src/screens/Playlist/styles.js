@@ -137,8 +137,8 @@ export default {
     paddingTop: Platform.OS === "android" ? 0 : 0
   },
   imageHeader: {
-    height: 25,
-    width: 95,
+    height: 35,
+    width: 105,
     resizeMode: "contain"
   }
 };
