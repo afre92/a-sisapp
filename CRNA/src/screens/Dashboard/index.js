@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
-import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS } from "react-native";
+import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import {
   Container,
   Content,
@@ -81,19 +81,21 @@ class Dashboard extends Component {
                 </Text>
               </View>
           </Content>
-            <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
-              <View style={{textAlign: 'center', justifyContent: 'center'}} >
-                <Text style={styles.cardTittle}>My Journey</Text>
-              </View>
-              <CardItem>
-                <Body>
-                  <Text style={{fontColor: 'black', color: 'black'}}>
-                    Some text here asdfasdf asdfasdf asdfasdf dsafasdf
-                  </Text>
-                </Body>
-              </CardItem>
+            <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
+              <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
+                <View style={{textAlign: 'center', justifyContent: 'center'}} >
+                  <Text style={styles.cardTittle}>My Journey</Text>
+                </View>
+                <CardItem>
+                  <Body>
+                    <Text style={{fontColor: 'black', color: 'black'}}>
+                      Some text here asdfasdf asdfasdf asdfasdf dsafasdf
+                    </Text>
+                  </Body>
+                </CardItem>
 
-            </Card>
+              </Card>
+              </TouchableWithoutFeedback>
 
             <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
               <View style={{textAlign: 'center', justifyContent: 'center'}} >

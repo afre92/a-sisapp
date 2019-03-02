@@ -25,6 +25,7 @@ import SetUpStepFour from "./screens/SetUpStepFour";
 import Alarm from "./screens/Alarm";
 import DaysAndTime from "./screens/DaysAndTime";
 import Dashboard from "./screens/Dashboard";
+import Playlist from "./screens/Playlist";
 
 
 const Drawer = createDrawerNavigator(
@@ -40,7 +41,7 @@ const Drawer = createDrawerNavigator(
     Dashboard: { screen: Dashboard }
   },
   {
-    initialRouteName: "Dashboard",
+    initialRouteName: "Home",
     contentComponent: props => <Sidebar {...props} />
   }
 );
@@ -61,11 +62,12 @@ const App = createStackNavigator(
     Comments: { screen: Comments },
     Channel: { screen: Channel },
     Drawer: { screen: Drawer },
-    Dashboard: { screen: Dashboard}
+    Dashboard: { screen: Dashboard},
+    Playlist: { screen: Playlist}
   },
   {
     index: 0,
-    initialRouteName: "Drawer",
+    initialRouteName: "Playlist",
     headerMode: "none"
   }
 );

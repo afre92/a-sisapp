@@ -67,7 +67,7 @@ export default {
   },
   container: {
     paddingVertical: 50,
-    marginBottom: 10
+    marginVertical: 10
   },
   progressBar: {
     height: 8,
