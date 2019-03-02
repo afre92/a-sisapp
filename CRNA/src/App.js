@@ -26,6 +26,7 @@ import Alarm from "./screens/Alarm";
 import DaysAndTime from "./screens/DaysAndTime";
 import Dashboard from "./screens/Dashboard";
 import Playlist from "./screens/Playlist";
+import Player from "./screens/Player";
 
 
 const Drawer = createDrawerNavigator(
@@ -63,11 +64,12 @@ const App = createStackNavigator(
     Channel: { screen: Channel },
     Drawer: { screen: Drawer },
     Dashboard: { screen: Dashboard},
-    Playlist: { screen: Playlist}
+    Playlist: { screen: Playlist},
+    Player: { screen: Player}
   },
   {
     index: 0,
-    initialRouteName: "Playlist",
+    initialRouteName: "Player",
     headerMode: "none"
   }
 );

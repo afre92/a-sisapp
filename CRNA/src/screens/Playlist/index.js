@@ -78,6 +78,20 @@ class Playlist extends Component {
     } else {
       return (
         <Container>
+                                <Header style={{backgroundColor: 'transparent',borderBottomColor: 'transparent'}}>
+                          <Left>
+                            <Button
+                              transparent
+                              onPress={() => this.props.navigation.goBack()}
+                            >
+                              <Icon active name="arrow-back" />
+                            </Button>
+                          </Left>
+                          <Body>
+                            <Image source={headerLogo} style={styles.imageHeader} />
+                          </Body>
+                          <Right />
+                        </Header>
 
           <Content
             showsVerticalScrollIndicator={false}
@@ -95,20 +109,7 @@ class Playlist extends Component {
                         style={styles.newsPoster}
                         source={require("../../../assets/NewsIcons/4.jpg")}
                       >
-                        <Header style={{backgroundColor: 'transparent',borderBottomColor: 'transparent'}}>
-                          <Left>
-                            <Button
-                              transparent
-                              onPress={() => this.props.navigation.goBack()}
-                            >
-                              <Icon active name="arrow-back" />
-                            </Button>
-                          </Left>
-                          <Body>
-                            <Image source={headerLogo} style={styles.imageHeader} />
-                          </Body>
-                          <Right />
-                        </Header>
+
 
                       <View style={{flex: 1, justifyContent: 'center',alignItems: 'center'}}>
                         <Image style={{height: 150, width: 150}} source={playIcon} /> 
