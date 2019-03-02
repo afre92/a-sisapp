@@ -56,26 +56,23 @@ class Player extends Component {
             showsVerticalScrollIndicator={false}
             style={{ backgroundColor: "#fff" }}
           >
-            <View>
-            <View style={{paddingHorizontal: 20, paddingTop: 30}}>
-              <Icon name="arrow-back" style={{color: primary, fontSize: 40}} />
-            </View>
-              <View style={styles.recordCover}>
-              <Text style={{color: primary, textAlign: 'center', fontWeight: 'bold'}}> Playlist Name</Text>
+
+              <View style={{paddingHorizontal: 20, paddingTop: 30}}>
+                <Icon name="arrow-back" style={{color: primary, fontSize: 40}} />
+              </View>
+                <View style={styles.recordCover}>
+                  <Text style={{color: primary, textAlign: 'center', fontWeight: 'bold', paddingBottom: 20}}> Playlist Name</Text>
                   <RNView>
-                    <View
-                      style={styles.slide}
-                    >
+                    <View style={styles.slide}>
                       <ImageBackground
                         style={styles.newsPoster}
                         source={require("../../../assets/NewsIcons/4.jpg")}
                       >
-
                       </ImageBackground>
                     </View>
                   </RNView>
-              </View>
-            </View>
+                </View>
+
 
         <View style={styles.recordInfo}>
           <View style={styles.recordInfoNames}>

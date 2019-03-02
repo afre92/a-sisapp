@@ -39,7 +39,7 @@ export default {
   newsPoster: {
     marginVertical: 20,
     marginHorizontal: deviceWidth / 8,
-    height: 290,
+    height: 250,
     width: null,
     flex: 1,
     position: "relative",
@@ -85,7 +85,6 @@ export default {
   slide: {
     flex: 1,
     width: deviceWidth,
-    height: 300,
     backgroundColor: "transparent"
   },
   swiperTextContent: {
@@ -163,12 +162,12 @@ export default {
   },
   recordInfo: {
     paddingHorizontal: deviceWidth / 12,
-    marginVertical: deviceHeight / 40
+    marginBottom: deviceHeight / 40
   },
   recordInfoNames: {
-    marginBottom: deviceHeight / 50
+    marginVertical: deviceHeight / 40
   },
   recordCover: {
-    marginVertical: deviceHeight / 25
+    marginVertical: deviceHeight / 30
   }
 };
