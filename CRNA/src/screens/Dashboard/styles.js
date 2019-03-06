@@ -66,8 +66,8 @@ export default {
     marginTop: deviceHeight / 25
   },
   container: {
-    paddingVertical: 50,
-    marginVertical: 10
+    paddingVertical: 20,
+    marginVertical: 10,
   },
   progressBar: {
     height: 8,
@@ -104,8 +104,9 @@ export default {
     paddingVertical: deviceHeight / 30,
   },
   imageHeader: {
-    height: 25,
-    width: 95,
+    marginTop: 5,
+    height: 35,
+    width: 110,
     resizeMode: "contain"
   },
   cardTittle: {
@@ -115,5 +116,30 @@ export default {
     justifyContent: 'center',
     fontWeight: 'bold',
     paddingVertical: 10
+  },
+  newsPoster: {
+    height:  deviceHeight / 2.2,
+    width: null,
+    position: "relative",
+    marginHorizontal: 20,
+  },
+  newsPosterHeader: {
+    fontWeight: "900"
+  },
+  newsPosterLink: {
+    opacity: 0.8,
+    fontSize: 12,
+    alignSelf: "flex-start",
+    fontWeight: "bold"
+  },
+  newsPosterTypeView: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+    alignSelf: "flex-end"
+  },
+  newsPosterTypeText: {
+    fontSize: 10,
+    fontWeight: "800",
+    paddingBottom: 2
   }
 };

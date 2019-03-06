@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
-import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
+import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS, TouchableOpacity, TouchableWithoutFeedback,Platform, View as RNView } from "react-native";
 import {
   Container,
   Content,
@@ -26,7 +26,9 @@ import { Field, reduxForm } from "redux-form";
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 import DaysAndTime from "../../components/DaysAndTime"
-
+import Carousel from "react-native-carousel-view";
+import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 const headerLogo = require("../../../assets/header-logo.png");
 
 const deviceWidth = Dimensions.get("window").width;
@@ -47,82 +49,82 @@ class Dashboard extends Component {
           barStyle="light-content"
         />
         <ImageBackground
-          source={require("../../../assets/dashboardBg.png")}
+          source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
 
-          <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
-            <Left>
-              <Button
-                transparent
-                onPress={() => this.props.navigation.openDrawer()}
-              >
-                <Icon active name="menu" />
-              </Button>
-            </Left>
-            <Body>
-              <Image source={headerLogo} style={styles.imageHeader} />
-            </Body>
-            <Right />
-          </Header>
-        <Content padder style={styles.container}>
-          <Content >
-              <View style={{paddingBottom: 40}}>
-                <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
-                    Good Morning!
-                </Text>
-                <Text style={{textAlign: 'center'}}>
-                    27/02/2018
-                </Text>
+        <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.openDrawer()}
+            >
+              <Icon active name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Image source={headerLogo} style={styles.imageHeader} />
+          </Body>
+          <Right />
+        </Header>
+        <Content style={styles.container}>
+          <View >
+            <RNView>
+              <View style={styles.slide} >
+                <ImageBackground
+                  imageStyle={{ borderRadius: 25 }}
+                  style={styles.newsPoster}
+                  source={require("../../../assets/NewsIcons/4.jpg")}
+                >
+                <View flex style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={{fontWeight: 'bold', fontSize: 25, paddingHorizontal: 20}}> This where the main Text is  This where the main Text is </Text>
+                </View>
+                <View style={{paddingHorizontal: 25, paddingVertical: 25}}>
+                 <Feather style={{alignSelf: 'flex-end'}}name="share" color="white" size={30}/>
+                 </View>
+                </ImageBackground>
               </View>
-              <View style={{paddingBottom: 70}}>
-                <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: '22'}}>
-                    Some text here asdfasdf asdfasdf asdfasdf dsafasdf
-                </Text>
-              </View>
-          </Content>
+            </RNView>
+          </View>
+          <View style={{paddingHorizontal: 20, paddingTop: 10}}>
+
+          <Grid>
+            <Col style={{paddingRight: 5}}>
             <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
-              <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
-                <View style={{textAlign: 'center', justifyContent: 'center'}} >
+              <Card style={{ height: 250, marginBottom: 30, borderRadius: 30, paddngRight: 10}}>
+                <View style={{justifyContent: 'center'}} >
                   <Text style={styles.cardTittle}>My Journey</Text>
                 </View>
                 <CardItem>
                   <Body>
-                    <Text style={{fontColor: 'black', color: 'black'}}>
+                    <Text style={{color: 'black'}}>
                       Some text here asdfasdf asdfasdf asdfasdf dsafasdf
                     </Text>
                   </Body>
                 </CardItem>
 
               </Card>
-              </TouchableWithoutFeedback>
+            </TouchableWithoutFeedback>
+            </Col>
+            <Col style={{paddingLeft: 5}}>
+            <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
+              <Card style={{ height: 250, marginBottom: 30, borderRadius: 30}}>
+                <View style={{justifyContent: 'center'}} >
+                  <Text style={styles.cardTittle}>My Journey</Text>
+                </View>
+                <CardItem>
+                  <Body>
+                    <Text style={{color: 'black'}}>
+                      Some text here asdfasdf asdfasdf asdfasdf dsafasdf
+                    </Text>
+                  </Body>
+                </CardItem>
 
-            <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
-              <View style={{textAlign: 'center', justifyContent: 'center'}} >
-                <Text style={styles.cardTittle}>My Stats </Text>
-              </View>
-              <CardItem>
-                <Body>
-                  <Text style={{fontColor: 'black', color: 'black'}}>
-                    Some text here asdfasdf asdfasdf asdfasdf dsafasdf
-                  </Text>
-                </Body>
-              </CardItem>
-            </Card>
-
-            <Card style={{fontColor: 'black', color: 'black', height: 200, marginBottom: 30}}>
-              <View style={{textAlign: 'center', justifyContent: 'center'}} >
-                <Text style={styles.cardTittle}>Others</Text>
-              </View>
-              <CardItem>
-                <Body>
-                  <Text style={{fontColor: 'black', color: 'black'}}>
-                    Some text here asdfasdf asdfasdf asdfasdf dsafasdf
-                  </Text>
-                </Body>
-              </CardItem>
-            </Card>
-
+              </Card>
+            </TouchableWithoutFeedback>
+            </Col>
+          </Grid>
+            </View>
         </Content>
 
         </ImageBackground>
