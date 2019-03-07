@@ -57,13 +57,14 @@ class Dashboard extends Component {
           <Left>
             <Button
               transparent
-              onPress={() => this.props.navigation.openDrawer()}
+              onPress={() => this.props.navigation.goBack()}
             >
-              <Icon active name="menu" />
+              <Icon active name="arrow-back" />
             </Button>
           </Left>
           <Body>
-            <Image source={headerLogo} style={styles.imageHeader} />
+           
+            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Analytics </Text>
           </Body>
           <Right />
         </Header>
