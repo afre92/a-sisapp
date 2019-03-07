@@ -25,6 +25,7 @@ import SetUpStepFour from "./screens/SetUpStepFour";
 import Alarm from "./screens/Alarm";
 import DaysAndTime from "./screens/DaysAndTime";
 import Dashboard from "./screens/Dashboard";
+import Dashboard1 from "./screens/Dashboard1";
 import Playlist from "./screens/Playlist";
 import Player from "./screens/Player";
 import Analytics from "./screens/Analytics"
@@ -67,11 +68,12 @@ const App = createStackNavigator(
     Dashboard: { screen: Dashboard},
     Playlist: { screen: Playlist},
     Player: { screen: Player},
-    Analytics: { screen: Analytics}
+    Analytics: { screen: Analytics},
+    Dashboard1: { screen: Dashboard1},
   },
   {
     index: 0,
-    initialRouteName: "Dashboard",
+    initialRouteName: "Dashboard1",
     headerMode: "none"
   }
 );
