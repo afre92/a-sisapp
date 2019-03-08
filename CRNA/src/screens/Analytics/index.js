@@ -33,7 +33,7 @@ const headerLogo = require("../../../assets/header-logo.png");
 
 const deviceWidth = Dimensions.get("window").width;
 
-class Dashboard extends Component {
+class Analytics extends Component {
 
   setDate(newDate) {
     this.setState({chosenDate: newDate});
@@ -153,4 +153,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default Analytics;

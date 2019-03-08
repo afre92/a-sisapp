@@ -23,7 +23,7 @@ import { Field, reduxForm } from "redux-form";
 
 // const logo = require("../../../assets/logo.png");
 
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
@@ -46,7 +46,7 @@ const alphaNumeric = value =>
     ? "Only alphanumeric characters"
     : undefined;
 
-class Profile extends Component {
+class ProfileDetails extends Component {
   textInput: any;
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
@@ -125,73 +125,56 @@ class Profile extends Component {
           </Left>
           <Body>
            
-            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Profile </Text>
+            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Profile Details</Text>
           </Body>
           <Right />
         </Header>
           <Content padder>
             <View style={styles.profileContainer}>
-              <Grid>
-                <Col >
-                  <View style={{ alignSelf: "center" }}>
-                    <Thumbnail
-                      source={require("../../../assets/Contacts/profile.png")}
-                      style={styles.profilePic}
-                    />
-                  </View>
-                </Col>
-                <Col style={{width: '50%', justifyContent:'center'}}>
+              <View style={{ alignSelf: "center" }}>
+                <Thumbnail
+                  source={require("../../../assets/Contacts/profile.png")}
+                  style={styles.profilePic}
+                />
+              </View>
+              <View style={{alignSelf: "center", paddingTop: 20}}>
+                <Text style={{fontWeight: 'bold', paddingLeft: 10, fontSize: 20, textAlign: 'center'}}>John Doe   <Feather name="edit-3" color="white" size={20} /></Text>
+                <Text style={{fontSize: 15, paddingLeft: 10, textAlign: 'center'}}>johndoe@gmail.com </Text>
+              </View>
 
-                  <Text style={{fontWeight: 'bold', paddingLeft: 10}}>John Doe </Text>
-                  <Text style={{fontSize: 15, paddingLeft: 10}}>johndoe@gmail.com </Text>
-                </Col>
-                <Col style={{width: '20%', justifyContent:'center'}}>
-                <View style={{ alignSelf: "center" }}>
-                  <Entypo active name="cog" size={30} color="white" />
-                  </View>
-                </Col>
-              </Grid>
-             
+              <View style={{alignSelf: "center", marginTop: 10, borderColor: 'white', borderLeftWidth: 2, borderRightWidth: 2}}>
+
+                  <Text style={{fontWeight: 'bold', paddingHorizontal: 20, textAlign: 'center', fontSize: 20}}>Subscription</Text>
+
+                  <Text style={{paddingHorizontal: 20, textAlign: 'center', fontSize: 15}}>FREE VERSION</Text>
+ 
+              </View>
+            </View>
+
+            <View style={{alignSelf: "center", paddingTop: 5}}>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}> Unlock A.SIS Premium </Text>
+              <Text> Comming Soon</Text>
             </View>
 
             <View style={styles.signupContainer}>
-              <Button
-                rounded
-                bordered
-                block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
-                style={styles.signupBtn}
-              >
-                <Text style={{ color: "#FFF", fontWeight: 'bold'}}>My Account</Text>
-              </Button>
-              <Button
-                rounded
-                bordered
-                block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
-                style={styles.signupBtn}
-              >
-                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Support</Text>
-              </Button>
-              <Button
-                rounded
-                bordered
-                block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
-                style={styles.signupBtn}
-              >
-                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>The Science of Affirmations</Text>
-              </Button>
-              <Button
-                rounded
-                bordered
-                block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
-                style={styles.signupBtn}
-              >
-                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>FAQ</Text>
-              </Button>
+            <Grid>
+              <Row style={{flexDirection: 'row', paddingVertical: 8}}>
+                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              </Row>
+              <Row style={{flexDirection: 'row', paddingVertical: 8}}>
+                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              </Row>
+                <Row style={{flexDirection: 'row', paddingVertical: 8}}>
+                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              </Row>
+                <Row style={{flexDirection: 'row', paddingVertical: 8}}>
+                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              </Row>
 
+
+            </Grid>
+
+            </View>
               <Button
                 rounded
                 bordered
@@ -199,10 +182,8 @@ class Profile extends Component {
                 onPress={() => this.props.navigation.navigate("SetUpStepOne")}
                 style={styles.signOut}
               >
-                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Log Out</Text>
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>PREMIUM</Text>
               </Button>
-
-            </View>
           </Content>
           <Footer
             style={{
@@ -231,4 +212,5 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+
+export default ProfileDetails;

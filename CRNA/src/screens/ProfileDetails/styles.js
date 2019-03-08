@@ -9,15 +9,15 @@ const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 export default {
   signupContainer: {
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
     marginTop:
       deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 9 - 100
-          : deviceHeight / 10 - 100
+          ? deviceHeight / 10 - 100
+          : deviceHeight / 12 - 100
         : Platform.OS === "android"
-          ? deviceHeight / 9 - 100
+          ? deviceHeight / 12 - 100
           : deviceHeight / 8 - 100
   },
   signupHeader: {
@@ -110,12 +110,7 @@ export default {
     flex: 1,
     justifyContent: "center",
     alignSelf: "center",
-    borderWidth: 2,
-    borderColor: "white",
-    borderRadius: 22,
     marginHorizontal: deviceWidth / 8,
-    paddingVertical: deviceWidth / 12,
-    backgroundColor: 'rgba(255, 255, 255, .2)'
   },
   profilePic: {
     width: 80,
