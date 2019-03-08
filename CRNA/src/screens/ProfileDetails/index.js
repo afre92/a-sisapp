@@ -142,7 +142,13 @@ class ProfileDetails extends Component {
                 <Text style={{fontSize: 15, paddingLeft: 10, textAlign: 'center'}}>johndoe@gmail.com </Text>
               </View>
 
+              <View style={{alignSelf: "center", marginTop: 10, borderColor: 'white', borderLeftWidth: 2, borderRightWidth: 2, display: 'none'}}>
 
+                  <Text style={{fontWeight: 'bold', paddingHorizontal: 20, textAlign: 'center', fontSize: 18}}>Subscription</Text>
+
+                  <Text style={{paddingHorizontal: 20, textAlign: 'center', fontSize: 13}}>FREE VERSION</Text>
+ 
+              </View>
             </View>
 
             <View style={{alignSelf: "center"}}>
