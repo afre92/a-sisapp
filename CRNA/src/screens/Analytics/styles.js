@@ -1,46 +1,126 @@
 const React = require("react-native");
-const {Dimensions, Platform} = React;
+const { Dimensions, Platform } = React;
+const commonColor = require("../../theme/variables/commonColor");
 
-const deviceWidth = Dimensions.get("window").width;
 const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
+
 const primary = require("../../theme/variables/commonColor").brandPrimary;
+const contentMarginVertical = deviceWidth < 330
+        ? Platform.OS === "android"
+          ? deviceHeight / 6 - 20
+          : deviceHeight / 8 - 20
+        : Platform.OS === "android"
+          ? deviceHeight / 9 - 20
+          : deviceHeight / 8 - 20
 
 export default {
-  newsContent: {
-    flexDirection: "column",
-    paddingTop: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
+  setUpStepThree: {
+    paddingLeft: 10,
+    paddingBottom: 50,
+    paddingRight: 10,
+    marginBottom: contentMarginVertical,
+  },
+  background: {
     flex: 1,
-    borderTopWidth: 1,
-    borderTopColor: "#ddd"
+    width: null,
+    height: null,
+    backgroundColor: primary
   },
-  newsHeader: {
-    color: "#444",
-    fontWeight: "bold"
+  formErrorIcon: {
+    color: "#fff",
+    marginTop: 5,
+    right: 10
   },
-  newsLink: {
-    color: Platform.OS === "android" ? "#777" : "#666",
-    fontSize: 12,
-    alignSelf: "flex-start",
-    fontWeight: "bold"
+  formErrorText1: {
+    fontSize: Platform.OS === "android" ? 12 : 15,
+    color: commonColor.brandDanger,
+    textAlign: "right",
+    top: -10
   },
-  newsTypeView: {
-    borderBottomWidth: 1,
-    borderBottomColor: Platform.OS === "android" ? "#777" : "#666",
-    alignSelf: "flex-end"
+  formErrorText2: {
+    fontSize: Platform.OS === "android" ? 12 : 15,
+    color: "transparent",
+    textAlign: "right",
+    top: -10
   },
-  newsTypeText: {
-    color: Platform.OS === "android" ? "#777" : "#666",
-    fontSize: 12,
-    fontWeight: "bold",
-    paddingBottom: 2
+  input: {
+    paddingLeft: 10,
+    color: "#FFF"
+  },
+  signupBtn: {
+    height: 50,
+    marginTop: 10,
+    borderTopWidth: 2,
+    borderRightWidth: 2,
+    borderLeftWidth: 2,
+    borderBottomWidth: 2,
+    borderColor: "#FFF",
+  },
+  datePicker: {
+    marginVertical: deviceHeight / 20,
+    backgroundColor: 'white',
+    borderRadius: 20
+  },
+  buttonsContainer: {
+    marginTop: deviceHeight / 25
+  },
+  container: {
+    marginVertical: 10,
+  },
+  progressBar: {
+    height: 8,
+    color: '#FFFFFF',
+    borderColor: '#FFFFFF',
+    borderWidth: 1,
+    marginHorizontal: 12
+ },
+ currentStep: {
+    height: 8,
+    color: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
+    marginHorizontal: 12
+ },
+  backArrowContainer: {
+    paddingLeft: 10,
+    backgroundColor: 'transparent'
+  },
+  recapIcons: {
+    fontSize: 50,
+    textAlign: 'center',
+  },
+  recapText: {
+    fontSize: 17
+  },
+  setUpReview: {
+    paddingHorizontal: deviceWidth / 20,
+    marginVertical: deviceHeight / 6,
+  },
+  recapRow: {
+    paddingVertical: deviceHeight / 60,
+  },
+  title: {
+    paddingVertical: deviceHeight / 30,
+  },
+  imageHeader: {
+    marginTop: 5,
+    height: 35,
+    width: 110,
+    resizeMode: "contain"
+  },
+  cardTittle: {
+    fontColor: 'black',
+    color: 'black',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    paddingTop: 10
   },
   newsPoster: {
-    height: 300,
+    height:  deviceHeight / 2.2,
     width: null,
-    flex: 1,
-    position: "relative"
+    position: "relative",
+    marginHorizontal: 20,
   },
   newsPosterHeader: {
     fontWeight: "900"
@@ -60,95 +140,5 @@ export default {
     fontSize: 10,
     fontWeight: "800",
     paddingBottom: 2
-  },
-  timeIcon: {
-    fontSize: 22,
-    marginHorizontal: 20,
-    color: "#666"
-  },
-  timePosterIcon: {
-    fontSize: 20,
-    marginLeft: Platform.OS === "android" ? 20 : 0,
-    paddingLeft: Platform.OS === "android" ? 0 : 20,
-    paddingRight: 5,
-    marginTop: Platform.OS === "android" ? -1 : -2,
-    color: "#fff"
-  },
-  slide: {
-    flex: 1,
-    width: deviceWidth - 40,
-    height: 330,
-    backgroundColor: "transparent"
-  },
-  swiperTextContent: {
-    flex: 1,
-    position: "absolute",
-    bottom: -5,
-    padding: 20
-  },
-  swiperDot: {
-    backgroundColor: "rgba(0,0,0,.8)",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginLeft: 3,
-    marginRight: 3,
-    marginTop: 3,
-    marginBottom: 0
-  },
-  swiperActiveDot: {
-    backgroundColor: "#fff",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginLeft: 3,
-    marginRight: 3,
-    marginTop: 3,
-    marginBottom: 0
-  },
-  swiperContentBox: {
-    paddingTop: 20,
-    paddingBottom: 20
-  },
-  container: {
-    flex: 1,
-    width: null,
-    height: null
-  },
-  logoHeader: {
-    width: 20,
-    height: 28,
-    alignSelf: "center"
-  },
-  text: {
-    fontSize: 15,
-    color: "#000",
-    marginBottom: 10
-  },
-  header: {
-    width: Dimensions.get("window").width,
-    flexDirection: "row",
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginLeft: Platform.OS === "ios" ? undefined : -30
-  },
-  rowHeader: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignSelf: "stretch",
-    paddingTop: Platform.OS === "android" ? 0 : 0
-  },
-  imageHeader: {
-    height: 25,
-    width: 95,
-    resizeMode: "contain"
-  },
-  background: {
-    flex: 1,
-    width: null,
-    height: deviceHeight,
-    backgroundColor: primary,
-    marginHorizontal: 20
   }
 };

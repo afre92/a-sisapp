@@ -1,101 +1,136 @@
 const React = require("react-native");
-const { Platform, Dimensions } = React;
+const { Dimensions, Platform } = React;
+const commonColor = require("../../theme/variables/commonColor");
 
+const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
+
 const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 export default {
-  container: {
-    flex: 1,
-    width: null,
-    height: null
+  signupContainer: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop:
+      deviceWidth < 330
+        ? Platform.OS === "android"
+          ? deviceHeight / 9 - 100
+          : deviceHeight / 10 - 100
+        : Platform.OS === "android"
+          ? deviceHeight / 9 - 100
+          : deviceHeight / 8 - 100
   },
-  profileInfoContainer: {
-    backgroundColor: primary,
-    paddingTop: 10
-  },
-  profileUser: {
+  signupHeader: {
+    paddingBottom: 20,
     alignSelf: "center",
     fontSize: 22,
+    padding: 10,
     fontWeight: "bold",
-    paddingBottom: 5
+    color: "#FFF",
+  
   },
-  profileUserInfo: {
+  background: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: primary
+  },
+  formErrorIcon: {
+    color: "#fff",
+    marginTop: 5,
+    right: 10
+  },
+  formErrorText1: {
+    fontSize: Platform.OS === "android" ? 12 : 15,
+    color: commonColor.brandDanger,
+    textAlign: "right",
+    top: -10
+  },
+  formErrorText2: {
+    fontSize: Platform.OS === "android" ? 12 : 15,
+    color: "transparent",
+    textAlign: "right",
+    top: -10
+  },
+  inputGrp: {
+    flexDirection: "row",
+    borderRadius: 25,
+    backgroundColor: "rgba(255,255,255,0.2)",
+    marginBottom: 10,
+    borderWidth: 0,
+    borderColor: "transparent"
+  },
+  input: {
+    paddingLeft: 10,
+    color: "#FFF"
+  },
+  signupBtn: {
+    height: 50,
+    marginTop: 18,
+    borderWidth: 1,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderLeftWidth: 2,
+    borderRightWidth: 2,
+    borderColor: "#ddd"
+  },
+  otherLinkText: {
     alignSelf: "center",
     opacity: 0.8,
+    fontSize: 14,
+    fontWeight: "bold",
+    color: "#EFF"
+  },
+  otherLinksContainer: {
+    flexDirection: "row",
+    marginTop: 10
+  },
+  helpBtns: {
+    opacity: 0.9,
+    fontSize: 14,
     fontWeight: "bold",
     color: "#FFF"
+  },
+  imageContainer: {
+    paddingTop: '35%',
+    flexDirection: "row",
+    alignSelf: "center"
+  },
+  logo: {
+    flex: 1,
+    resizeMode: "contain",
+    height: deviceHeight / 4.5,
+    alignSelf: "center"
+  },
+  Content: {
+
+  },
+  profileContainer: {
+    width: '92%',
+    marginBottom: deviceHeight / 20,
+    flex: 1,
+    justifyContent: "center",
+    alignSelf: "center",
+    borderWidth: 2,
+    borderColor: "white",
+    borderRadius: 22,
+    marginHorizontal: deviceWidth / 8,
+    paddingVertical: deviceWidth / 12,
+    backgroundColor: 'rgba(255, 255, 255, .2)'
   },
   profilePic: {
     width: 80,
     height: 80,
     borderRadius: 40
   },
-  profileInfo: {
-    alignSelf: "center",
-    paddingTop: 5,
-    paddingBottom: 10
-  },
-  linkTabs: {
-    backgroundColor: "#fff"
-  },
-  linkTabs_header: {
-    padding: 15,
-    alignSelf: "center"
-  },
-  linkTabs_tabCounts: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: primary,
-    alignSelf: "center",
-    paddingBottom: Platform.OS === "android" ? 3 : 0
-  },
-  linkTabs_tabName: {
-    color: "#444",
-    fontWeight: "bold",
-    fontSize: deviceWidth < 330 ? 13 : 15
-  },
-  newsImage: {
-    width: 100,
-    height: 120
-  },
-  newsContent: {
-    flexDirection: "column",
-    paddingTop: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
-    flex: 1,
-    borderTopWidth: 1,
-    borderTopColor: "#ddd"
-  },
-  newsHeader: {
-    color: "#444",
-    fontWeight: "bold"
-  },
-  newsLink: {
-    color: "#666",
-    fontSize: 12,
-    alignSelf: "flex-start",
-    fontWeight: "bold"
-  },
-  newsTypeView: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#666",
-    alignSelf: "flex-end"
-  },
-  newsTypeText: {
-    color: "#666",
-    fontSize: 12,
-    fontWeight: "bold",
-    paddingBottom: 5
-  },
-  textNote: {
-    color: "#777",
-    fontSize: 12
-  },
-  swipeBtn: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+  signOut: {
+    height: 50,
+    marginTop: 70,
+    borderWidth: 1,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderLeftWidth: 2,
+    borderRightWidth: 2,
+    borderColor: "#ddd"
   }
 };

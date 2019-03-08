@@ -1,191 +1,237 @@
 // @flow
-import React, { Component } from "react";
-import { Image,ImageBackground, TouchableOpacity, ListView } from "react-native";
 
+import React, { Component } from "react";
+import { ImageBackground, StatusBar, Image } from "react-native";
 import {
   Container,
   Content,
   Text,
-  Thumbnail,
-  View,
-  List,
-  ListItem,
   Button,
-  Icon
+  Icon,
+  Item,
+  Input,
+  View,
+  Toast,
+  Left,
+  Right,
+  Footer,
+  Thumbnail,
+  Header,
+  Body
 } from "native-base";
-import { Grid, Col } from "react-native-easy-grid";
-import CustomHeader from "../../components/CustomHeader";
+import { Field, reduxForm } from "redux-form";
 
+// const logo = require("../../../assets/logo.png");
+
+import { Entypo } from '@expo/vector-icons';
+import { Col, Row, Grid } from "react-native-easy-grid";
 import styles from "./styles";
-import datas from "./data";
+import commonColor from "../../theme/variables/commonColor";
+const headerLogo = require("../../../assets/header-logo.png");
 
-type Props = {
-  navigation: () => void
-};
-class Profile extends Component {
-  state: {
-    listViewData: any
-  };
-  props: Props;
-  ds: Object;
-  constructor(props: Props) {
-    super(props);
-    this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      listViewData: datas
-    };
+const required = value => (value ? undefined : "Required");
+const maxLength = max => value =>
+  value && value.length > max ? `Must be ${max} characters or less` : undefined;
+const maxLength15 = maxLength(15);
+const minLength = min => value =>
+  value && value.length < min ? `Must be ${min} characters or more` : undefined;
+const minLength8 = minLength(8);
+const minLength5 = minLength(5);
+const email = value =>
+  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? "Invalid email address"
+    : undefined;
+const alphaNumeric = value =>
+  value && /[^a-zA-Z0-9 ]/i.test(value)
+    ? "Only alphanumeric characters"
+    : undefined;
+
+class SignUpForm extends Component {
+  textInput: any;
+  renderInput({ input, label, type, meta: { touched, error, warning } }) {
+    return (
+      <View>
+        <Item error={error && touched} rounded style={styles.inputGrp}>
+          <Icon
+            active
+            name={
+              input.name === "username"
+                ? "person"
+                : input.name === "email" ? "mail" : "unlock"
+            }
+            style={{ color: "#fff" }}
+          />
+          <Input
+            ref={c => (this.textInput = c)}
+            placeholderTextColor="#FFF"
+            style={styles.input}
+            placeholder={
+              input.name === "username"
+                ? "Username"
+                : input.name === "email" ? "Email" : "Password"
+            }
+            secureTextEntry={input.name === "password" ? true : false}
+            {...input}
+          />
+          {touched && error
+            ? <Icon
+                active
+                style={styles.formErrorIcon}
+                onPress={() => this.textInput._root.clear()}
+                name="close"
+              />
+            : <Text />}
+        </Item>
+        {touched && error
+          ? <Text style={styles.formErrorText1}>
+              {error}
+            </Text>
+          : <Text style={styles.formErrorText2}>> error here</Text>}
+      </View>
+    );
+  }
+  signUp() {
+    if (this.props.valid) {
+      this.props.navigation.goBack();
+    } else {
+      Toast.show({
+        text: "All the fields are compulsory!",
+        duration: 2500,
+        position: "top",
+        textStyle: { textAlign: "center" }
+      });
+    }
   }
 
-  deleteRow(secId: string, rowId: string, rowMap: any) {
-    rowMap[`${secId}${rowId}`].props.closeRow();
-    const newData = [...this.state.listViewData];
-    newData.splice(rowId, 1);
-    this.setState({ listViewData: newData });
-  }
   render() {
-    const navigation = this.props.navigation;
     return (
       <Container>
+        <StatusBar
+          backgroundColor={commonColor.statusBarColor}
+          barStyle="light-content"
+        />
         <ImageBackground
-          source={require("../../../assets/bg-transparent.png")}
-          style={styles.container}
+          source={require("../../../assets/bg-signup.png")}
+          style={styles.background}
         >
-          <CustomHeader hasTabs navigation={navigation} />
-
-          <View style={styles.profileInfoContainer}>
-            <View style={{ alignSelf: "center" }}>
-              <Thumbnail
-                source={require("../../../assets/Contacts/profile.png")}
-                style={styles.profilePic}
-              />
-            </View>
-            <View style={styles.profileInfo}>
-              <Text style={styles.profileUser}>User Name</Text>
-              <Text note style={styles.profileUserInfo}>
-                CEO, GeekyAnts
-              </Text>
-            </View>
-          </View>
-          <Content
-            showsVerticalScrollIndicator={false}
-            style={{ backgroundColor: "#fff" }}
-          >
-            <View style={styles.linkTabs}>
+                <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.goBack()}
+            >
+              <Icon active name="arrow-back" />
+            </Button>
+          </Left>
+          <Body>
+           
+            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Profile </Text>
+          </Body>
+          <Right />
+        </Header>
+          <Content padder>
+            <View style={styles.profileContainer}>
               <Grid>
-                <Col>
-                  <View style={styles.linkTabs_header}>
-                    <Text style={styles.linkTabs_tabCounts}>13</Text>
-                    <Text note style={styles.linkTabs_tabName}>
-                      Comments
-                    </Text>
+                <Col >
+                  <View style={{ alignSelf: "center" }}>
+                    <Thumbnail
+                      source={require("../../../assets/Contacts/profile.png")}
+                      style={styles.profilePic}
+                    />
                   </View>
                 </Col>
-                <Col>
-                  <View style={styles.linkTabs_header}>
-                    <Text style={styles.linkTabs_tabCounts}>12</Text>
-                    <Text note style={styles.linkTabs_tabName}>
-                      Channels
-                    </Text>
-                  </View>
+                <Col style={{width: '50%', justifyContent:'center'}}>
+
+                  <Text style={{fontWeight: 'bold', paddingLeft: 10}}>John Doe </Text>
+                  <Text style={{fontSize: 15, paddingLeft: 10}}>johndoe@gmail.com </Text>
                 </Col>
-                <Col>
-                  <View style={styles.linkTabs_header}>
-                    <Text style={styles.linkTabs_tabCounts}>52</Text>
-                    <Text note style={styles.linkTabs_tabName}>
-                      Bookmarks
-                    </Text>
+                <Col style={{width: '20%', justifyContent:'center'}}>
+                <View style={{ alignSelf: "center" }}>
+                  <Entypo active name="cog" size={30} color="white" />
                   </View>
                 </Col>
               </Grid>
+             
             </View>
 
-            {this.ds.cloneWithRows(this.state.listViewData).getRowCount() === 0
-              ? <View style={styles.linkTabs}>
-                  <ListItem
-                    style={{
-                      backgroundColor: "#fff",
-                      justifyContent: "center"
-                    }}
-                  >
-                    <Text style={styles.textNote}>Empty List</Text>
-                  </ListItem>
-                </View>
-              : <View>
-                  <View style={styles.linkTabs}>
-                    <ListItem
-                      style={{
-                        backgroundColor: "#fff",
-                        justifyContent: "center"
-                      }}
-                    >
-                      <Text style={styles.textNote}>
-                        Swipe the items to left and right
-                      </Text>
-                    </ListItem>
-                  </View>
-                  <List
-                    dataSource={this.ds.cloneWithRows(this.state.listViewData)}
-                    renderRow={data =>
-                      <ListItem
-                        swipeList
-                        style={{
-                          flexDirection: "row",
-                          backgroundColor: "#FFF"
-                        }}
-                        onPress={() => navigation.navigate("Story")}
-                      >
-                        <Image source={data.url} style={styles.newsImage} />
-                        <View style={styles.newsContent}>
-                          <Text numberOfLines={2} style={styles.newsHeader}>
-                            {data.headline}
-                          </Text>
-                          <Grid style={{ marginTop: 25 }}>
-                            <Col>
-                              <TouchableOpacity>
-                                <Text style={styles.newsLink}>
-                                  {data.link}
-                                </Text>
-                              </TouchableOpacity>
-                            </Col>
-                            <Col>
-                              <TouchableOpacity style={styles.newsTypeView}>
-                                <Text style={styles.newsTypeText}>
-                                  {data.category}
-                                </Text>
-                              </TouchableOpacity>
-                            </Col>
-                          </Grid>
-                        </View>
-                      </ListItem>}
-                    renderLeftHiddenRow={data =>
-                      <Button
-                        full
-                        style={([styles.swipeBtn], { backgroundColor: "#CCC" })}
-                      >
-                        <Icon
-                          active
-                          name="information-circle"
-                          style={{ fontSize: 35 }}
-                        />
-                      </Button>}
-                    renderRightHiddenRow={(data, secId, rowId, rowMap) =>
-                      <Button
-                        full
-                        danger
-                        onPress={_ => this.deleteRow(secId, rowId, rowMap)}
-                        style={styles.swipeBtn}
-                      >
-                        <Icon active name="trash" style={{ fontSize: 35 }} />
-                      </Button>}
-                    leftOpenValue={100}
-                    rightOpenValue={-100}
-                  />
-                </View>}
+            <View style={styles.signupContainer}>
+              <Button
+                rounded
+                bordered
+                block
+                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                style={styles.signupBtn}
+              >
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>My Account</Text>
+              </Button>
+              <Button
+                rounded
+                bordered
+                block
+                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                style={styles.signupBtn}
+              >
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Support</Text>
+              </Button>
+              <Button
+                rounded
+                bordered
+                block
+                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                style={styles.signupBtn}
+              >
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>The Science of Affirmations</Text>
+              </Button>
+              <Button
+                rounded
+                bordered
+                block
+                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                style={styles.signupBtn}
+              >
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>FAQ</Text>
+              </Button>
+
+              <Button
+                rounded
+                bordered
+                block
+                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                style={styles.signOut}
+              >
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Log Out</Text>
+              </Button>
+
+            </View>
           </Content>
+          <Footer
+            style={{
+              paddingLeft: 20,
+              paddingRight: 20
+            }}
+          >
+            <Left style={{ flex: 2 }}>
+              <Button small transparent>
+                <Text style={styles.helpBtns}>Terms & Conditions</Text>
+              </Button>
+            </Left>
+            <Right style={{ flex: 1 }}>
+              <Button
+                small
+                transparent
+                onPress={() => this.props.navigation.navigate("Login")}
+              >
+                <Text style={styles.helpBtns}>Privacy Policy</Text>
+              </Button>
+            </Right>
+          </Footer>
         </ImageBackground>
       </Container>
     );
   }
 }
 
-export default Profile;
+const SignUp = reduxForm({
+  form: "signup"
+})(SignUpForm);
+export default SignUp;

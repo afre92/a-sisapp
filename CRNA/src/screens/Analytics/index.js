@@ -1,210 +1,156 @@
-// @flow
+
 import React, { Component } from "react";
-import {
-  Platform,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-  Dimensions,
-  FlatList,
-  View as RNView
-} from "react-native";
-import { connect } from "react-redux";
+import { Col, Row, Grid } from "react-native-easy-grid";
+import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
+import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS, TouchableOpacity, TouchableWithoutFeedback,Platform, View as RNView } from "react-native";
 import {
   Container,
-  Header,
   Content,
   Text,
   Button,
   Icon,
+  Item,
+  Input,
+  View,
+  Toast,
+  Left,
+  Right,
+  CheckBox,
+  Body,
   Card,
   CardItem,
-  Left,
-  Body,
-  Right,
-  View,
-  Spinner
+  Header
 } from "native-base";
-
-import { Grid, Col, Row } from "react-native-easy-grid";
-import Carousel from "react-native-carousel-view";
-
-import { Ionicons } from '@expo/vector-icons';
-import { itemsFetchData } from "../../actions";
-import datas from "./data.json";
+import { Field, reduxForm } from "redux-form";
 
 import styles from "./styles";
+import commonColor from "../../theme/variables/commonColor";
+import DaysAndTime from "../../components/DaysAndTime"
+import Carousel from "react-native-carousel-view";
+import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+const headerLogo = require("../../../assets/header-logo.png");
 
 const deviceWidth = Dimensions.get("window").width;
-const headerLogo = require("../../../assets/header-logo.png");
-const primary = require("../../theme/variables/commonColor").brandPrimary;
 
-class Analytics extends Component {
-  componentDidMount() {
-    this.props.fetchData(datas);
+class Dashboard extends Component {
+
+  setDate(newDate) {
+    this.setState({chosenDate: newDate});
   }
-  _renderItem = ({ item }) => {
-    return (
-      <TouchableOpacity
-        style={{ flexDirection: "row" }}
-        onPress={() => this.props.navigation.navigate("Story")}
-      >
-        <View style={styles.newsContent}>
-          <Text numberOfLines={2} style={styles.newsHeader}>
-            {item.headline}
-          </Text>
-          <Grid style={styles.swiperContentBox}>
-            <Col style={{ flexDirection: "row" }}>
-              <Text style={styles.newsLink}>
-                {item.link}
-              </Text>
-              <Icon name="ios-time-outline" style={styles.timeIcon} />
-              <Text style={styles.newsLink}>
-                {item.time}
-              </Text>
-            </Col>
-            <Col>
-              <TouchableOpacity
-                style={styles.newsTypeView}
-                onPress={() => this.props.navigation.navigate("Channel")}
-              >
-                <Text style={styles.newsTypeText}>
-                  <Icon name="share" />
-                </Text>
-              </TouchableOpacity>
-            </Col>
-          </Grid>
-        </View>
-      </TouchableOpacity>
-    );
-  };
+
+  textInput: any;
+
   render() {
-    if (this.props.isLoading) {
-      return <Spinner />;
-    } else {
-      return (
-        <Container>
+    return (
+      <Container>
+        <StatusBar
+          backgroundColor={commonColor.statusBarColor}
+          barStyle="light-content"
+        />
+        <ImageBackground
+          source={require("../../../assets/bg-signup.png")}
+          style={styles.background}
+        >
 
-          <Content
-            showsVerticalScrollIndicator={false}
-            style={{ backgroundColor: primary, paddingHorizontal: 20 }}
-          >
-          <Icon name="arrow-back" style={{marginBottom: 40, marginTop: 40}} />
-            <View style={{marginBottom: 40}}>
-              <View>
-                <Carousel
-                  width=""
-                  height={300}
-                  indicatorAtBottom
-                  indicatorSize={Platform.OS === "android" ? 15 : 10}
-                  indicatorColor="#FFF"
-                  indicatorOffset={10}
-                  animate={false}
+        <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.goBack()}
+            >
+              <Icon active name="arrow-back" />
+            </Button>
+          </Left>
+          <Body>
+           
+            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Analytics </Text>
+          </Body>
+          <Right />
+        </Header>
+        <Content style={styles.container}>
+          <View >
+            <RNView>
+              <View style={styles.slide} >
+                <ImageBackground
+                  imageStyle={{ borderRadius: 25 }}
+                  style={styles.newsPoster}
+                  source={require("../../../assets/NewsIcons/4.jpg")}
                 >
-                  <RNView>
-                    <TouchableOpacity
-                      activeOpacity={1}
-                      onPress={() => this.props.navigation.navigate("Story")}
-                      style={styles.slide}
-                    >
-                      <ImageBackground
-                        style={styles.newsPoster}
-                        source={require("../../../assets/NewsIcons/4.jpg")}
-                      >
-                        <View style={styles.swiperTextContent}>
-                          <Text
-                            numberOfLines={2}
-                            style={styles.newsPosterHeader}
-                          >
-                            A.sis is a style of interface design emphasizing
-                            minimal use of stylistic elements.
-                          </Text>
-                          <Grid style={styles.swiperContentBox}>
-                            <Col style={{ flexDirection: "row", width: '80%' }}>
-                              
-                               <Grid>
-                                 <Row>
-                                  <Text style={{ fontWeight: 'bold' }}> John Doe </Text>
-                                 </Row>
-                                  <Row>
-                                    <Text  style={{ fontSize: 15 }}> San Francisco, CA </Text>
-                                 </Row>
-                               </Grid>
-                             
-                            </Col>
-                            <Col style={{ width: '20%' }}>
-                              <TouchableOpacity
-                                style={styles.newsPosterTypeView}
-                              >
-                                <Text
-                                  style={styles.newsPosterTypeText}
-                                  onPress={() =>
-                                    this.props.navigation.navigate("Channel")}
-                                >
-                                   <Ionicons name="md-share" size={32} color="white" />
-                                </Text>
-                              </TouchableOpacity>
-                            </Col>
-                          </Grid>
-                        </View>
-                      </ImageBackground>
-                    </TouchableOpacity>
-                  </RNView>
-
-                </Carousel>
+                <View flex style={{justifyContent: 'center', alignItems: 'center'}}>
+                  <Text style={{fontWeight: 'bold', fontSize: 25, paddingHorizontal: 20}}> This where the main Text is  This where the main Text is </Text>
+                </View>
+                <View style={{height: 70, paddingHorizontal: 20, paddingVertical: 10}}>
+                  <Grid style={{height: 50}} >
+                    <Col style={{height: 50}}>
+                      <Text style={{ fontWeight: 'bold'}}> John Doe </Text>
+                      <Text> San Francisco, CA </Text>
+                    </Col>
+                    <Col style={{height: 50}}>
+                    <Feather style={{alignSelf: 'flex-end', paddingHorizontal: 20}}name="share" color="white" size={30}/>
+                    </Col>
+                  </Grid>
+                </View>
+            
+                </ImageBackground>
               </View>
+            </RNView>
+          </View>
+          <View style={{paddingHorizontal: 40, paddingTop: 10}}>
+            <Grid>
+              <Row >
+              <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
+                <Card style={{ height: 90, borderRadius: 30}}>
+                  <View style={{justifyContent: 'center'}} >
+                    <Text style={styles.cardTittle}> <Ionicons  size={25} name="md-stopwatch" color="grey" /> Total Time Meditated</Text>
+                  </View>
+                  <CardItem style={{backgroundColor: 'transparent',textAlign: 'center', justifyContent: 'center'}}>
+                      <Text style={{color: 'black'}}>
+                        4 hours
+                      </Text>
+                  </CardItem>
+
+                </Card>
+              </TouchableWithoutFeedback>
+              </Row>
+              <Row>
+                <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
+                  <Card style={{ height: 90, borderRadius: 30}}>
+                    <View style={{justifyContent: 'center'}} >
+                      <Text style={styles.cardTittle}> <Ionicons  size={25} name="ios-thumbs-up" color="grey" /> Session Completed</Text>
+                    </View>
+                    <CardItem style={{backgroundColor: 'transparent',textAlign: 'center', justifyContent: 'center'}}>
+                        <Text style={{color: 'black'}}>
+                          12 Sessions
+                        </Text>
+                    </CardItem>
+
+                  </Card>
+                </TouchableWithoutFeedback>
+                </Row>
+                <Row>
+                  <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
+                    <Card style={{ height: 90, borderRadius: 30}}>
+                      <View style={{justifyContent: 'center'}} >
+                        <Text style={styles.cardTittle}> <Ionicons  size={25} name="ios-stats" color="grey" />  Current Day Streak</Text>
+                      </View>
+                      <CardItem style={{backgroundColor: 'transparent',textAlign: 'center', justifyContent: 'center'}}>
+                        <Text style={{color: 'black'}}>
+                          6 days
+                        </Text>
+                      </CardItem>
+
+                    </Card>
+                  </TouchableWithoutFeedback>
+                </Row>
+              </Grid>
             </View>
-            <View style={{paddingHorizontal: 20, textAlign: "center"}}>
-            <Card style={{fontColor: 'black', color: 'black', marginBottom: 20, }}>
-              <View style={{textAlign: 'center', justifyContent: 'center', borderBottomColor: primary ,borderBottomWidth: 1}} >
-                <Text style={{fontColor: 'black', color:'#e66949', textAlign: 'center', paddingVertical: 5, fontWeight: 'bold'}}> <Ionicons  size={32} name="md-stopwatch" style={styles.timeIcon} />   Total Time Meditated </Text>
-              </View>
-              <CardItem style={{textAlign: 'center', justifyContent: 'center'}}>
-                  <Text style={{ color: '#4d4d4d', fontWeight: '600', fontSize: 17}}>
-                    4 Hours
-                  </Text>
-              </CardItem>
-            </Card>
+        </Content>
 
-            <Card style={{fontColor: 'black', color: 'black', marginBottom: 20}}>
-              <View style={{textAlign: 'center', justifyContent: 'center', borderBottomColor: primary ,borderBottomWidth: 1}} >
-                <Text style={{fontColor: 'black', color: '#e66949', textAlign: 'center', paddingVertical: 5, fontWeight: 'bold'}}>  <Ionicons size={32} name="ios-thumbs-up" style={styles.timeIcon} />   Sessions Completed </Text>
-              </View>
-              <CardItem style={{textAlign: 'center', justifyContent: 'center'}}>
-                  <Text style={{ color: '#4d4d4d', fontWeight: '600', fontSize: 17}}>
-                    12 Sessions
-                  </Text>
-              </CardItem>
-            </Card>
-
-            <Card style={{fontColor: 'black', color: 'black', marginBottom: 20}}>
-              <View style={{textAlign: 'center', justifyContent: 'center', borderBottomColor: primary ,borderBottomWidth: 1}} >
-                <Text style={{fontColor: 'black', color: '#e66949', textAlign: 'center', paddingVertical: 5, fontWeight: 'bold'}}> <Ionicons size={32} name="ios-stats" style={styles.timeIcon} />   Current Day Streak</Text>
-              </View>
-              <CardItem style={{textAlign: 'center', justifyContent: 'center'}}>
-                  <Text style={{ color: '#4d4d4d', fontWeight: '600', fontSize: 17}}>
-                    6 days
-                  </Text>
-
-              </CardItem>
-            </Card>
-            </View>
-          </Content>
-        </Container>
-      );
-    }
+        </ImageBackground>
+      </Container>
+    );
   }
 }
 
-function bindAction(dispatch) {
-  return {
-    fetchData: url => dispatch(itemsFetchData(url))
-  };
-}
-
-const mapStateToProps = state => ({
-  items: state.homeReducer.items,
-  hasErrored: state.homeReducer.hasErrored,
-  isLoading: state.homeReducer.isLoading
-});
-export default connect(mapStateToProps, bindAction)(Analytics);
+export default Dashboard;
