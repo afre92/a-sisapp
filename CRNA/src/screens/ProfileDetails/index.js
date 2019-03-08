@@ -142,18 +142,12 @@ class ProfileDetails extends Component {
                 <Text style={{fontSize: 15, paddingLeft: 10, textAlign: 'center'}}>johndoe@gmail.com </Text>
               </View>
 
-              <View style={{alignSelf: "center", marginTop: 10, borderColor: 'white', borderLeftWidth: 2, borderRightWidth: 2}}>
 
-                  <Text style={{fontWeight: 'bold', paddingHorizontal: 20, textAlign: 'center', fontSize: 20}}>Subscription</Text>
-
-                  <Text style={{paddingHorizontal: 20, textAlign: 'center', fontSize: 15}}>FREE VERSION</Text>
- 
-              </View>
             </View>
 
-            <View style={{alignSelf: "center", paddingTop: 5}}>
+            <View style={{alignSelf: "center"}}>
               <Text style={{fontSize: 20, fontWeight: 'bold'}}> Unlock A.SIS Premium </Text>
-              <Text> Comming Soon</Text>
+              <Text  style={{fontSize: 17, textAlign: 'center'}}> Comming Soon</Text>
             </View>
 
             <View style={styles.signupContainer}>
@@ -191,7 +185,7 @@ class ProfileDetails extends Component {
               paddingRight: 20
             }}
           >
-            <Left style={{ flex: 2 }}>
+            <Left style={{ flex: 1 }}>
               <Button small transparent>
                 <Text style={styles.helpBtns}>Terms & Conditions</Text>
               </Button>

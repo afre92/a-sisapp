@@ -14,11 +14,11 @@ export default {
     marginTop:
       deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 10 - 100
-          : deviceHeight / 12 - 100
+          ? deviceHeight / 10 
+          : deviceHeight / 12 
         : Platform.OS === "android"
-          ? deviceHeight / 12 - 100
-          : deviceHeight / 8 - 100
+          ? deviceHeight / 12 
+          : deviceHeight / 35
   },
   signupHeader: {
     paddingBottom: 20,
@@ -106,7 +106,7 @@ export default {
   },
   profileContainer: {
     width: '92%',
-    marginBottom: deviceHeight / 20,
+    marginBottom: deviceHeight / 40,
     flex: 1,
     justifyContent: "center",
     alignSelf: "center",
@@ -119,7 +119,7 @@ export default {
   },
   signOut: {
     height: 50,
-    marginTop: 70,
+    marginTop: deviceHeight / 12,
     borderWidth: 1,
     borderTopWidth: 2,
     borderBottomWidth: 2,
