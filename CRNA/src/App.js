@@ -30,6 +30,7 @@ import Player from "./screens/Player";
 import Analytics from "./screens/Analytics"
 import Profile1 from "./screens/Profile1";
 import ProfileDetails from "./screens/ProfileDetails";
+import EditProfile from "./screens/EditProfile";
 
 
 const Drawer = createDrawerNavigator(
@@ -72,11 +73,12 @@ const App = createStackNavigator(
     Analytics: { screen: Analytics},
     Profile: { screen: Profile },
     Profile1: { screen: Profile1 },
-    ProfileDetails: { screen: ProfileDetails}
+    ProfileDetails: { screen: ProfileDetails},
+    EditProfile: { screen: EditProfile}
   },
   {
     index: 0,
-    initialRouteName: "ProfileDetails",
+    initialRouteName: "EditProfile",
     headerMode: "none"
   }
 );
