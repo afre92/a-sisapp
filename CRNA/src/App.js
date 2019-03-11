@@ -32,7 +32,7 @@ import Profile1 from "./screens/Profile1";
 import ProfileDetails from "./screens/ProfileDetails";
 import EditProfile from "./screens/EditProfile";
 import BecomeASubscriber from "./screens/BecomeASubscriber";
-
+import ContactUs from "./screens/ContactUs";
 
 
 const Drawer = createDrawerNavigator(
@@ -77,11 +77,12 @@ const App = createStackNavigator(
     Profile1: { screen: Profile1 },
     ProfileDetails: { screen: ProfileDetails},
     EditProfile: { screen: EditProfile},
-    BecomeASubscriber: { screen: BecomeASubscriber}
+    BecomeASubscriber: { screen: BecomeASubscriber},
+    ContactUs: { screen: ContactUs }
   },
   {
     index: 0,
-    initialRouteName: "BecomeASubscriber",
+    initialRouteName: "ContactUs",
     headerMode: "none"
   }
 );
