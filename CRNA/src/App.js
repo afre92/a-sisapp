@@ -33,6 +33,7 @@ import ProfileDetails from "./screens/ProfileDetails";
 import EditProfile from "./screens/EditProfile";
 import BecomeASubscriber from "./screens/BecomeASubscriber";
 import ContactUs from "./screens/ContactUs";
+import TSOM from "./screens/TSOM";
 
 
 const Drawer = createDrawerNavigator(
@@ -78,11 +79,12 @@ const App = createStackNavigator(
     ProfileDetails: { screen: ProfileDetails},
     EditProfile: { screen: EditProfile},
     BecomeASubscriber: { screen: BecomeASubscriber},
-    ContactUs: { screen: ContactUs }
+    ContactUs: { screen: ContactUs },
+    TSOM: { screen: TSOM }
   },
   {
     index: 0,
-    initialRouteName: "ContactUs",
+    initialRouteName: "TSOM",
     headerMode: "none"
   }
 );
