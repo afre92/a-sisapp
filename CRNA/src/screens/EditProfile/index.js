@@ -113,7 +113,7 @@ class EditProfileForm extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-                <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+        <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
           <Left>
             <Button
               transparent
