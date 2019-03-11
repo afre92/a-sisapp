@@ -29,7 +29,7 @@ type Props = {
   navigation: () => void
 };
 declare type Any = any;
-class BecomeASubscriber extends Component {
+class PrivacyPolicy extends Component {
   textInput: Any;
   state: {
     offset: {
@@ -111,7 +111,7 @@ class BecomeASubscriber extends Component {
           </Left>
           <Body>
            
-            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Contact</Text>
+            <Text style={{fontWeight: 'bold', paddingTop: 5}}></Text>
           </Body>
           <Right />
 
@@ -122,11 +122,25 @@ class BecomeASubscriber extends Component {
           <View>
             <Content padder scrollEnabled={false}>
               <Text style={styles.forgotPasswordHeader}>
-                Contact Us
+                PrivacyPolicy
               </Text>
+              <View style={{paddingHorizontal: 10}}>
+                <Text style={{paddingBottom: 20,fontSize: 21, fontWeight: '500'}}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in uienply voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat norin proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                </Text>
+              </View>
               <View style={styles.forgotPasswordContainer}>
-                <Text style={{ color: "#FFF", textAlign: 'center', paddingBottom: 20, fontWeight: '500', fontSize: 23 }}>We’re friendly so please let us know what you need.</Text>
-                <Text style={{ color: "#FFF", textAlign: 'center', paddingBottom: 20, fontWeight: '500' }}>Email us support@asis.com</Text>
+
+                <Button
+                  rounded
+                  block
+                  bordered
+                  onPress={() => this.forgotPassword()}
+                  style={styles.submit}
+                >
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>More</Text>
+                </Button>
               </View>
             </Content>
             </View>
@@ -138,4 +152,4 @@ class BecomeASubscriber extends Component {
 }
 
 
-export default BecomeASubscriber;
+export default PrivacyPolicy;

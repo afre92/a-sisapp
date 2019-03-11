@@ -34,6 +34,10 @@ import EditProfile from "./screens/EditProfile";
 import BecomeASubscriber from "./screens/BecomeASubscriber";
 import ContactUs from "./screens/ContactUs";
 import TSOM from "./screens/TSOM";
+import FAQ from "./screens/FAQ";
+import PrivacyPolicy from "./screens/PrivacyPolicy";
+import TermsAndConditions from "./screens/TermsAndConditions";
+
 
 
 const Drawer = createDrawerNavigator(
@@ -80,11 +84,14 @@ const App = createStackNavigator(
     EditProfile: { screen: EditProfile},
     BecomeASubscriber: { screen: BecomeASubscriber},
     ContactUs: { screen: ContactUs },
-    TSOM: { screen: TSOM }
+    TSOM: { screen: TSOM },
+    FAQ: { screen: FAQ },
+    PrivacyPolicy: { screen: PrivacyPolicy },
+    TermsAndConditions: { screen: TermsAndConditions }
   },
   {
     index: 0,
-    initialRouteName: "TSOM",
+    initialRouteName: "TermsAndConditions",
     headerMode: "none"
   }
 );

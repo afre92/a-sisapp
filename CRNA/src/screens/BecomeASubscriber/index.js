@@ -129,20 +129,10 @@ class BecomeASubscriber extends Component {
                   rounded
                   block
                   bordered
-                  onPress={() => this.forgotPassword()}
+                  onPress={() => this.props.navigation.goBack()}
                   style={styles.submit}
                 >
-                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Subscribe for $14.99/ month</Text>
-                </Button>
-
-                <Button
-                  rounded
-                  block
-                  bordered
-                  onPress={() => this.forgotPassword()}
-                  style={styles.submit}
-                >
-                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Subscribe for $99.99/ year</Text>
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>More</Text>
                 </Button>
               </View>
             </Content>

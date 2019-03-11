@@ -39,10 +39,11 @@ export default {
     paddingBottom: 2
   },
   newsPoster: {
-    height: 330,
+    height: 280,
     width: null,
     flex: 1,
-    position: "relative"
+    position: "relative",
+    marginHorizontal: 20
   },
   newsPosterHeader: {
     fontWeight: "900"
@@ -83,7 +84,7 @@ export default {
   slide: {
     flex: 1,
     width: deviceWidth,
-    height: 330,
+    height: 280,
     backgroundColor: "transparent"
   },
   swiperTextContent: {

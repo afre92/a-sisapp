@@ -10,23 +10,18 @@ export default {
   forgotPasswordContainer: {
     paddingLeft: 20,
     paddingRight: 20,
-    marginTop:
-      deviceWidth < 330
-        ? Platform.OS === "android"
-          ? deviceHeight / 17
-          : deviceHeight / 15
-        : Platform.OS === "android"
-          ? deviceHeight / 17
-          : deviceHeight / 15
+    marginTop: 20
+
   },
   forgotPasswordHeader: {
+    textDecorationLine: 'underline',
     alignSelf: "center",
-    fontSize: 22,
+    fontSize: 30,
     padding: 10,
     fontWeight: "bold",
     color: "#FFF",
     marginTop:
-      Platform.OS === "android" ? deviceHeight / 8 : deviceHeight / 8 + 10
+      Platform.OS === "android" ? deviceHeight / 4.5 : deviceHeight / 4.5 + 10
   },
   background: {
     flex: 1,

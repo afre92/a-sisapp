@@ -11,16 +11,18 @@ export default {
     paddingLeft: 20,
     paddingRight: 20,
     marginTop: 20
+
   },
   forgotPasswordHeader: {
     textDecorationLine: 'underline',
     alignSelf: "center",
-    fontSize: 40,
+    paddingBottom: 40,
+    fontSize: 30,
     padding: 10,
     fontWeight: "bold",
     color: "#FFF",
     marginTop:
-      Platform.OS === "android" ? deviceHeight / 4.5 : deviceHeight / 4.5 + 10
+      Platform.OS === "android" ? deviceHeight / 40 : deviceHeight / 40 + 10
   },
   background: {
     flex: 1,

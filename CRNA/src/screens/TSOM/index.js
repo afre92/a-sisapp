@@ -88,28 +88,27 @@ class Home extends Component {
             <Left>
               <Button
                 transparent
-                onPress={() => this.props.navigation.openDrawer()}
+                onPress={() => this.props.navigation.goBack()}
               >
-                <Icon active name="menu" />
+                <Icon active name="arrow-back" />
               </Button>
             </Left>
             <Body>
-              <Image source={headerLogo} style={styles.imageHeader} />
             </Body>
             <Right />
           </Header>
 
           <View >
           <View>
-            <View style={{ paddingHorizontal: 10, paddingVertical: 40}}>
-                <Text style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center'}}>
+            <View style={{ paddingHorizontal: 30, paddingBottom: 40, paddingTop: 10}}>
+                <Text style={{ fontWeight: 'bold', fontSize: 35, textAlign: 'left',textDecorationLine: 'underline'}}>
                   The Science of Meditation
                 </Text>
                   <View>
-                  <Text style={{color: 'white', fontSize: 23, textAlign: 'center', paddingTop: 30}}>
+                  <Text style={{color: 'white', fontSize: 22, textAlign: 'left', paddingTop: 30}}>
                   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
                 </Text>
-                            <Text style={{color: 'white', textAlign: 'center', paddingTop: 30}}>
+                            <Text style={{color: 'white', textAlign: 'left', paddingTop: 30}}>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
                 </Text>
 
@@ -117,7 +116,7 @@ class Home extends Component {
           </View>
                 <Carousel
                   width={deviceWidth}
-                  height={330}
+                  height={280}
                   indicatorAtBottom
                   indicatorSize={Platform.OS === "android" ? 15 : 10}
                   indicatorColor="#FFF"
@@ -132,6 +131,7 @@ class Home extends Component {
                     >
                       <ImageBackground
                         style={styles.newsPoster}
+                        imageStyle={{ borderRadius: 25 }}
                         source={require("../../../assets/NewsIcons/1.jpg")}
                       >
                         <View style={styles.swiperTextContent}>
@@ -139,7 +139,7 @@ class Home extends Component {
                             numberOfLines={2}
                             style={styles.newsPosterHeader}
                           >
-                            Flat App is a style of interface design emphasizing
+                            Asis is a style of interface design emphasizing
                             minimal use of stylistic elements.
                           </Text>
                           <Grid style={styles.swiperContentBox}>
@@ -180,6 +180,7 @@ class Home extends Component {
                       <ImageBackground
                         style={styles.newsPoster}
                         source={require("../../../assets/NewsIcons/3.jpg")}
+                        imageStyle={{ borderRadius: 25 }}
                       >
                         <View style={styles.swiperTextContent}>
                           <Text
@@ -225,6 +226,7 @@ class Home extends Component {
                       <ImageBackground
                         style={styles.newsPoster}
                         source={require("../../../assets/NewsIcons/4.jpg")}
+                        imageStyle={{ borderRadius: 25 }}
                       >
                         <View style={styles.swiperTextContent}>
                           <Text
