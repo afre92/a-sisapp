@@ -114,8 +114,12 @@ class BecomeASubscriber extends Component {
             <Text style={{fontWeight: 'bold', paddingTop: 5}}></Text>
           </Body>
           <Right />
+
+   
+    
         </Header>
           <Content contentOffset={this.state.offset}>
+          <View>
             <Content padder scrollEnabled={false}>
               <Text style={styles.forgotPasswordHeader}>
                 Become A Subscriber
@@ -138,10 +142,11 @@ class BecomeASubscriber extends Component {
                   onPress={() => this.forgotPassword()}
                   style={styles.submit}
                 >
-                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Subscribe for $99/ year</Text>
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Subscribe for $99.99/ year</Text>
                 </Button>
               </View>
             </Content>
+            </View>
           </Content>
         </ImageBackground>
       </Container>

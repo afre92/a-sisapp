@@ -13,11 +13,11 @@ export default {
     marginTop:
       deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 9 - 20
-          : deviceHeight / 8 - 10
+          ? deviceHeight / 17
+          : deviceHeight / 15
         : Platform.OS === "android"
-          ? deviceHeight / 7 - 20
-          : deviceHeight / 6 - 30
+          ? deviceHeight / 17
+          : deviceHeight / 15
   },
   forgotPasswordHeader: {
     alignSelf: "center",
