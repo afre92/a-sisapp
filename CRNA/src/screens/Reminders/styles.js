@@ -11,19 +11,15 @@ const contentMarginVertical = deviceWidth < 330
           ? deviceHeight / 9 - 20
           : deviceHeight / 10 - 20
         : Platform.OS === "android"
-          ? deviceHeight / 15 - 20
-          : deviceHeight / 15 - 20
+          ? deviceHeight / 12 - 20
+          : deviceHeight / 10 - 20
 
 export default {
-  datePickerContainer: {
-    marginTop: contentMarginVertical - 15,
-  },
-  signupHeader: {
-    paddingBottom: 20,
-    alignSelf: "center",
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#FFF"
+  setUpStepThree: {
+    paddingLeft: 10,
+    paddingBottom: 50,
+    paddingRight: 10,
+    marginBottom: contentMarginVertical - 20,
   },
   background: {
     flex: 1,
@@ -52,52 +48,49 @@ export default {
     paddingLeft: 10,
     color: "#FFF"
   },
-  formContainer: {
-    flexDirection: "row",
-    alignSelf: "center"
-  },
-  weekDay: {
-    fontSize: 18,
-    flex: 1,
-    fontWeight: '600',
-    textAlign: 'center',
-    paddingBottom: deviceWidth / 20 - 10
+  signupBtn: {
+    height: 50,
+    borderTopWidth: 2,
+    borderRightWidth: 2,
+    borderLeftWidth: 2,
+    borderBottomWidth: 2,
+    borderColor: "#FFF",
   },
   datePicker: {
-    marginVertical: deviceHeight / 30,
+    marginVertical: deviceHeight / 20,
     backgroundColor: 'white',
-    borderRadius: 20,
-  },
-  labelStyle: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: '#fff', 
-    paddingTop: 20, 
-    paddingBottom: 10,
-    width: deviceWidth / 5,
-    textAlign: 'center',
-    paddingLeft: 10
+    borderRadius: 20
   },
   buttonsContainer: {
-  },
-  header: {
-    textAlign: 'center',
-    paddingBottom: 10,
-    fontSize: 20,
-    fontWeight: '600'
+    // marginTop: deviceHeight / 25
   },
   container: {
   },
-  checkBoxes: {
-    CheckboxIconSize: 50
+  progressBar: {
+    height: 8,
+    color: '#FFFFFF',
+    borderColor: '#FFFFFF',
+    borderWidth: 1,
+    marginHorizontal: 12
+ },
+ currentStep: {
+    height: 8,
+    color: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
+    marginHorizontal: 12
+ },
+  backArrowContainer: {
+    paddingLeft: 10,
+    backgroundColor: 'transparent'
   },
-  subHeader: {
-    textAlign: 'center',
-    fontSize: deviceWidth / 22,
-    fontWeight: 'bold'
-  },
-    loginBtn: {
-    marginTop: 7,
-    height: 50
-  },
+  reminderIcon: {
+    borderColor: 'white',
+    borderTopWidth: 3,
+    borderRightWidth: 3,
+    borderLeftWidth: 3,
+    borderBottomWidth: 3,
+    borderRadius: '80%',
+    padding: '9%',
+    backgroundColor: "rgba(255,255,255,0.2)",
+  }
 };

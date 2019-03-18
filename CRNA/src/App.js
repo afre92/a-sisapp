@@ -37,6 +37,8 @@ import TSOM from "./screens/TSOM";
 import FAQ from "./screens/FAQ";
 import PrivacyPolicy from "./screens/PrivacyPolicy";
 import TermsAndConditions from "./screens/TermsAndConditions";
+import Alarms from "./screens/Alarms";
+import Reminders from "./screens/Reminders";
 
 
 
@@ -87,11 +89,13 @@ const App = createStackNavigator(
     TSOM: { screen: TSOM },
     FAQ: { screen: FAQ },
     PrivacyPolicy: { screen: PrivacyPolicy },
-    TermsAndConditions: { screen: TermsAndConditions }
+    TermsAndConditions: { screen: TermsAndConditions },
+    Alarms: { screen: Alarms },
+    Reminders: { screen: Reminders }
   },
   {
     index: 0,
-    initialRouteName: "TermsAndConditions",
+    initialRouteName: "Reminders",
     headerMode: "none"
   }
 );
