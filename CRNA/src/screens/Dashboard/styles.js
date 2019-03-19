@@ -110,12 +110,12 @@ export default {
     resizeMode: "contain"
   },
   cardTittle: {
+    flex: 1,
     fontColor: 'black',
     color: 'black',
     textAlign: 'center',
-    justifyContent: 'center',
     fontWeight: 'bold',
-    paddingVertical: 10
+    paddingVertical: 20
   },
   newsPoster: {
     height:  deviceHeight / 2.2,

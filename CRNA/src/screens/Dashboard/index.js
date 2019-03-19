@@ -27,8 +27,7 @@ import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 import DaysAndTime from "../../components/DaysAndTime"
 import Carousel from "react-native-carousel-view";
-import { Ionicons } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
+import { Ionicons, Feather, FontAwesome } from '@expo/vector-icons';
 const headerLogo = require("../../../assets/header-logo.png");
 
 const deviceWidth = Dimensions.get("window").width;
@@ -54,18 +53,20 @@ class Dashboard extends Component {
         >
 
         <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.openDrawer()}
-            >
-              <Icon active name="menu" />
-            </Button>
-          </Left>
+          <Left />
           <Body>
             <Image source={headerLogo} style={styles.imageHeader} />
           </Body>
-          <Right />
+          <Right style={{paddingTop: 10, paddingRight: 15}}>
+            <TouchableOpacity
+              transparent
+              onPress={() => this.props.navigation.navigate('Profile')}
+            >
+              <FontAwesome active name="user-circle" color="white" size={30}/>
+            </TouchableOpacity>
+          </Right>
+
+          
         </Header>
         <Content style={styles.container}>
           <View >
@@ -89,40 +90,29 @@ class Dashboard extends Component {
           <View style={{paddingHorizontal: 20, paddingTop: 10}}>
 
           <Grid>
-            <Col style={{paddingRight: 5}}>
+            <Row style={{paddingRight: 5}}>
             <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
-              <Card style={{ height: 250, marginBottom: 30, borderRadius: 30, paddngRight: 10}}>
+              <Card style={{ height: 120, marginBottom: 30, borderRadius: 30, paddngRight: 10}}>
                 <View style={{justifyContent: 'center'}} >
                   <Text style={styles.cardTittle}>My Journey</Text>
                 </View>
-                <CardItem>
-                  <Body>
-                    <Text style={{color: 'black'}}>
-                      Some text here asdfasdf asdfasdf asdfasdf dsafasdf
-                    </Text>
-                  </Body>
-                </CardItem>
+                <View>
 
+                </View>
               </Card>
             </TouchableWithoutFeedback>
-            </Col>
-            <Col style={{paddingLeft: 5}}>
+            </Row>
+            <Row style={{paddingLeft: 5}}>
             <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
-              <Card style={{ height: 250, marginBottom: 30, borderRadius: 30}}>
-                <View style={{justifyContent: 'center'}} >
+              <Card style={{ height: 120, marginBottom: 30, borderRadius: 30}}>
+                <View style={{justifyContent: 'center',alignItems: 'center'}} >
                   <Text style={styles.cardTittle}>My Journey</Text>
                 </View>
-                <CardItem>
-                  <Body>
-                    <Text style={{color: 'black'}}>
-                      Some text here asdfasdf asdfasdf asdfasdf dsafasdf
-                    </Text>
-                  </Body>
-                </CardItem>
-
+                <Text style={{color: 'black'}}>
+                </Text>
               </Card>
             </TouchableWithoutFeedback>
-            </Col>
+            </Row>
           </Grid>
             </View>
         </Content>

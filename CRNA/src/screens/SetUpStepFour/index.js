@@ -92,7 +92,7 @@ class SetUpStepFour extends Component {
                     rounded
                     bordered
                     block
-                    onPress={() => this.props.navigation.navigate('Drawer')}
+                    onPress={() => this.props.navigation.navigate('Dashboard')}
                     style={styles.signupBtn}
                   >
                    <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
