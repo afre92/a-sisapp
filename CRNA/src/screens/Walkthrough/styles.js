@@ -116,6 +116,13 @@ export default {
   iconContainer: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: deviceHeight/6 
+    marginTop: deviceHeight/5 
+  },
+  emailBtn: {
+    height: 50,
+    marginTop: 10,
+    borderWidth: 2,
+    borderColor: "#ddd",
+    marginHorizontal: '10%'
   }
 };

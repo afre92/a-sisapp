@@ -51,7 +51,7 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("SignUp")}
-                style={styles.Button}
+                style={styles.emailBtn}
               >
                 <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
                   <Text style={{ color: "#FFF", fontWeight: "600"}}>
@@ -64,7 +64,7 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("Login")}
-                style={styles.Button}
+                style={styles.emailBtn}
               >
               <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
                 <Text style={{ color: "#FFF", fontWeight: "600"}}>
@@ -90,7 +90,7 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("SignUp")}
-                style={styles.Button}
+                style={styles.emailBtn}
               >
                 <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
                   <Text style={{ color: "#FFF", fontWeight: "600"}}>
@@ -103,7 +103,7 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("Login")}
-                style={styles.Button}
+                style={styles.emailBtn}
               >
               <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
                 <Text style={{ color: "#FFF", fontWeight: "600"}}>
@@ -137,7 +137,7 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("SignUp")}
-                style={styles.Button}
+                style={styles.emailBtn}
               >
                 <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
                   <Text style={{ color: "#FFF", fontWeight: "600"}}>
@@ -150,7 +150,7 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("Login")}
-                style={styles.Button}
+                style={styles.emailBtn}
               >
               <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
                 <Text style={{ color: "#FFF", fontWeight: "600"}}>
