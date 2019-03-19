@@ -21,7 +21,7 @@ import {
   Radio,
   Header,
   CardItem,
-  Card
+  Card,
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
@@ -33,6 +33,21 @@ import DaysAndTime from "../../components/DaysAndTime"
 import { MaterialCommunityIcons, Feather, FontAwesome, Entypo } from '@expo/vector-icons';
 
 import AnalogClock from 'react-native-clock-analog';
+
+
+var radio_props_one = [
+  {label: 'ENERGIZED', value: 0 },
+  {label: ' CALM ', value: 0 },
+  {label: 'RELAXED', value: 0 }
+];
+
+var radio_props_two = [
+  {label: 'PEACEFUL', value: 0 },
+  {label: ' HAPPY ', value: 0 },
+  {label: 'GREATFUL', value: 0 }
+];
+
+
 const deviceWidth = Dimensions.get("window").width;
 
 class Reminders extends Component {
@@ -84,6 +99,58 @@ class Reminders extends Component {
         </View>
           <DaysAndTime />
 
+            <View style={styles.signupContainer}>
+              <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
+              <View style={styles.moodContainer}>
+
+                <RadioForm
+                  radio_props={radio_props_one}
+                  buttonColor={'#FFFFFF'}
+                  initial={-1}
+                  labelHorizontal={false}
+                  formHorizontal={true}
+                  buttonSize={50}
+                  selectedButtonColor={'#FFFFFF'}
+                  labelStyle={styles.labelStyle}
+                  onPress={(value) => {this.setState({value:value})}}
+                />
+
+                <RadioForm
+                  radio_props={radio_props_two}
+                  buttonColor={'#FFFFFF'}
+                  initial={-1}
+                  labelHorizontal={false}
+                  formHorizontal={true}
+                  buttonSize={50}
+                  selectedButtonColor={'#FFFFFF'}
+                  labelStyle={styles.labelStyle}
+                  onPress={(value) => {this.setState({value:value})}}
+                />
+              </View>
+
+              <View style={styles.buttonsContainer}>
+                <Button
+                  rounded
+                  bordered
+                  block
+                  onPress={() => this.signUp()}
+                  style={{display: 'none'}}
+                >
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
+                </Button>
+
+                <Button
+                  rounded
+                  bordered
+                  block
+                  onPress={() => this.props.navigation.navigate("SetUpStepThree")}
+                  style={styles.signupBtn}
+                >
+                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
+                </Button>
+                </View>
+            </View>
+
             <View style={styles.setUpStepThree}>
                   <Card style={{ height: 90, borderRadius: 30, display: 'none'}}>
                     <View style={{justifyContent: 'center'}} >
@@ -97,18 +164,6 @@ class Reminders extends Component {
 
                   </Card>
 
-              <View style={styles.buttonsContainer}>
-
-                <Button
-                  rounded
-                  bordered
-                  block
-                  onPress={() => this.props.navigation.navigate("SetUpStepFour")}
-                  style={styles.signupBtn}
-                >
-                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
-                </Button>
-                </View>
             </View>
           </Content>
         </ImageBackground>

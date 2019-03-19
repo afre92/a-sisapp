@@ -95,7 +95,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Reminders",
+    initialRouteName: "Walkthrough",
     headerMode: "none"
   }
 );

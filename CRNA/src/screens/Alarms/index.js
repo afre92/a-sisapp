@@ -18,6 +18,7 @@ import {
   Footer,
   CheckBox,
   Body,
+  Header,
   Radio
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
@@ -28,6 +29,18 @@ import DaysAndTime from "../../components/DaysAndTime"
 
 import AnalogClock from 'react-native-clock-analog';
 const deviceWidth = Dimensions.get("window").width;
+
+var radio_props_one = [
+  {label: 'ENERGIZED', value: 0 },
+  {label: ' CALM ', value: 0 },
+  {label: 'RELAXED', value: 0 }
+];
+
+var radio_props_two = [
+  {label: 'PEACEFUL', value: 0 },
+  {label: ' HAPPY ', value: 0 },
+  {label: 'GREATFUL', value: 0 }
+];
 
 class Alarms extends Component {
   constructor(props) {
@@ -52,13 +65,23 @@ class Alarms extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
+                <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.goBack()}
+            >
+              <Icon active name="arrow-back" />
+            </Button>
+          </Left>
+          <Body>
+           
+            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Alarms </Text>
+          </Body>
+          <Right />
+        </Header>
 
         <Content padder style={styles.container}>
-        <Button style={styles.backArrowContainer} onPress={() => this.props.navigation.goBack()}>
-          <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
-
-
-        </Button>
         <View style={{ alignItems: 'center'}}>
           <AnalogClock
             size={150}
@@ -68,21 +91,60 @@ class Alarms extends Component {
           />
         </View>
           <DaysAndTime />
+                      <View style={styles.signupContainer}>
+              <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
+              <View style={styles.moodContainer}>
 
-            <View style={styles.setUpStepThree}>
+                <RadioForm
+                  radio_props={radio_props_one}
+                  buttonColor={'#FFFFFF'}
+                  initial={-1}
+                  labelHorizontal={false}
+                  formHorizontal={true}
+                  buttonSize={50}
+                  selectedButtonColor={'#FFFFFF'}
+                  labelStyle={styles.labelStyle}
+                  onPress={(value) => {this.setState({value:value})}}
+                />
+
+                <RadioForm
+                  radio_props={radio_props_two}
+                  buttonColor={'#FFFFFF'}
+                  initial={-1}
+                  labelHorizontal={false}
+                  formHorizontal={true}
+                  buttonSize={50}
+                  selectedButtonColor={'#FFFFFF'}
+                  labelStyle={styles.labelStyle}
+                  onPress={(value) => {this.setState({value:value})}}
+                />
+              </View>
 
               <View style={styles.buttonsContainer}>
+                <Button
+                  rounded
+                  bordered
+                  block
+                  onPress={() => this.signUp()}
+                  style={{display: 'none'}}
+                >
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
+                </Button>
 
                 <Button
                   rounded
                   bordered
                   block
-                  onPress={() => this.props.navigation.navigate("SetUpStepFour")}
+                  onPress={() => this.props.navigation.navigate("SetUpStepThree")}
                   style={styles.signupBtn}
                 >
                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
                 </Button>
                 </View>
+            </View>
+
+            <View style={styles.setUpStepThree}>
+
             </View>
           </Content>
         </ImageBackground>

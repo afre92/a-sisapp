@@ -92,5 +92,36 @@ export default {
     borderRadius: '80%',
     padding: '9%',
     backgroundColor: "rgba(255,255,255,0.2)",
+  },
+  moodContainer: {
+    marginBottom: deviceHeight / 20,
+    marginTop: deviceHeight / 30,
+    flex: 1,
+    justifyContent: "center",
+    alignSelf: "center",
+    borderWidth: 2,
+    borderColor: "white",
+    borderRadius: 22,
+    paddingHorizontal: deviceWidth / 12,
+    paddingVertical: deviceWidth / 10,
+    backgroundColor: 'rgba(255, 255, 255, .2)'
+  },
+  signupContainer: {
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  subHeader: {
+    textAlign: 'center',
+    fontSize: deviceWidth / 22,
+    fontWeight: 'bold'
+  },
+  labelStyle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#fff', 
+    paddingTop: 20, 
+    paddingBottom: 10,
+    width: deviceWidth / 5,
+    textAlign: 'center'
   }
 };

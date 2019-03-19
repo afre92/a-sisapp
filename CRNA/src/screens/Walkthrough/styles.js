@@ -8,12 +8,12 @@ const deviceWidth = Dimensions.get("window").width;
 
 export default {
   slides: {
-    flex: 1,
+    // flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: primary,
-    height: deviceHeight,
-    width: deviceWidth
+    backgroundColor: 'transparent'//primary,
+    // height: deviceHeight,
+    // width: deviceWidth
   },
   iosText: {
     fontSize: 16,
@@ -75,5 +75,30 @@ export default {
     paddingHorizontal: 20,
     backgroundColor: "rgba(0,0,0,0.2)",
     marginBottom: 10,
+  },
+  background: {
+    flex: 1,
+    // width: null,
+    height: deviceHeight,
+    backgroundColor: primary
+  },
+    slide: {
+    flex: 1,
+    backgroundColor: 'transparent'
+  },
+  container: {
+    flex: 1,
+  },
+
+  imgBackground: {
+    Width: deviceWidth,
+    deviceHeight,
+    backgroundColor: 'transparent',
+    position: 'absolute'
+  },
+
+  image: {
+    deviceWidth,
+    deviceHeight,
   }
 };
