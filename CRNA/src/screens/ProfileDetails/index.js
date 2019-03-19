@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from "react";
-import { ImageBackground, StatusBar, Image } from "react-native";
+import { ImageBackground, StatusBar, Image, TouchableOpacity } from "react-native";
 import {
   Container,
   Content,
@@ -138,7 +138,7 @@ class ProfileDetails extends Component {
                 />
               </View>
               <View style={{alignSelf: "center", paddingTop: 20}}>
-                <Text style={{fontWeight: 'bold', paddingLeft: 10, fontSize: 20, textAlign: 'center'}}>John Doe   <Feather name="edit-3" color="white" size={20} /></Text>
+                <Text style={{fontWeight: 'bold', paddingLeft: 10, fontSize: 20, textAlign: 'center'}}>John Doe <Feather onPress={() => this.props.navigation.navigate("EditProfile")} name="edit-3" color="white" size={20} /></Text>
                 <Text style={{fontSize: 15, paddingLeft: 10, textAlign: 'center'}}>johndoe@gmail.com </Text>
               </View>
 
@@ -179,33 +179,12 @@ class ProfileDetails extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                onPress={() => this.props.navigation.navigate("BecomeASubscriber")}
                 style={styles.signOut}
               >
                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>PREMIUM</Text>
               </Button>
           </Content>
-          <Footer
-            style={{
-              paddingLeft: 20,
-              paddingRight: 20
-            }}
-          >
-            <Left style={{ flex: 1 }}>
-              <Button small transparent>
-                <Text style={styles.helpBtns}>Terms & Conditions</Text>
-              </Button>
-            </Left>
-            <Right style={{ flex: 1 }}>
-              <Button
-                small
-                transparent
-                onPress={() => this.props.navigation.navigate("Login")}
-              >
-                <Text style={styles.helpBtns}>Privacy Policy</Text>
-              </Button>
-            </Right>
-          </Footer>
         </ImageBackground>
       </Container>
     );

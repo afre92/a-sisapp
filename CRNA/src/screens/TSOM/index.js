@@ -101,7 +101,7 @@ class Home extends Component {
           <View >
           <View>
             <View style={{ paddingHorizontal: 30, paddingBottom: 40, paddingTop: 10}}>
-                <Text style={{ fontWeight: 'bold', fontSize: 35, textAlign: 'left',textDecorationLine: 'underline'}}>
+                <Text style={{ fontWeight: 'bold', fontSize: 35, textAlign: 'left'}}>
                   The Science of Meditation
                 </Text>
                   <View>
@@ -126,7 +126,6 @@ class Home extends Component {
                   <RNView>
                     <TouchableOpacity
                       activeOpacity={1}
-                      onPress={() => this.props.navigation.navigate("Story")}
                       style={styles.slide}
                     >
                       <ImageBackground
@@ -159,8 +158,6 @@ class Home extends Component {
                               >
                                 <Text
                                   style={styles.newsPosterTypeText}
-                                  onPress={() =>
-                                    this.props.navigation.navigate("Channel")}
                                 >
                                   SCIENCE
                                 </Text>
@@ -174,7 +171,6 @@ class Home extends Component {
                   <RNView>
                     <TouchableOpacity
                       activeOpacity={1}
-                      onPress={() => this.props.navigation.navigate("Story")}
                       style={styles.slide}
                     >
                       <ImageBackground
@@ -205,8 +201,6 @@ class Home extends Component {
                               >
                                 <Text
                                   style={styles.newsPosterTypeText}
-                                  onPress={() =>
-                                    this.props.navigation.navigate("Channel")}
                                 >
                                   ENVIRONMENT
                                 </Text>
@@ -220,7 +214,6 @@ class Home extends Component {
                   <RNView>
                     <TouchableOpacity
                       activeOpacity={1}
-                      onPress={() => this.props.navigation.navigate("Story")}
                       style={styles.slide}
                     >
                       <ImageBackground
@@ -252,8 +245,6 @@ class Home extends Component {
                               >
                                 <Text
                                   style={styles.newsPosterTypeText}
-                                  onPress={() =>
-                                    this.props.navigation.navigate("Channel")}
                                 >
                                   WORLD
                                 </Text>

@@ -91,11 +91,12 @@ const App = createStackNavigator(
     PrivacyPolicy: { screen: PrivacyPolicy },
     TermsAndConditions: { screen: TermsAndConditions },
     Alarms: { screen: Alarms },
-    Reminders: { screen: Reminders }
+    Reminders: { screen: Reminders },
+    Settings: { screen: Settings }
   },
   {
     index: 0,
-    initialRouteName: "Dashboard",
+    initialRouteName: "Settings",
     headerMode: "none"
   }
 );

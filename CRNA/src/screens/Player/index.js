@@ -58,7 +58,12 @@ class Player extends Component {
           >
 
               <View style={{paddingHorizontal: 20, paddingTop: 30}}>
+              <Button
+                transparent
+                onPress={() => this.props.navigation.goBack()}
+              >
                 <Icon name="arrow-back" style={{color: primary, fontSize: 40}} />
+              </Button>
               </View>
                 <View style={styles.recordCover}>
                   <Text style={{color: primary, textAlign: 'center', fontWeight: 'bold', paddingBottom: 20}}> Playlist Name</Text>
@@ -77,20 +82,19 @@ class Player extends Component {
         <View style={styles.recordInfo}>
           <View style={styles.recordInfoNames}>
               <Text style={{color: primary, textAlign: 'center', fontWeight: 'bold', fontSize: 20}}> Autor Name</Text>
-              <Text style={{color: 'black', textAlign: 'center', color: 'grey', fontSize: 'small'}}> Album Name </Text>
+              <Text style={{color: 'black', textAlign: 'center', color: 'grey', fontSize: 16}}> Album Name </Text>
           </View>
           <Slider
             step={1}
             maximumValue={100}
-            onValueChange=""
             value={this.state.value}
             minimumTrackTintColor={primary}
             trackStyle={{'height': 3}}
             thumbStyle={{width: 8, height: 8, backgroundColor: primary}}
           />
           <View style={{flexDirection: "row", flex: 1}}>
-            <Text style={{color: 'black', alignItems: 'left', flex: 1, fontSize: 'small', fontWeight: 'bold'}}>1:25</Text>
-            <Text style={{color: 'black', textAlign: 'right', flex: 1, fontSize: 'small', fontWeight: 'bold'}}>3:30</Text>
+            <Text style={{color: 'black', flex: 1, fontSize: 16, fontWeight: 'bold'}}>1:25</Text>
+            <Text style={{color: 'black', textAlign: 'right', flex: 1, fontSize: 16, fontWeight: 'bold'}}>3:30</Text>
           </View>
         </View>
         <View style={{paddingHorizontal: 20}}>

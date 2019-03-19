@@ -13,7 +13,7 @@ export default {
     marginTop: 20
   },
   forgotPasswordHeader: {
-    textDecorationLine: 'underline',
+    // textDecorationLine: 'underline',
     alignSelf: "center",
     fontSize: 40,
     padding: 10,

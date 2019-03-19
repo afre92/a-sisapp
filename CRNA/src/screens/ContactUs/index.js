@@ -111,7 +111,7 @@ class BecomeASubscriber extends Component {
           </Left>
           <Body>
            
-            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Contact</Text>
+            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Support</Text>
           </Body>
           <Right />
 

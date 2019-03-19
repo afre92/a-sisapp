@@ -136,7 +136,6 @@ class PrivacyPolicy extends Component {
                   rounded
                   block
                   bordered
-                  onPress={() => this.forgotPassword()}
                   style={styles.submit}
                 >
                   <Text style={{ color: "#FFF", fontWeight: 'bold' }}>More</Text>

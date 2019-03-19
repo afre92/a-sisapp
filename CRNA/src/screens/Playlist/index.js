@@ -45,7 +45,7 @@ class Playlist extends Component {
     return (
       <TouchableOpacity
         style={{ flexDirection: "row" }}
-        onPress={() => this.props.navigation.navigate("Story")}
+        onPress={() => this.props.navigation.navigate("Player")}
       >
         <View style={styles.newsContent}>
           <Grid style={styles.swiperContentBox}>
@@ -78,20 +78,20 @@ class Playlist extends Component {
     } else {
       return (
         <Container>
-                                <Header style={{backgroundColor: 'transparent',borderBottomColor: 'transparent'}}>
-                          <Left>
-                            <Button
-                              transparent
-                              onPress={() => this.props.navigation.goBack()}
-                            >
-                              <Icon active name="arrow-back" />
-                            </Button>
-                          </Left>
-                          <Body>
-                            <Image source={headerLogo} style={styles.imageHeader} />
-                          </Body>
-                          <Right />
-                        </Header>
+          <Header style={{backgroundColor: 'transparent',borderBottomColor: 'transparent'}}>
+            <Left>
+              <Button
+                transparent
+                onPress={() => this.props.navigation.goBack()}
+              >
+                <Icon active name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
+              <Text style={{fontWeight: 'bold', paddingTop: 5}}> My Journey </Text>
+            </Body>
+            <Right />
+          </Header>
 
           <Content
             showsVerticalScrollIndicator={false}
@@ -102,7 +102,7 @@ class Playlist extends Component {
                   <RNView>
                     <TouchableOpacity
                       activeOpacity={1}
-                      onPress={() => this.props.navigation.navigate("Story")}
+                      onPress={() => this.props.navigation.navigate("Player")}
                       style={styles.slide}
                     >
                       <ImageBackground

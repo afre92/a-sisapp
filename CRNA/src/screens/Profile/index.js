@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from "react";
-import { ImageBackground, StatusBar, Image } from "react-native";
+import { ImageBackground, StatusBar, Image, TouchableOpacity } from "react-native";
 import {
   Container,
   Content,
@@ -147,7 +147,11 @@ class Profile extends Component {
                 </Col>
                 <Col style={{width: '20%', justifyContent:'center'}}>
                 <View style={{ alignSelf: "center" }}>
-                  <Entypo active name="cog" size={30} color="white" />
+                  <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('ProfileDetails')}
+                  >
+                    <Entypo active name="cog" size={30} color="white" />
+                  </TouchableOpacity>
                   </View>
                 </Col>
               </Grid>
@@ -159,7 +163,7 @@ class Profile extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                onPress={() => this.props.navigation.navigate("ProfileDetails")}
                 style={styles.signupBtn}
               >
                 <Text style={{ color: "#FFF", fontWeight: 'bold'}}>My Account</Text>
@@ -168,7 +172,7 @@ class Profile extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                onPress={() => this.props.navigation.navigate("ContactUs")}
                 style={styles.signupBtn}
               >
                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Support</Text>
@@ -177,7 +181,7 @@ class Profile extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                onPress={() => this.props.navigation.navigate("TSOM")}
                 style={styles.signupBtn}
               >
                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>The Science of Affirmations</Text>
@@ -186,7 +190,7 @@ class Profile extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                onPress={() => this.props.navigation.navigate("FAQ")}
                 style={styles.signupBtn}
               >
                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>FAQ</Text>
@@ -196,7 +200,7 @@ class Profile extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
+                onPress={() => this.props.navigation.navigate("Login")}
                 style={styles.signOut}
               >
                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Log Out</Text>
@@ -211,7 +215,9 @@ class Profile extends Component {
             }}
           >
             <Left style={{ flex: 2 }}>
-              <Button small transparent>
+              <Button small transparent
+                onPress={() => this.props.navigation.navigate("TermsAndConditions")}
+              >
                 <Text style={styles.helpBtns}>Terms & Conditions</Text>
               </Button>
             </Left>
@@ -219,7 +225,7 @@ class Profile extends Component {
               <Button
                 small
                 transparent
-                onPress={() => this.props.navigation.navigate("Login")}
+                onPress={() => this.props.navigation.navigate("PrivacyPolicy")}
               >
                 <Text style={styles.helpBtns}>Privacy Policy</Text>
               </Button>

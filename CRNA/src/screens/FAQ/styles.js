@@ -14,7 +14,7 @@ export default {
 
   },
   forgotPasswordHeader: {
-    textDecorationLine: 'underline',
+    // textDecorationLine: 'underline',
     alignSelf: "center",
     paddingBottom: 40,
     fontSize: 30,

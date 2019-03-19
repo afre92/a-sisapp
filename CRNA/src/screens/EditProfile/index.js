@@ -174,7 +174,6 @@ class EditProfileForm extends Component {
                 rounded
                 bordered
                 block
-                onPress={() => this.props.navigation.navigate("SetUpStepOne")}
                 style={styles.submit}
               >
                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Save</Text>

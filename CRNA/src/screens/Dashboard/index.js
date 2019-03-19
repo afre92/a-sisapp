@@ -91,11 +91,14 @@ class Dashboard extends Component {
 
           <Grid>
             <Row style={{paddingRight: 5}}>
-            <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
+            <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Analytics')}>
               <Card style={{ height: 120, marginBottom: 10, borderRadius: 30}}>
                 <View style={{justifyContent: 'center'}} >
-                  <Text style={styles.cardTittle}>My Journey</Text>
+                  <Text style={styles.cardTittle}>My Stats</Text>
                 </View>
+                <Text style={{color: 'black', textAlign: 'center', paddingTop: 10, paddingHorizontal: 10}}>
+                 condimentum massa. Nam volutpat feugiat quam id porttitor.
+                </Text>
                 <View>
 
                 </View>
@@ -103,12 +106,13 @@ class Dashboard extends Component {
             </TouchableWithoutFeedback>
             </Row>
             <Row style={{paddingLeft: 5}}>
-            <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
+            <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Playlist')}>
               <Card style={{ height: 120, marginBottom: 30, borderRadius: 30}}>
                 <View style={{justifyContent: 'center',alignItems: 'center'}} >
                   <Text style={styles.cardTittle}>My Journey</Text>
                 </View>
-                <Text style={{color: 'black'}}>
+                <Text style={{color: 'black', textAlign: 'center', paddingTop: 10, paddingHorizontal: 10}}>
+                 condimentum massa. Nam volutpat feugiat quam id porttitor.
                 </Text>
               </Card>
             </TouchableWithoutFeedback>

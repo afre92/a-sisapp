@@ -143,7 +143,6 @@ class Reminders extends Component {
                   rounded
                   bordered
                   block
-                  onPress={() => this.props.navigation.navigate("SetUpStepThree")}
                   style={styles.signupBtn}
                 >
                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
