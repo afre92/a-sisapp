@@ -111,7 +111,6 @@ export default {
   },
   cardTittle: {
     flex: 1,
-    fontColor: 'black',
     color: 'black',
     textAlign: 'center',
     fontWeight: 'bold',

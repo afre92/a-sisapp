@@ -92,7 +92,7 @@ class Dashboard extends Component {
           <Grid>
             <Row style={{paddingRight: 5}}>
             <TouchableWithoutFeedback onPress={() =>  this.props.navigation.navigate('Login')}>
-              <Card style={{ height: 120, marginBottom: 30, borderRadius: 30, paddngRight: 10}}>
+              <Card style={{ height: 120, marginBottom: 10, borderRadius: 30}}>
                 <View style={{justifyContent: 'center'}} >
                   <Text style={styles.cardTittle}>My Journey</Text>
                 </View>
