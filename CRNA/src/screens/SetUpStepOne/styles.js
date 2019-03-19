@@ -7,17 +7,17 @@ const primary = require("../../theme/variables/commonColor").brandPrimary;
 const commonColor = require("../../theme/variables/commonColor");
 
 export default {
-  forgotPasswordContainer: {
+  setUpStepOneContainer: {
     paddingLeft: 20,
     paddingRight: 20,
     marginTop:
       deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 9 - 30
-          : deviceHeight / 8 - 15
+          ? deviceHeight / 9 - 10
+          : deviceHeight / 8 - 10
         : Platform.OS === "android"
-          ? deviceHeight / 7 - 30
-          : deviceHeight / 6 - 50
+          ? deviceHeight / 7 - 10
+          : deviceHeight / 6 - 10
   },
   welcome: {
     alignSelf: "center",
@@ -60,10 +60,13 @@ export default {
     paddingLeft: 10,
     color: "#FFF"
   },
-  emailBtn: {
+  button: {
     height: 50,
     marginTop: 10,
-    borderWidth: 1,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderRightWidth: 2,
+    borderLeftWidth: 2,
     borderColor: "#ddd"
   },
   helpBtns: {
@@ -90,12 +93,13 @@ export default {
   },
   welcomeText: {
     textAlign: 'center',
-    fontSize: 22
+    fontSize: 22,
+    fontWeight: 'bold'
   },
   welcomeHeader: {
     fontWeight: "bold",
     textAlign: "center",
-    fontSize: 30,
+    fontSize: 40,
     paddingBottom: 20
   }
 };

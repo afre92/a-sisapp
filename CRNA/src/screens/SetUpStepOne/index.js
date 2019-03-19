@@ -16,34 +16,9 @@ import {
 import { Field, reduxForm } from "redux-form";
 import styles from "./styles";
 
-const required = value => (value ? undefined : "Required");
-const email = value =>
-  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-    ? "Invalid email address"
-    : undefined;
-type Props = {
-  navigation: () => void
-};
-declare type Any = any;
+
 class SetUpStepOne extends Component {
-  textInput: Any;
-  state: {
-    offset: {
-      x: 0,
-      y: 0
-    }
-  };
-  props: Props;
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      offset: {
-        x: 0,
-        y: 0
-      },
-      name: ""
-    };
-  }
+
 
   render() {
     return (
@@ -53,34 +28,31 @@ class SetUpStepOne extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-          <Content contentOffset={this.state.offset}>
-
+          <Content >
             <Content padder scrollEnabled={false}>
-            <View style={styles.imageContainer}>
-              <Image source={require("../../../assets/logo-horizontal-w-text.png")} style={styles.logo}/>
-            </View>
-            <View style={styles.welcome}>
-              <Text style={styles.welcomeHeader}>
-                  WELCOME
-              </Text>
-              <Text style={styles.welcomeText}>
-                Lets Start Your Day With Love and End it with Bliss
-              </Text>
-            </View>
-              <View style={styles.forgotPasswordContainer}>
+              <View style={styles.imageContainer}>
+                <Image source={require("../../../assets/logo-horizontal.png")} style={styles.logo}/>
+              </View>
+              <View style={styles.welcome}>
+                <Text style={styles.welcomeHeader}>
+                    WELCOME
+                </Text>
+                <Text style={styles.welcomeText}>
+                  Lets Start Your Day With Love and End it with Bliss
+                </Text>
               </View>
             </Content>
 
             <Content padder scrollEnabled={false}>
-              <View style={styles.forgotPasswordContainer}>
+              <View style={styles.setUpStepOneContainer}>
                 <Button
                   rounded
                   block
                   bordered
                   onPress={() => this.props.navigation.navigate("SetUpStepTwo")}
-                  style={styles.emailBtn}
+                  style={styles.button}
                 >
-                  <Text style={{ color: "#FFF" }}>Get Started</Text>
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Get Started</Text>
                 </Button>
               </View>
             </Content>

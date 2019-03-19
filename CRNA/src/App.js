@@ -95,7 +95,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Walkthrough",
+    initialRouteName: "SetUpStepOne",
     headerMode: "none"
   }
 );
