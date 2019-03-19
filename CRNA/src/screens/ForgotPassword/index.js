@@ -116,7 +116,7 @@ class ForgotPasswordForm extends Component {
                   onPress={() => this.forgotPassword()}
                   style={styles.emailBtn}
                 >
-                  <Text style={{ color: "#FFF" }}>Send Email</Text>
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Send Email</Text>
                 </Button>
               </View>
             </Content>

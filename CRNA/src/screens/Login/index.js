@@ -137,7 +137,7 @@ class LoginForm extends Component {
                   block
                   large
                   style={styles.loginBtn}
-                  onPress={() => this.login()}
+                  onPress={() => navigation.navigate("Dashboard")}
                 >
                   <Text
                     style={
@@ -146,7 +146,7 @@ class LoginForm extends Component {
                         : { fontSize: 16, fontWeight: "900" }
                     }
                   >
-                    Get Started
+                    Login
                   </Text>
                 </Button>
 
@@ -171,26 +171,6 @@ class LoginForm extends Component {
                       <Text style={styles.helpBtns}>Forgot Password</Text>
                     </Button>
                   </Right>
-                </View>
-                <View style={{ flex: 1, alignSelf: "flex-end" }}>
-                  <Button
-                    light
-                    small
-                    transparent
-                    style={styles.skipBtn}
-                    onPress={() => {
-                      this.skip();
-                    }}
-                  >
-                    <Text
-                      style={
-                        ([styles.helpBtns],
-                        { top: Platform.OS === "ios" ? null : 0 })
-                      }
-                    >
-                      Skip
-                    </Text>
-                  </Button>
                 </View>
               </View>
             </View>

@@ -93,12 +93,14 @@ export default {
   },
   setUpReview: {
     paddingHorizontal: deviceWidth / 20,
-    marginVertical: deviceHeight / 6,
+    marginVertical: deviceHeight / 7,
   },
   recapRow: {
     paddingVertical: deviceHeight / 60,
   },
   title: {
     paddingVertical: deviceHeight / 30,
+    fontSize: 30,
+    fontWeight: 'bold'
   }
 };

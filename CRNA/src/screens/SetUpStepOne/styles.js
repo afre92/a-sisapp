@@ -13,11 +13,11 @@ export default {
     marginTop:
       deviceWidth < 330
         ? Platform.OS === "android"
-          ? deviceHeight / 9 - 10
-          : deviceHeight / 8 - 10
+          ? deviceHeight / 9 - 5
+          : deviceHeight / 8 - 5
         : Platform.OS === "android"
-          ? deviceHeight / 7 - 10
-          : deviceHeight / 6 - 10
+          ? deviceHeight / 7 - 5
+          : deviceHeight / 6 - 5
   },
   welcome: {
     alignSelf: "center",

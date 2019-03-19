@@ -95,7 +95,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "SetUpStepOne",
+    initialRouteName: "SetUpStepFour",
     headerMode: "none"
   }
 );

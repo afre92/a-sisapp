@@ -52,7 +52,7 @@ class SetUpStepOne extends Component {
                   onPress={() => this.props.navigation.navigate("SetUpStepTwo")}
                   style={styles.button}
                 >
-                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Get Started</Text>
+                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
                 </Button>
               </View>
             </Content>

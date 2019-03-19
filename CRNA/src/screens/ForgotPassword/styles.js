@@ -66,7 +66,10 @@ export default {
   emailBtn: {
     height: 50,
     marginTop: 10,
-    borderWidth: 1,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderRightWidth: 2,
+    borderLeftWidth: 2,
     borderColor: "#ddd"
   },
   helpBtns: {

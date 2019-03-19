@@ -82,7 +82,7 @@ export default {
   },
   header: {
     textAlign: 'center',
-    paddingBottom: 10,
+    paddingBottom: 30,
     fontSize: 20,
     fontWeight: '600'
   },

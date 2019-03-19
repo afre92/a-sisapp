@@ -30,10 +30,7 @@ import DaysAndTime from "../../components/DaysAndTime"
 const deviceWidth = Dimensions.get("window").width;
 
 class SetUpStepThree extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
-  }
+
 
   setDate(newDate) {
     this.setState({chosenDate: newDate});
@@ -55,17 +52,10 @@ class SetUpStepThree extends Component {
 
         <Content padder style={styles.container}>
         <Button style={styles.backArrowContainer} onPress={() => this.props.navigation.goBack()}>
-          <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
+           <Icon active name="arrow-back" />
         </Button>
-        <View>
-              <Grid>
-                <Col style={styles.currentStep}>
-                </Col>
-                <Col style={styles.currentStep}>
-                </Col>
-                <Col style={styles.progressBar}>
-                </Col>
-              </Grid>
+        <View style={{paddingBottom: 30, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{ fontWeight: 'bold',fontSize: 20}}> 2 of 3 </Text>
         </View>
 
           <DaysAndTime />

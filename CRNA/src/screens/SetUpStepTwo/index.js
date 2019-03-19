@@ -67,16 +67,9 @@ class SetUpStepTwo extends Component {
         >
 
         <Content padder style={styles.container}>
-                <View>
-              <Grid>
-                <Col style={styles.currentStep}>
-                </Col>
-                <Col style={styles.progressBar}>
-                </Col>
-                <Col style={styles.progressBar}>
-                </Col>
-              </Grid>
-        </View>
+          <View style={{paddingBottom: 30, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{ fontWeight: 'bold',fontSize: 20}}> 1 of 3 </Text>
+          </View>
 
           <DaysAndTime />
 

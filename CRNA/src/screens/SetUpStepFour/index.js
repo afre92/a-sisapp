@@ -48,23 +48,14 @@ class SetUpStepFour extends Component {
         >
 
         <Content padder style={styles.container}>
-          <Button style={styles.backArrowContainer} 
-            onPress={() => this.props.navigation.goBack()}
-            >
-            <Icon type="FontAwesome" name="arrow-left" style={{fontSize: 20}} />
-          </Button>
-          <View>
-            <Grid>
-              <Col style={styles.currentStep}>
-              </Col>
-              <Col style={styles.currentStep}>
-              </Col>
-              <Col style={styles.currentStep}>
-              </Col>
-            </Grid>
-          </View>
+        <Button style={styles.backArrowContainer} onPress={() => this.props.navigation.goBack()}>
+           <Icon active name="arrow-back" />
+        </Button>
+        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{ fontWeight: 'bold',fontSize: 20}}> 3 of 3 </Text>
+        </View>
             <View style={styles.setUpReview}>
-              <Grid style={{textAlign: 'center', justifyContent: 'center', alignItems: 'center'}}>
+              <Grid style={{justifyContent: 'center', alignItems: 'center'}}>
                 <Row>
                   <Text style={styles.title}> So, To Recap</Text>
                 </Row>

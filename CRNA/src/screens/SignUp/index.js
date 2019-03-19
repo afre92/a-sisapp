@@ -141,7 +141,7 @@ class SignUpForm extends Component {
                 onPress={() => this.props.navigation.navigate("SetUpStepOne")}
                 style={styles.signupBtn}
               >
-                <Text style={{ color: "#FFF" }}>Continue</Text>
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
               </Button>
             </View>
           </Content>
@@ -152,7 +152,11 @@ class SignUpForm extends Component {
             }}
           >
             <Left style={{ flex: 2 }}>
-              <Button small transparent>
+              <Button 
+                small
+                transparent
+                onPress={() => this.props.navigation.navigate("TermsAndConditions")}
+              >
                 <Text style={styles.helpBtns}>Terms & Conditions</Text>
               </Button>
             </Left>
