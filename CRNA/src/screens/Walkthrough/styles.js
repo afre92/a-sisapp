@@ -78,7 +78,7 @@ export default {
   },
   background: {
     flex: 1,
-    // width: null,
+    width: null,
     height: deviceHeight,
     backgroundColor: primary
   },
@@ -89,16 +89,33 @@ export default {
   container: {
     flex: 1,
   },
-
   imgBackground: {
-    Width: deviceWidth,
-    deviceHeight,
     backgroundColor: 'transparent',
     position: 'absolute'
   },
-
   image: {
     deviceWidth,
     deviceHeight,
+  },
+  dot: {
+    backgroundColor: 'rgba(255,255,255,.3)',
+    width: 13,
+    height: 13,
+    borderRadius: 7,
+    marginLeft: 7,
+    marginRight: 7
+  },
+  activeDot: {
+    backgroundColor: '#fff',
+    width: 13,
+    height: 13,
+    borderRadius: 7,
+    marginLeft: 7,
+    marginRight: 7
+  },
+  iconContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: deviceHeight/6 
   }
 };
