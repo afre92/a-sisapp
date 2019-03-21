@@ -78,15 +78,15 @@ class Analytics extends Component {
                   source={require("../../../assets/NewsIcons/4.jpg")}
                 >
                 <View flex style={{justifyContent: 'center', alignItems: 'center'}}>
-                  <Text style={{fontWeight: 'bold', fontSize: 25, paddingHorizontal: 20}}> This where the main Text is  This where the main Text is </Text>
+                  <Text style={{fontWeight: 'bold', fontSize: 25, paddingHorizontal: 20}}>This where the main Text is  This where the main Text is </Text>
                 </View>
                 <View style={{height: 70, paddingHorizontal: 20, paddingVertical: 10}}>
                   <Grid style={{height: 50}} >
-                    <Col style={{height: 50}}>
+                    <Col style={{height: 50, width: '80%'}}>
                       <Text style={{ fontWeight: 'bold'}}> John Doe </Text>
                       <Text> San Francisco, CA </Text>
                     </Col>
-                    <Col style={{height: 50}}>
+                    <Col style={{height: 50, width: '20%'}}>
                     <Feather style={{alignSelf: 'flex-end', paddingHorizontal: 20}}name="share" color="white" size={30}/>
                     </Col>
                   </Grid>

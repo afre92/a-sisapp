@@ -123,6 +123,13 @@ class Profile extends Component {
               <Icon active name="arrow-back" />
             </Button>
           </Left>
+          <Right>
+          <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Settings')}
+                  >
+                    <Entypo active name="cog" size={30} color="white" />
+                  </TouchableOpacity>
+          </Right>
           <Body>
            
             <Text style={{fontWeight: 'bold', paddingTop: 5}}> Profile </Text>
@@ -148,7 +155,7 @@ class Profile extends Component {
                 <Col style={{width: '20%', justifyContent:'center'}}>
                 <View style={{ alignSelf: "center" }}>
                   <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('ProfileDetails')}
+                    onPress={() => this.props.navigation.navigate('Settings')}
                   >
                     <Entypo active name="cog" size={30} color="white" />
                   </TouchableOpacity>

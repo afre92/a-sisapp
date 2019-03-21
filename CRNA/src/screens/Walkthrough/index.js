@@ -27,23 +27,12 @@ class Walkthrough extends Component {
             }}
             loop={false}>
             <View style={styles.slide}>
-              <Text
-                style={
-                  Platform.OS === "android"
-                    ? styles.apaginationText
-                    : styles.iospaginationText
-                }
-              >
-                1 of 3
-              </Text>
               <View style={styles.iconContainer}>
                 <Icon name="ios-paper-outline" style={styles.imageIcons} />
               </View>
               <Text
                 numberOfLines={2}
-                style={
-                  Platform.OS === "android" ? styles.aText : styles.iosText
-                }
+                style={styles.iosText}
               >
                 Explore the latest news from your mobile device
               </Text>
@@ -51,9 +40,9 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("SignUp")}
-                style={styles.emailBtn}
+                style={styles.wBtn}
               >
-                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                <View style={styles.buttonTextContainer}>
                   <Text style={{ color: "#FFF", fontWeight: "600"}}>
                     Create Account
                   </Text>
@@ -64,9 +53,9 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("Login")}
-                style={styles.emailBtn}
+                style={styles.wBtn}
               >
-              <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+              <View style={styles.buttonTextContainer}>
                 <Text style={{ color: "#FFF", fontWeight: "600"}}>
                   Login
                 </Text>
@@ -74,15 +63,12 @@ class Walkthrough extends Component {
               </Button>
             </View>
             <View style={styles.slide}>
-
               <View style={styles.iconContainer}>
                 <Icon name="ios-paper-outline" style={styles.imageIcons} />
               </View>
               <Text
                 numberOfLines={2}
-                style={
-                  Platform.OS === "android" ? styles.aText : styles.iosText
-                }
+                style={styles.iosText} 
               >
                 Explore the latest news from your mobile device
               </Text>
@@ -90,9 +76,9 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("SignUp")}
-                style={styles.emailBtn}
+                style={styles.wBtn}
               >
-                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                <View style={styles.buttonTextContainer}>
                   <Text style={{ color: "#FFF", fontWeight: "600"}}>
                     Create Account
                   </Text>
@@ -103,9 +89,9 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("Login")}
-                style={styles.emailBtn}
+                style={styles.wBtn}
               >
-              <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+              <View style={styles.buttonTextContainer}>
                 <Text style={{ color: "#FFF", fontWeight: "600"}}>
                   Login
                 </Text>
@@ -113,23 +99,12 @@ class Walkthrough extends Component {
               </Button>
             </View>
             <View style={styles.slide}>
-              <Text
-                style={
-                  Platform.OS === "android"
-                    ? styles.apaginationText
-                    : styles.iospaginationText
-                }
-              >
-                1 of 3
-              </Text>
               <View style={styles.iconContainer}>
                 <Icon name="ios-paper-outline" style={styles.imageIcons} />
               </View>
               <Text
                 numberOfLines={2}
-                style={
-                  Platform.OS === "android" ? styles.aText : styles.iosText
-                }
+                style={styles.iosText}
               >
                 Explore the latest news from your mobile device
               </Text>
@@ -137,9 +112,9 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("SignUp")}
-                style={styles.emailBtn}
+                style={styles.wBtn}
               >
-                <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+                <View style={styles.buttonTextContainer}>
                   <Text style={{ color: "#FFF", fontWeight: "600"}}>
                     Create Account
                   </Text>
@@ -150,9 +125,9 @@ class Walkthrough extends Component {
                 transparent
                 rounded
                 onPress={() => this.props.navigation.navigate("Login")}
-                style={styles.emailBtn}
+                style={styles.wBtn}
               >
-              <View style={{flex:1,justifyContent: "center",alignItems: "center"}}>
+              <View style={styles.buttonTextContainer}>
                 <Text style={{ color: "#FFF", fontWeight: "600"}}>
                   Login
                 </Text>
