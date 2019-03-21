@@ -19,7 +19,6 @@ import styles from "./styles";
 
 class SetUpStepOne extends Component {
 
-
   render() {
     return (
       <Container>

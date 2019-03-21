@@ -4,7 +4,7 @@ const {Dimensions, Platform} = React;
 const deviceWidth = Dimensions.get("window").width;
 
 export default {
-  newsContent: {
+  trackContent: {
     flexDirection: "column",
     paddingLeft: 20,
     paddingRight: 20,
@@ -12,95 +12,17 @@ export default {
     borderTopWidth: 1,
     borderTopColor: "#ddd"
   },
-  newsHeader: {
-    color: "#444",
-    fontWeight: "bold"
-  },
-  newsLink: {
-    color: Platform.OS === "android" ? "#777" : "#666",
-    fontSize: 12,
-    alignSelf: "flex-start",
-    fontWeight: "bold"
-  },
-  newsTypeView: {
-    alignSelf: "flex-end"
-  },
-  newsTypeText: {
-    color: Platform.OS === "android" ? "#777" : "#666",
-    fontSize: 12,
-    paddingBottom: 2
-  },
-  newsPoster: {
+  playlistPoster: {
     height: 330,
     width: null,
     flex: 1,
     position: "relative"
-  },
-  newsPosterHeader: {
-    fontWeight: "900"
-  },
-  newsPosterLink: {
-    opacity: 0.8,
-    fontSize: 12,
-    alignSelf: "flex-start",
-    fontWeight: "bold"
-  },
-  newsPosterTypeView: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    alignSelf: "flex-end"
-  },
-  newsPosterTypeText: {
-    opacity: 0.8,
-    fontSize: 12,
-    fontWeight: "bold",
-    paddingBottom: 2
-  },
-  timeIcon: {
-    fontSize: 20,
-    marginLeft: Platform.OS === "android" ? 15 : 0,
-    paddingLeft: Platform.OS === "android" ? 0 : 20,
-    paddingRight: 5,
-    color: "#666"
-  },
-  timePosterIcon: {
-    fontSize: 20,
-    marginLeft: Platform.OS === "android" ? 20 : 0,
-    paddingLeft: Platform.OS === "android" ? 0 : 20,
-    paddingRight: 5,
-    marginTop: Platform.OS === "android" ? -1 : -2,
-    color: "#fff"
   },
   slide: {
     flex: 1,
     width: deviceWidth,
     height: 330,
     backgroundColor: "transparent"
-  },
-  swiperTextContent: {
-    position: "absolute",
-    bottom: -5,
-    padding: 20
-  },
-  swiperDot: {
-    backgroundColor: "rgba(0,0,0,.8)",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginLeft: 3,
-    marginRight: 3,
-    marginTop: 3,
-    marginBottom: 0
-  },
-  swiperActiveDot: {
-    backgroundColor: "#fff",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginLeft: 3,
-    marginRight: 3,
-    marginTop: 3,
-    marginBottom: 0
   },
   swiperContentBox: {
     paddingTop: 15,
@@ -111,11 +33,6 @@ export default {
     flex: 1,
     width: null,
     height: null
-  },
-  logoHeader: {
-    width: 20,
-    height: 28,
-    alignSelf: "center"
   },
   text: {
     fontSize: 15,
@@ -129,16 +46,27 @@ export default {
     paddingRight: 15,
     marginLeft: Platform.OS === "ios" ? undefined : -30
   },
-  rowHeader: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignSelf: "stretch",
-    paddingTop: Platform.OS === "android" ? 0 : 0
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
   },
-  imageHeader: {
-    height: 35,
-    width: 105,
-    resizeMode: "contain"
+  headerText: {
+    fontWeight: 'bold',
+    paddingTop: 5
+  },
+  playIconContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  trackLength: {
+    color: 'grey', 
+    textAlign: 'right', 
+    height: '100%', 
+    paddingVertical: 15, 
+    fontSize: 15
+  },
+  trackLengthContainer:{
+    flexDirection: 'column'
   }
 };

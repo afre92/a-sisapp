@@ -22,7 +22,6 @@ import {
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
-// const logo = require("../../../assets/logo.png");
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 
@@ -140,6 +139,7 @@ class DaysAndTime extends Component {
             <View style={styles.datePickerContainer}>
               <Text style={styles.subHeader}> What time would you like to wake up ? </Text>
               <DatePickerIOS
+                onDateChange={() => console.log('')}
                 mode='time'
                 style={styles.datePicker}
                 date={this.state.chosenDate}

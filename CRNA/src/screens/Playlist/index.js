@@ -26,11 +26,7 @@ import {
 } from "native-base";
 
 import { Grid, Col, Row } from "react-native-easy-grid";
-import Carousel from "react-native-carousel-view";
-
 import { itemsFetchData } from "../../actions";
-import datas from "./data.json";
-
 import styles from "./styles";
 
 const deviceWidth = Dimensions.get("window").width;
@@ -38,18 +34,15 @@ const headerLogo = require("../../../assets/header-logo.png");
 const playIcon = require("../../../assets/play-icon.png")
 
 class Playlist extends Component {
-  componentDidMount() {
-    this.props.fetchData(datas);
-  }
   _renderItem = ({ item }) => {
     return (
       <TouchableOpacity
         style={{ flexDirection: "row" }}
         onPress={() => this.props.navigation.navigate("Player")}
       >
-        <View style={styles.newsContent}>
+        <View style={styles.trackContent}>
           <Grid style={styles.swiperContentBox}>
-            <Col style={{ flexDirection: "" }}>
+            <Col>
               <Row>
                 <Text style={{color: 'black', fontWeight: '500'}}>
                   Breathing 3
@@ -61,8 +54,8 @@ class Playlist extends Component {
                 </Text>
               </Row>
             </Col>
-            <Col style={{flexDirection: 'column', textAlignVertical: 'center'}}>
-              <Text style={{color: 'grey', textAlign: 'right', height: '100%', paddingVertical: 15, fontSize: 15}}>
+            <Col style={styles.trackLengthContainer}>
+              <Text style={styles.trackLength}>
                  3:04
               </Text>
             </Col>
@@ -72,13 +65,14 @@ class Playlist extends Component {
       </TouchableOpacity>
     );
   };
+
   render() {
     if (this.props.isLoading) {
       return <Spinner />;
     } else {
       return (
         <Container>
-          <Header style={{backgroundColor: 'transparent',borderBottomColor: 'transparent'}}>
+          <Header style={styles.header}>
             <Left>
               <Button
                 transparent
@@ -88,36 +82,31 @@ class Playlist extends Component {
               </Button>
             </Left>
             <Body>
-              <Text style={{fontWeight: 'bold', paddingTop: 5}}> My Journey </Text>
+              <Text style={styles.headerText}> My Journey </Text>
             </Body>
             <Right />
           </Header>
-
           <Content
             showsVerticalScrollIndicator={false}
             style={{ backgroundColor: "#fff" }}
           >
             <View>
-              <View>
-                  <RNView>
-                    <TouchableOpacity
-                      activeOpacity={1}
-                      onPress={() => this.props.navigation.navigate("Player")}
-                      style={styles.slide}
-                    >
-                      <ImageBackground
-                        style={styles.newsPoster}
-                        source={require("../../../assets/NewsIcons/4.jpg")}
-                      >
-
-
-                      <View style={{flex: 1, justifyContent: 'center',alignItems: 'center'}}>
-                        <Image style={{height: 150, width: 150}} source={playIcon} /> 
-                      </View>
-                      </ImageBackground>
-                    </TouchableOpacity>
-                  </RNView>
-              </View>
+              <RNView>
+                <TouchableOpacity
+                  activeOpacity={1}
+                  onPress={() => this.props.navigation.navigate("Player")}
+                  style={styles.slide}
+                >
+                  <ImageBackground
+                    style={styles.playlistPoster}
+                    source={require("../../../assets/NewsIcons/4.jpg")}
+                  >
+                  <View style={styles.playIconContainer}>
+                    <Image style={{height: 150, width: 150}} source={playIcon} /> 
+                  </View>
+                  </ImageBackground>
+                </TouchableOpacity>
+              </RNView>
             </View>
 
             <FlatList
@@ -132,15 +121,9 @@ class Playlist extends Component {
   }
 }
 
-function bindAction(dispatch) {
-  return {
-    fetchData: url => dispatch(itemsFetchData(url))
-  };
-}
-
 const mapStateToProps = state => ({
   items: state.homeReducer.items,
   hasErrored: state.homeReducer.hasErrored,
   isLoading: state.homeReducer.isLoading
 });
-export default connect(mapStateToProps, bindAction)(Playlist);
+export default connect(mapStateToProps)(Playlist)

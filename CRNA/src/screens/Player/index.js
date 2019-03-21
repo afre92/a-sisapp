@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   Dimensions,
   FlatList,
-  View as RNView
+  StatusBar,
+  View as RNView,
 } from "react-native";
 import { connect } from "react-redux";
 import {
@@ -25,22 +26,15 @@ import {
 } from "native-base";
 
 import { Grid, Col } from "react-native-easy-grid";
-import Carousel from "react-native-carousel-view";
 import Slider from "react-native-slider"
-
-import { itemsFetchData } from "../../actions";
-import datas from "./data.json";
-
+import commonColor from "../../theme/variables/commonColor";
 import styles from "./styles";
 
+
 const deviceWidth = Dimensions.get("window").width;
-const headerLogo = require("../../../assets/header-logo.png");
 const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 class Player extends Component {
-  componentDidMount() {
-    this.props.fetchData(datas);
-  }
 
   state = {
     value: 35
@@ -52,87 +46,98 @@ class Player extends Component {
     } else {
       return (
         <Container>
-          <Content
-            showsVerticalScrollIndicator={false}
-            style={{ backgroundColor: "#fff" }}
-          >
-
-              <View style={{paddingHorizontal: 20, paddingTop: 30}}>
+        <StatusBar
+          backgroundColor={commonColor.statusBarColor}
+          barStyle="light-content"
+        />
+        <ImageBackground
+          source={require("../../../assets/bg-signup.png")}
+          style={styles.background}
+        >
+          <Header style={styles.headerStyle}>
+            <Left>
               <Button
                 transparent
                 onPress={() => this.props.navigation.goBack()}
               >
-                <Icon name="arrow-back" style={{color: primary, fontSize: 40}} />
+                <Icon active name="arrow-back" />
               </Button>
-              </View>
-                <View style={styles.recordCover}>
-                  <Text style={{color: primary, textAlign: 'center', fontWeight: 'bold', paddingBottom: 20}}> Playlist Name</Text>
-                  <RNView>
-                    <View style={styles.slide}>
-                      <ImageBackground
-                        style={styles.newsPoster}
-                        source={require("../../../assets/NewsIcons/4.jpg")}
-                      >
-                      </ImageBackground>
-                    </View>
-                  </RNView>
+            </Left>
+            <Body>
+              <Text style={styles.headerText}> Player </Text>
+            </Body>
+            <Right />
+          </Header>
+          <Content
+            showsVerticalScrollIndicator={false}
+          >
+            <View style={styles.recordCover}>
+              <Text style={styles.playlistName}> Playlist Name</Text>
+              <RNView>
+                <View style={styles.slide}>
+                  <ImageBackground
+                    style={styles.newsPoster}
+                    source={require("../../../assets/NewsIcons/4.jpg")}
+                  >
+                  </ImageBackground>
                 </View>
+              </RNView>
+            </View>
 
+            <View style={styles.recordInfo}>
+              <View style={styles.recordInfoNames}>
+                <Text style={styles.authorName}>Author Name</Text>
+                <Text style={styles.albumName}> Album Name </Text>
+              </View>
+              <Slider
+                step={1}
+                maximumValue={100}
+                value={this.state.value}
+                minimumTrackTintColor={'#fff'}
+                trackStyle={{'height': 3}}
+                thumbStyle={styles.thumbStyle}
+              />
+              <View style={{flexDirection: "row", flex: 1}}>
+                <Text style={styles.currentStep}>1:25</Text>
+                <Text style={styles.maxStep}>3:30</Text>
+              </View>
+            </View>
 
-        <View style={styles.recordInfo}>
-          <View style={styles.recordInfoNames}>
-              <Text style={{color: primary, textAlign: 'center', fontWeight: 'bold', fontSize: 20}}> Autor Name</Text>
-              <Text style={{color: 'black', textAlign: 'center', color: 'grey', fontSize: 16}}> Album Name </Text>
-          </View>
-          <Slider
-            step={1}
-            maximumValue={100}
-            value={this.state.value}
-            minimumTrackTintColor={primary}
-            trackStyle={{'height': 3}}
-            thumbStyle={{width: 8, height: 8, backgroundColor: primary}}
-          />
-          <View style={{flexDirection: "row", flex: 1}}>
-            <Text style={{color: 'black', flex: 1, fontSize: 16, fontWeight: 'bold'}}>1:25</Text>
-            <Text style={{color: 'black', textAlign: 'right', flex: 1, fontSize: 16, fontWeight: 'bold'}}>3:30</Text>
-          </View>
-        </View>
-        <View style={{paddingHorizontal: 20}}>
-          <Grid>
-          <Col style={styles.buttonContainer}>
-            <Icon name="heart" type="FontAwesome" style={{color: 'black', fontSize: 25}} />
-          </Col>
-          <Col style={styles.buttonContainer}>
-            <Icon name="step-backward" type="FontAwesome" style={{color: 'black', fontSize: 40}} />
-          </Col>
-          <Col style={{alignItems: 'center'}}>
-            <Icon type="FontAwesome" name="play-circle" style={{color: 'black', fontSize: 80}} />
-          </Col>
-          <Col style={styles.buttonContainer}>
-           <Icon type="FontAwesome" name="step-forward" style={{color: 'black', fontSize: 40}} />
-          </Col>
-          <Col style={styles.buttonContainer}>
-            <Icon name="random" type="FontAwesome" style={{color: 'black', fontSize: 25, }} />
-          </Col>
-          </Grid>
-
-          </View>
+            <View style={{paddingHorizontal: 20}}>
+              <Grid>
+                <Col style={styles.buttonContainer}>
+                  <TouchableOpacity>
+                    <Icon name="heart" type="FontAwesome" style={{ fontSize: 25}} />
+                  </TouchableOpacity>
+                </Col>
+                <Col style={styles.buttonContainer}>
+                  <TouchableOpacity>
+                    <Icon name="step-backward" type="FontAwesome" style={{ fontSize: 40}} />
+                  </TouchableOpacity>
+                </Col>
+                <Col>
+                  <TouchableOpacity>
+                    <Icon type="FontAwesome" name="play-circle" style={{ fontSize: 75}} />
+                  </TouchableOpacity>
+                </Col>
+                <Col style={styles.buttonContainer}>
+                  <TouchableOpacity>
+                   <Icon type="FontAwesome" name="step-forward" style={{ fontSize: 40}} />
+                  </TouchableOpacity>
+                </Col>
+                <Col style={styles.buttonContainer}>
+                  <TouchableOpacity>
+                    <Icon name="random" type="FontAwesome" style={{ fontSize: 25, }} />
+                  </TouchableOpacity>
+                </Col>
+              </Grid>
+            </View>
           </Content>
+          </ImageBackground>
         </Container>
       );
     }
   }
 }
 
-function bindAction(dispatch) {
-  return {
-    fetchData: url => dispatch(itemsFetchData(url))
-  };
-}
-
-const mapStateToProps = state => ({
-  items: state.homeReducer.items,
-  hasErrored: state.homeReducer.hasErrored,
-  isLoading: state.homeReducer.isLoading
-});
-export default connect(mapStateToProps, bindAction)(Player);
+export default Player

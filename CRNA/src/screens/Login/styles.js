@@ -68,14 +68,5 @@ export default {
   input: {
     paddingLeft: 10,
     color: "#fff"
-  },
-  skipBtn: {
-    alignSelf: "flex-end",
-    marginTop: 10,
-    borderWidth: 0.3,
-    borderColor: "#FFF",
-    position: "absolute",
-    bottom: 15,
-    right: 0
   }
 };

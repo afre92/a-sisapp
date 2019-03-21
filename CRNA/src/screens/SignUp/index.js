@@ -18,7 +18,6 @@ import {
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
-// const logo = require("../../../assets/logo.png");
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 
@@ -82,18 +81,6 @@ class SignUpForm extends Component {
           : <Text style={styles.formErrorText2}>> error here</Text>}
       </View>
     );
-  }
-  signUp() {
-    if (this.props.valid) {
-      this.props.navigation.goBack();
-    } else {
-      Toast.show({
-        text: "All the fields are compulsory!",
-        duration: 2500,
-        position: "top",
-        textStyle: { textAlign: "center" }
-      });
-    }
   }
 
   render() {

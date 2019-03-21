@@ -77,34 +77,7 @@ class LoginForm extends Component {
       </View>
     );
   }
-  skip() {
-    this.props.navigation.navigate("Drawer");
-    return this.props.navigation.dispatch(
-      StackActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: "Drawer" })]
-      })
-    );
-  }
 
-  login() {
-    if (this.props.valid) {
-      this.props.navigation.navigate("Drawer");
-      return this.props.navigation.dispatch(
-        StackActions.reset({
-          index: 0,
-          actions: [NavigationActions.navigate({ routeName: "Drawer" })]
-        })
-      );
-    } else {
-      Toast.show({
-        text: "Enter Valid Username & password!",
-        duration: 2500,
-        position: "top",
-        textStyle: { textAlign: "center" }
-      });
-    }
-  }
 
   render() {
     const navigation = this.props.navigation;

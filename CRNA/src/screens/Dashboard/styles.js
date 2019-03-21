@@ -15,73 +15,20 @@ const contentMarginVertical = deviceWidth < 330
           : deviceHeight / 8 - 20
 
 export default {
-  setUpStepThree: {
-    paddingLeft: 10,
-    paddingBottom: 50,
-    paddingRight: 10,
-    marginBottom: contentMarginVertical,
-  },
   background: {
     flex: 1,
     width: null,
     height: null,
     backgroundColor: primary
   },
-  formErrorIcon: {
-    color: "#fff",
-    marginTop: 5,
-    right: 10
-  },
-  formErrorText1: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: commonColor.brandDanger,
-    textAlign: "right",
-    top: -10
-  },
-  formErrorText2: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: "transparent",
-    textAlign: "right",
-    top: -10
-  },
   input: {
     paddingLeft: 10,
     color: "#FFF"
-  },
-  signupBtn: {
-    height: 50,
-    marginTop: 10,
-    borderTopWidth: 2,
-    borderRightWidth: 2,
-    borderLeftWidth: 2,
-    borderBottomWidth: 2,
-    borderColor: "#FFF",
-  },
-  datePicker: {
-    marginVertical: deviceHeight / 20,
-    backgroundColor: 'white',
-    borderRadius: 20
-  },
-  buttonsContainer: {
-    marginTop: deviceHeight / 25
   },
   container: {
     paddingVertical: 20,
     marginVertical: 10,
   },
-  progressBar: {
-    height: 8,
-    color: '#FFFFFF',
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
-    marginHorizontal: 12
- },
- currentStep: {
-    height: 8,
-    color: '#FFFFFF',
-    backgroundColor: '#FFFFFF',
-    marginHorizontal: 12
- },
   backArrowContainer: {
     paddingLeft: 10,
     backgroundColor: 'transparent'
@@ -92,10 +39,6 @@ export default {
   },
   recapText: {
     fontSize: 17
-  },
-  setUpReview: {
-    paddingHorizontal: deviceWidth / 20,
-    marginVertical: deviceHeight / 6,
   },
   recapRow: {
     paddingVertical: deviceHeight / 60,
@@ -122,23 +65,32 @@ export default {
     position: "relative",
     marginHorizontal: 20,
   },
-  newsPosterHeader: {
-    fontWeight: "900"
+  headerStyle: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
   },
-  newsPosterLink: {
-    opacity: 0.8,
-    fontSize: 12,
-    alignSelf: "flex-start",
-    fontWeight: "bold"
+  mainTextContainer: {
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  newsPosterTypeView: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    alignSelf: "flex-end"
+  mainText: {
+    fontWeight: 'bold',
+    fontSize: 25,
+    paddingHorizontal: 20
   },
-  newsPosterTypeText: {
-    fontSize: 10,
-    fontWeight: "800",
-    paddingBottom: 2
+  shareIcon: {
+    paddingHorizontal: 25,
+    paddingVertical: 25
+  },
+  cardContainer: {
+    height: deviceHeight / 6.5, 
+    marginBottom: 10,
+    borderRadius: 30
+  },
+  cardBody: {
+    color: 'black',
+    textAlign: 'center',
+    paddingTop: 10,
+    paddingHorizontal: 10
   }
 };

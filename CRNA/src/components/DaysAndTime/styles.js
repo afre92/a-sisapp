@@ -86,11 +86,6 @@ export default {
     fontSize: 20,
     fontWeight: '600'
   },
-  container: {
-  },
-  checkBoxes: {
-    CheckboxIconSize: 50
-  },
   subHeader: {
     textAlign: 'center',
     fontSize: deviceWidth / 22,

@@ -26,24 +26,6 @@ type Props = {
 };
 declare type Any = any;
 class ForgotPasswordForm extends Component {
-  textInput: Any;
-  state: {
-    offset: {
-      x: 0,
-      y: 0
-    }
-  };
-  props: Props;
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      offset: {
-        x: 0,
-        y: 0
-      },
-      name: ""
-    };
-  }
 
   renderInput({ input, label, type, meta: { touched, error, warning } }) {
     return (
@@ -75,19 +57,6 @@ class ForgotPasswordForm extends Component {
     );
   }
 
-  forgotPassword() {
-    if (this.props.valid) {
-      this.props.navigation.goBack();
-    } else {
-      Toast.show({
-        text: "Enter Valid Email",
-        duration: 2500,
-        position: "top",
-        textStyle: { textAlign: "center" }
-      });
-    }
-  }
-
   render() {
     return (
       <Container>
@@ -96,10 +65,10 @@ class ForgotPasswordForm extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-          <Content contentOffset={this.state.offset}>
+          <Content>
             <Content padder scrollEnabled={false}>
               <Text style={styles.forgotPasswordHeader}>
-                Forgot Your Password?
+                Reset Password
               </Text>
               <View style={styles.forgotPasswordContainer}>
                 <Field
@@ -113,7 +82,6 @@ class ForgotPasswordForm extends Component {
                   rounded
                   block
                   bordered
-                  onPress={() => this.forgotPassword()}
                   style={styles.emailBtn}
                 >
                   <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Send Email</Text>

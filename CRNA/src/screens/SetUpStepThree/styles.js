@@ -32,23 +32,11 @@ export default {
     marginTop: 5,
     right: 10
   },
-  formErrorText1: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: commonColor.brandDanger,
-    textAlign: "right",
-    top: -10
-  },
-  formErrorText2: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: "transparent",
-    textAlign: "right",
-    top: -10
-  },
   input: {
     paddingLeft: 10,
     color: "#FFF"
   },
-  signupBtn: {
+  sustBtn: {
     height: 50,
     marginTop: 10,
     borderTopWidth: 2,
@@ -65,21 +53,6 @@ export default {
   buttonsContainer: {
     marginTop: deviceHeight / 25
   },
-  container: {
-  },
-  progressBar: {
-    height: 8,
-    color: '#FFFFFF',
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
-    marginHorizontal: 12
- },
- currentStep: {
-    height: 8,
-    color: '#FFFFFF',
-    backgroundColor: '#FFFFFF',
-    marginHorizontal: 12
- },
   backArrowContainer: {
     paddingLeft: 10,
     backgroundColor: 'transparent'

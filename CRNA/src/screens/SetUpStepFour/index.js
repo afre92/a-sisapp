@@ -29,12 +29,6 @@ const deviceWidth = Dimensions.get("window").width;
 
 class SetUpStepFour extends Component {
 
-  setDate(newDate) {
-    this.setState({chosenDate: newDate});
-  }
-
-  textInput: any;
-
   render() {
     return (
       <Container>
@@ -46,14 +40,13 @@ class SetUpStepFour extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-
-        <Content padder style={styles.container}>
-        <Button style={styles.backArrowContainer} onPress={() => this.props.navigation.goBack()}>
-           <Icon active name="arrow-back" />
-        </Button>
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={{ fontWeight: 'bold',fontSize: 20}}> 3 of 3 </Text>
-        </View>
+          <Content padder style={styles.container}>
+            <Button style={styles.backArrowContainer} onPress={() => this.props.navigation.goBack()}>
+               <Icon active name="arrow-back" />
+            </Button>
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                <Text style={{ fontWeight: 'bold',fontSize: 20}}> 3 of 3 </Text>
+            </View>
             <View style={styles.setUpReview}>
               <Grid style={{justifyContent: 'center', alignItems: 'center'}}>
                 <Row>
@@ -86,19 +79,19 @@ class SetUpStepFour extends Component {
               </Grid>
 
             </View>
-              <View style={styles.setUpStepFour}>
-                <View style={styles.buttonsContainer}>
-                  <Button
-                    rounded
-                    bordered
-                    block
-                    onPress={() => this.props.navigation.navigate('Dashboard')}
-                    style={styles.signupBtn}
-                  >
-                   <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
-                  </Button>
-                  </View>
-              </View>
+            <View style={styles.setUpStepFour}>
+              <View style={styles.buttonsContainer}>
+                <Button
+                  rounded
+                  bordered
+                  block
+                  onPress={() => this.props.navigation.navigate('Dashboard')}
+                  style={styles.susfBtn}
+                >
+                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
+                </Button>
+                </View>
+            </View>
           </Content>
         </ImageBackground>
       </Container>

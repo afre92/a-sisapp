@@ -64,22 +64,22 @@ const App = createStackNavigator(
   {
     DaysAndTime: { screen: DaysAndTime },
     Alarm: { screen: Alarm},
-    SetUpStepOne: { screen: SetUpStepOne },
-    SetUpStepTwo: { screen: SetUpStepTwo },
-    SetUpStepThree: { screen: SetUpStepThree },
-    SetUpStepFour: { screen: SetUpStepFour },
-    Login: { screen: Login },
-    SignUp: { screen: SignUp },
-    ForgotPassword: { screen: ForgotPassword },
-    Walkthrough: { screen: Walkthrough },
+    SetUpStepOne: { screen: SetUpStepOne }, // done
+    SetUpStepTwo: { screen: SetUpStepTwo }, // done
+    SetUpStepThree: { screen: SetUpStepThree }, // done
+    SetUpStepFour: { screen: SetUpStepFour }, // done
+    Login: { screen: Login }, // done
+    SignUp: { screen: SignUp }, //done
+    ForgotPassword: { screen: ForgotPassword }, // done
+    Walkthrough: { screen: Walkthrough }, // done
     Story: { screen: Story },
     Comments: { screen: Comments },
     Channel: { screen: Channel },
     Drawer: { screen: Drawer },
-    Dashboard: { screen: Dashboard},
-    Playlist: { screen: Playlist},
+    Dashboard: { screen: Dashboard}, // done
+    Playlist: { screen: Playlist}, // done
     Player: { screen: Player},
-    Analytics: { screen: Analytics},
+    Analytics: { screen: Analytics}, // done
     Profile: { screen: Profile },
     Profile1: { screen: Profile1 },
     ProfileDetails: { screen: ProfileDetails},
@@ -96,7 +96,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Walkthrough",
+    initialRouteName: "Player",
     headerMode: "none"
   }
 );

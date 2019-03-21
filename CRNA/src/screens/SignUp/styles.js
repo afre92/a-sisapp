@@ -26,8 +26,7 @@ export default {
     fontSize: 22,
     padding: 10,
     fontWeight: "bold",
-    color: "#FFF",
-  
+    color: "#FFF"
   },
   background: {
     flex: 1,
@@ -100,8 +99,5 @@ export default {
     resizeMode: "contain",
     height: deviceHeight / 4.5,
     alignSelf: "center"
-  },
-  Content: {
-
   }
 };

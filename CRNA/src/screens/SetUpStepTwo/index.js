@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
-import { ImageBackground, StatusBar, Image, Dimensions, DatePickerIOS } from "react-native";
+import { ImageBackground, StatusBar, Image, Dimensions} from "react-native";
 import {
   Container,
   Content,
@@ -43,16 +43,10 @@ var radio_props_two = [
 const deviceWidth = Dimensions.get("window").width;
 
 class SetUpStepTwo extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
-  }
 
   setDate(newDate) {
     this.setState({chosenDate: newDate});
   }
-
-  textInput: any;
 
   render() {
     return (
@@ -68,12 +62,12 @@ class SetUpStepTwo extends Component {
 
         <Content padder style={styles.container}>
           <View style={{paddingBottom: 30, alignItems: 'center', justifyContent: 'center'}}>
-              <Text style={{ fontWeight: 'bold',fontSize: 20}}> 1 of 3 </Text>
+            <Text style={{ fontWeight: 'bold',fontSize: 20}}> 1 of 3 </Text>
           </View>
 
           <DaysAndTime />
 
-            <View style={styles.signupContainer}>
+            <View style={styles.sustContainer}>
               <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
               <View style={styles.moodContainer}>
 
@@ -107,22 +101,12 @@ class SetUpStepTwo extends Component {
                   rounded
                   bordered
                   block
-                  onPress={() => this.signUp()}
-                  style={{display: 'none'}}
-                >
-                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
-                </Button>
-
-                <Button
-                  rounded
-                  bordered
-                  block
                   onPress={() => this.props.navigation.navigate("SetUpStepThree")}
-                  style={styles.signupBtn}
+                  style={styles.sustBtn}
                 >
                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
                 </Button>
-                </View>
+              </View>
             </View>
           </Content>
         </ImageBackground>

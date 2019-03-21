@@ -169,5 +169,44 @@ export default {
   },
   recordCover: {
     marginVertical: deviceHeight / 30
+  },
+  headerStyle: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
+  },
+  headerText: {
+    fontWeight: 'bold',
+    paddingTop: 5
+  },
+  playlistName: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    paddingBottom: 20
+  },
+  authorName: {
+    textAlign: 'center', 
+    fontWeight: 'bold', 
+    fontSize: 20
+  },
+  albumName: {
+    textAlign: 'center', 
+    opacity: 0.9, 
+    fontSize: 16
+  },
+  thumbStyle: {
+    width: 8,
+    height: 8,
+    backgroundColor: 'white'
+  },
+  currentStep: {
+    flex: 1,
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  maxStep: {
+    textAlign: 'right', 
+    flex: 1, 
+    fontSize: 16, 
+    fontWeight: 'bold'
   }
 };
