@@ -8,7 +8,7 @@ const deviceWidth = Dimensions.get("window").width;
 const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 export default {
-  signupContainer: {
+  profileDetailsContainer: {
     paddingLeft: 10,
     paddingRight: 10,
     marginTop:
@@ -20,89 +20,11 @@ export default {
           ? deviceHeight / 12 
           : deviceHeight / 35
   },
-  signupHeader: {
-    paddingBottom: 20,
-    fontSize: 22,
-    padding: 10,
-    fontWeight: "bold",
-    color: "#FFF",
-  
-  },
   background: {
     flex: 1,
     width: null,
     height: null,
     backgroundColor: primary
-  },
-  formErrorIcon: {
-    color: "#fff",
-    marginTop: 5,
-    right: 10
-  },
-  formErrorText1: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: commonColor.brandDanger,
-    textAlign: "right",
-    top: -10
-  },
-  formErrorText2: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: "transparent",
-    textAlign: "right",
-    top: -10
-  },
-  inputGrp: {
-    flexDirection: "row",
-    borderRadius: 25,
-    backgroundColor: "rgba(255,255,255,0.2)",
-    marginBottom: 10,
-    borderWidth: 0,
-    borderColor: "transparent"
-  },
-  input: {
-    paddingLeft: 10,
-    color: "#FFF"
-  },
-  signupBtn: {
-    height: 50,
-    marginTop: 18,
-    borderWidth: 1,
-    borderTopWidth: 2,
-    borderBottomWidth: 2,
-    borderLeftWidth: 2,
-    borderRightWidth: 2,
-    borderColor: "#ddd"
-  },
-  otherLinkText: {
-    alignSelf: "center",
-    opacity: 0.8,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#EFF"
-  },
-  otherLinksContainer: {
-    flexDirection: "row",
-    marginTop: 10
-  },
-  helpBtns: {
-    opacity: 0.9,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#FFF"
-  },
-  imageContainer: {
-    paddingTop: '35%',
-    flexDirection: "row",
-    alignSelf: "center"
-  },
-  logo: {
-    flex: 1,
-    resizeMode: "contain",
-    height: deviceHeight / 4.5,
-    alignSelf: "center"
-  },
-  Content: {
-
   },
   profileContainer: {
     width: '92%',
@@ -117,7 +39,7 @@ export default {
     height: 80,
     borderRadius: 40
   },
-  signOut: {
+  premium: {
     height: 50,
     marginTop: deviceHeight / 12,
     borderWidth: 1,
@@ -126,5 +48,66 @@ export default {
     borderLeftWidth: 2,
     borderRightWidth: 2,
     borderColor: "#ddd"
+  },
+  headerText:{
+    fontWeight: 'bold',
+    paddingTop: 5
+  },
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
+  },
+  userInfoContainer: {
+    alignSelf: "center",
+    paddingTop: 20
+  },
+  userName: {
+    fontWeight: 'bold', 
+    paddingLeft: 10, 
+    fontSize: 20, 
+    textAlign: 'center'
+  },
+  userEmail: {
+    fontSize: 15, 
+    paddingLeft: 10, 
+    textAlign: 'center'
+  },
+  subscriptionContainer: {
+    alignSelf: "center", 
+    marginTop: 10, 
+    borderColor: 'white', 
+    borderLeftWidth: 2, 
+    borderRightWidth: 2
+  },
+  subscriptionTitle: {
+    fontWeight: 'bold', 
+    paddingHorizontal: 20, 
+    textAlign: 'center', 
+    fontSize: 18
+  },
+  currentVersion: {
+    paddingHorizontal: 20, 
+    textAlign: 'center', 
+    fontSize: 13
+  },
+  commingSoonTitle:{
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  commingSoonText:{
+    fontSize: 17,
+    textAlign: 'center'
+  },
+  premiumFeature: {
+    flexDirection: 'row',
+    paddingVertical: 8
+  },
+  premiumFeatureText: {
+    textAlign: 'center',
+    fontWeight: '500'
+  },
+  buttonText: {
+    color: "#FFF",
+    fontWeight: 'bold'
   }
 };

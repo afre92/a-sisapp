@@ -21,26 +21,9 @@ import {
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
-// const logo = require("../../../assets/logo.png");
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 
-const required = value => (value ? undefined : "Required");
-const maxLength = max => value =>
-  value && value.length > max ? `Must be ${max} characters or less` : undefined;
-const maxLength15 = maxLength(15);
-const minLength = min => value =>
-  value && value.length < min ? `Must be ${min} characters or more` : undefined;
-const minLength8 = minLength(8);
-const minLength5 = minLength(5);
-const email = value =>
-  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-    ? "Invalid email address"
-    : undefined;
-const alphaNumeric = value =>
-  value && /[^a-zA-Z0-9 ]/i.test(value)
-    ? "Only alphanumeric characters"
-    : undefined;
 
 class EditProfileForm extends Component {
   textInput: any;
@@ -89,18 +72,6 @@ class EditProfileForm extends Component {
       </View>
     );
   }
-  signUp() {
-    if (this.props.valid) {
-      this.props.navigation.goBack();
-    } else {
-      Toast.show({
-        text: "All the fields are compulsory!",
-        duration: 2500,
-        position: "top",
-        textStyle: { textAlign: "center" }
-      });
-    }
-  }
 
   render() {
     return (
@@ -113,7 +84,7 @@ class EditProfileForm extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-        <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+        <Header style={styles.header}>
           <Left>
             <Button
               transparent
@@ -123,8 +94,7 @@ class EditProfileForm extends Component {
             </Button>
           </Left>
           <Body>
-           
-            <Text style={{fontWeight: 'bold', paddingTop: 5}}>Edit Profile</Text>
+            <Text style={styles.headerText}>Edit Profile</Text>
           </Body>
           <Right />
         </Header>
@@ -133,43 +103,37 @@ class EditProfileForm extends Component {
               <Thumbnail
                 imageStyle=""
                 source={require("../../../assets/Contacts/profile.png")}
-                style={{width: 100, height: 100, borderRadius: 50}}
+                style={styles.userAvatar}
               />
-
             </View>
             <View style={{ alignSelf: "center", paddingVertical: 10}}>
               <Text style={{fontSize: 15, textDecorationLine: 'underline' }}> Change </Text>
             </View>
 
-            <View style={styles.signupContainer}>
-            <Text style={styles.signupHeader}>UPDATE YOUR ACCOUNT DETAILS</Text>
+            <View style={styles.editProfileContainer}>
+            <Text style={styles.editProfileHeader}>UPDATE YOUR ACCOUNT DETAILS</Text>
               <Field
                 name="username"
                 component={this.renderInput}
                 type="text"
-                validate={[required, alphaNumeric, minLength5]}
               />
 
               <Field
                 name="email"
                 component={this.renderInput}
                 type="email"
-                valie
-                validate={[email, required]}
               />
               <Field
                 name="password"
                 component={this.renderInput}
                 type="password"
-                validate={[alphaNumeric, minLength8, maxLength15, required]}
               />
               <Field
                 name="passwordConfirm"
                 component={this.renderInput}
                 type="passwordConfirm"
-                validate={[alphaNumeric, minLength8, maxLength15, required]}
-              />
 
+              />
               <Button
                 rounded
                 bordered

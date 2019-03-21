@@ -19,90 +19,13 @@ import {
   Header,
   Body
 } from "native-base";
-import { Field, reduxForm } from "redux-form";
-
-// const logo = require("../../../assets/logo.png");
 
 import { Entypo, Feather, FontAwesome } from '@expo/vector-icons';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
-const headerLogo = require("../../../assets/header-logo.png");
-
-const required = value => (value ? undefined : "Required");
-const maxLength = max => value =>
-  value && value.length > max ? `Must be ${max} characters or less` : undefined;
-const maxLength15 = maxLength(15);
-const minLength = min => value =>
-  value && value.length < min ? `Must be ${min} characters or more` : undefined;
-const minLength8 = minLength(8);
-const minLength5 = minLength(5);
-const email = value =>
-  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-    ? "Invalid email address"
-    : undefined;
-const alphaNumeric = value =>
-  value && /[^a-zA-Z0-9 ]/i.test(value)
-    ? "Only alphanumeric characters"
-    : undefined;
 
 class ProfileDetails extends Component {
-  textInput: any;
-  renderInput({ input, label, type, meta: { touched, error, warning } }) {
-    return (
-      <View>
-        <Item error={error && touched} rounded style={styles.inputGrp}>
-          <Icon
-            active
-            name={
-              input.name === "username"
-                ? "person"
-                : input.name === "email" ? "mail" : "unlock"
-            }
-            style={{ color: "#fff" }}
-          />
-          <Input
-            ref={c => (this.textInput = c)}
-            placeholderTextColor="#FFF"
-            style={styles.input}
-            placeholder={
-              input.name === "username"
-                ? "Username"
-                : input.name === "email" ? "Email" : "Password"
-            }
-            secureTextEntry={input.name === "password" ? true : false}
-            {...input}
-          />
-          {touched && error
-            ? <Icon
-                active
-                style={styles.formErrorIcon}
-                onPress={() => this.textInput._root.clear()}
-                name="close"
-              />
-            : <Text />}
-        </Item>
-        {touched && error
-          ? <Text style={styles.formErrorText1}>
-              {error}
-            </Text>
-          : <Text style={styles.formErrorText2}>> error here</Text>}
-      </View>
-    );
-  }
-  signUp() {
-    if (this.props.valid) {
-      this.props.navigation.goBack();
-    } else {
-      Toast.show({
-        text: "All the fields are compulsory!",
-        duration: 2500,
-        position: "top",
-        textStyle: { textAlign: "center" }
-      });
-    }
-  }
-
   render() {
     return (
       <Container>
@@ -114,7 +37,7 @@ class ProfileDetails extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-        <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+        <Header style={styles.header}>
           <Left>
             <Button
               transparent
@@ -124,8 +47,7 @@ class ProfileDetails extends Component {
             </Button>
           </Left>
           <Body>
-           
-            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Profile Details</Text>
+            <Text style={styles.headerText}> Profile Details</Text>
           </Body>
           <Right />
         </Header>
@@ -137,41 +59,72 @@ class ProfileDetails extends Component {
                   style={styles.profilePic}
                 />
               </View>
-              <View style={{alignSelf: "center", paddingTop: 20}}>
-                <Text style={{fontWeight: 'bold', paddingLeft: 10, fontSize: 20, textAlign: 'center'}}>John Doe <Feather onPress={() => this.props.navigation.navigate("EditProfile")} name="edit-3" color="white" size={20} /></Text>
-                <Text style={{fontSize: 15, paddingLeft: 10, textAlign: 'center'}}>johndoe@gmail.com </Text>
+              <View style={styles.userInfoContainer}>
+                <Text style={styles.userName}>
+                  John Doe 
+                  <Feather 
+                    onPress={() => this.props.navigation.navigate("EditProfile")} 
+                    name="edit-3" 
+                    color="white" 
+                    size={20} 
+                  />
+                </Text>
+                <Text style={styles.userEmail}>johndoe@gmail.com </Text>
               </View>
 
-              <View style={{alignSelf: "center", marginTop: 10, borderColor: 'white', borderLeftWidth: 2, borderRightWidth: 2, display: 'none'}}>
-
-                  <Text style={{fontWeight: 'bold', paddingHorizontal: 20, textAlign: 'center', fontSize: 18}}>Subscription</Text>
-
-                  <Text style={{paddingHorizontal: 20, textAlign: 'center', fontSize: 13}}>FREE VERSION</Text>
- 
+              <View style={styles.subscriptionContainer}>
+                <Text style={styles.subscriptionTitle}>Subscription</Text>
+                <Text style={styles.currentVersion}>FREE VERSION</Text>
               </View>
             </View>
 
             <View style={{alignSelf: "center"}}>
-              <Text style={{fontSize: 20, fontWeight: 'bold'}}> Unlock A.SIS Premium </Text>
-              <Text  style={{fontSize: 17, textAlign: 'center'}}> Comming Soon</Text>
+              <Text style={styles.commingSoonTitle}> Unlock A.SIS Premium </Text>
+              <Text  style={styles.commingSoonText}> Comming Soon</Text>
             </View>
 
-            <View style={styles.signupContainer}>
+            <View style={styles.profileDetailsContainer}>
             <Grid>
-              <Row style={{flexDirection: 'row', paddingVertical: 8}}>
-                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              <Row style={styles.premiumFeature}>
+                <FontAwesome 
+                  name="check" 
+                  color="white" 
+                  size={20}
+                />
+                <Text style={styles.premiumFeatureText}>
+                  Excepteur sint occaecat cupidatat non proident, sunt 
+                </Text>
               </Row>
-              <Row style={{flexDirection: 'row', paddingVertical: 8}}>
-                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              <Row style={styles.premiumFeature}>
+                <FontAwesome 
+                  name="check" 
+                  color="white" 
+                  size={20}
+                />
+                <Text style={styles.premiumFeatureText}>
+                  Excepteur sint occaecat cupidatat non proident, sunt 
+                </Text>
               </Row>
-                <Row style={{flexDirection: 'row', paddingVertical: 8}}>
-                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              <Row style={styles.premiumFeature}>
+                <FontAwesome 
+                  name="check" 
+                  color="white" 
+                  size={20}
+                />
+                <Text style={styles.premiumFeatureText}>
+                  Excepteur sint occaecat cupidatat non proident, sunt 
+                </Text>
               </Row>
-                <Row style={{flexDirection: 'row', paddingVertical: 8}}>
-                <FontAwesome name="check" color="white" size={20} /><Text style={{textAlign: 'center', fontWeight: '500'}}>Excepteur sint occaecat cupidatat non proident, sunt </Text>
+              <Row style={styles.premiumFeature}>
+                <FontAwesome 
+                  name="check" 
+                  color="white" 
+                  size={20}
+                />
+                <Text style={styles.premiumFeatureText}>
+                  Excepteur sint occaecat cupidatat non proident, sunt 
+                </Text>
               </Row>
-
-
             </Grid>
 
             </View>
@@ -180,9 +133,9 @@ class ProfileDetails extends Component {
                 bordered
                 block
                 onPress={() => this.props.navigation.navigate("BecomeASubscriber")}
-                style={styles.signOut}
+                style={styles.premium}
               >
-                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>PREMIUM</Text>
+                <Text style={styles.buttonText}>PREMIUM</Text>
               </Button>
           </Content>
         </ImageBackground>

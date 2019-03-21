@@ -43,10 +43,6 @@ var radio_props_two = [
 ];
 
 class Alarms extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
-  }
 
   setDate(newDate) {
     this.setState({chosenDate: newDate});
@@ -65,7 +61,7 @@ class Alarms extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-                <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+        <Header style={styles.header}>
           <Left>
             <Button
               transparent
@@ -75,76 +71,69 @@ class Alarms extends Component {
             </Button>
           </Left>
           <Body>
-           
-            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Alarms </Text>
+            <Text style={styles.headerText}> Alarms </Text>
           </Body>
           <Right />
         </Header>
-
         <Content padder style={styles.container}>
-        <View style={{ alignItems: 'center'}}>
-          <AnalogClock
-            size={150}
-            colorClock="rgba(255,255,255,0.1)"
-            hour="2"
-            minutes={55}
+          <View style={{ alignItems: 'center'}}>
+            <AnalogClock
+              size={150}
+              colorClock="rgba(255,255,255,0.1)"
+              hour="2"
+              minutes={55}
           />
         </View>
           <DaysAndTime />
-                      <View style={styles.signupContainer}>
-              <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
-              <View style={styles.moodContainer}>
+          <View style={styles.AlarmsContainer}>
+            <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
+            <View style={styles.moodContainer}>
 
-                <RadioForm
-                  radio_props={radio_props_one}
-                  buttonColor={'#FFFFFF'}
-                  initial={-1}
-                  labelHorizontal={false}
-                  formHorizontal={true}
-                  buttonSize={50}
-                  selectedButtonColor={'#FFFFFF'}
-                  labelStyle={styles.labelStyle}
-                  onPress={(value) => {this.setState({value:value})}}
-                />
+              <RadioForm
+                radio_props={radio_props_one}
+                buttonColor={'#FFFFFF'}
+                initial={-1}
+                labelHorizontal={false}
+                formHorizontal={true}
+                buttonSize={50}
+                selectedButtonColor={'#FFFFFF'}
+                labelStyle={styles.labelStyle}
+                onPress={(value) => {this.setState({value:value})}}
+              />
 
-                <RadioForm
-                  radio_props={radio_props_two}
-                  buttonColor={'#FFFFFF'}
-                  initial={-1}
-                  labelHorizontal={false}
-                  formHorizontal={true}
-                  buttonSize={50}
-                  selectedButtonColor={'#FFFFFF'}
-                  labelStyle={styles.labelStyle}
-                  onPress={(value) => {this.setState({value:value})}}
-                />
-              </View>
-
-              <View style={styles.buttonsContainer}>
-                <Button
-                  rounded
-                  bordered
-                  block
-                  onPress={() => this.signUp()}
-                  style={{display: 'none'}}
-                >
-                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
-                </Button>
-
-                <Button
-                  rounded
-                  bordered
-                  block
-                  style={styles.signupBtn}
-                >
-                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
-                </Button>
-                </View>
+              <RadioForm
+                radio_props={radio_props_two}
+                buttonColor={'#FFFFFF'}
+                initial={-1}
+                labelHorizontal={false}
+                formHorizontal={true}
+                buttonSize={50}
+                selectedButtonColor={'#FFFFFF'}
+                labelStyle={styles.labelStyle}
+                onPress={(value) => {this.setState({value:value})}}
+              />
             </View>
+            <View style={styles.buttonsContainer}>
+              <Button
+                rounded
+                bordered
+                block
+                onPress={() => this.signUp()}
+                style={{display: 'none'}}
+              >
+                <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Another Alarm</Text>
+              </Button>
 
-            <View style={styles.setUpStepThree}>
-
+              <Button
+                rounded
+                bordered
+                block
+                style={styles.signupBtn}
+              >
+               <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
+              </Button>
             </View>
+          </View>
           </Content>
         </ImageBackground>
       </Container>

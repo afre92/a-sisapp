@@ -51,16 +51,10 @@ var radio_props_two = [
 const deviceWidth = Dimensions.get("window").width;
 
 class Reminders extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), itemSelected: 'calm' }
-  }
 
   setDate(newDate) {
     this.setState({chosenDate: newDate});
   }
-
-  textInput: any;
 
   render() {
     return (
@@ -73,7 +67,7 @@ class Reminders extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
-        <Header style={{backgroundColor: 'transparent', borderBottomColor: 'transparent'}}>
+        <Header style={styles.header}>
           <Left>
             <Button
               transparent
@@ -83,26 +77,22 @@ class Reminders extends Component {
             </Button>
           </Left>
           <Body>
-           
-            <Text style={{fontWeight: 'bold', paddingTop: 5}}> Reminders </Text>
+            <Text style={styles.headerText}> Reminders </Text>
           </Body>
           <Right />
         </Header>
 
         <Content padder style={styles.container}>
 
-        <View style={{ alignItems: 'center'}}>
-          <View style={styles.reminderIcon}>
-            
-            <Entypo name="bell"  color="white" size={60}/>
+          <View style={{ alignItems: 'center'}}>
+            <View style={styles.reminderIcon}>
+              <Entypo name="bell"  color="white" size={60}/>
+            </View>
           </View>
-        </View>
           <DaysAndTime />
-
-            <View style={styles.signupContainer}>
+            <View style={styles.remindersContainer}>
               <Text style={styles.subHeader}> How would you like to (wake) up ? </Text>
               <View style={styles.moodContainer}>
-
                 <RadioForm
                   radio_props={radio_props_one}
                   buttonColor={'#FFFFFF'}
@@ -148,21 +138,6 @@ class Reminders extends Component {
                  <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Continue</Text>
                 </Button>
                 </View>
-            </View>
-
-            <View style={styles.setUpStepThree}>
-                  <Card style={{ height: 90, borderRadius: 30, display: 'none'}}>
-                    <View style={{justifyContent: 'center'}} >
-                      <Text style={styles.cardTittle}>  Session Completed</Text>
-                    </View>
-                    <CardItem style={{backgroundColor: 'transparent',textAlign: 'center', justifyContent: 'center'}}>
-                        <Text style={{color: 'black'}}>
-                          12 Sessions
-                        </Text>
-                    </CardItem>
-
-                  </Card>
-
             </View>
           </Content>
         </ImageBackground>

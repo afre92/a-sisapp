@@ -78,25 +78,25 @@ const App = createStackNavigator(
     Drawer: { screen: Drawer },
     Dashboard: { screen: Dashboard}, // done
     Playlist: { screen: Playlist}, // done
-    Player: { screen: Player},
+    Player: { screen: Player}, // done
     Analytics: { screen: Analytics}, // done
-    Profile: { screen: Profile },
+    Profile: { screen: Profile }, // done
     Profile1: { screen: Profile1 },
-    ProfileDetails: { screen: ProfileDetails},
-    EditProfile: { screen: EditProfile},
-    BecomeASubscriber: { screen: BecomeASubscriber},
-    ContactUs: { screen: ContactUs },
-    TSOM: { screen: TSOM },
-    FAQ: { screen: FAQ },
-    PrivacyPolicy: { screen: PrivacyPolicy },
-    TermsAndConditions: { screen: TermsAndConditions },
-    Alarms: { screen: Alarms },
-    Reminders: { screen: Reminders },
-    Settings: { screen: Settings }
+    ProfileDetails: { screen: ProfileDetails}, // done
+    EditProfile: { screen: EditProfile}, // done
+    BecomeASubscriber: { screen: BecomeASubscriber}, // done
+    ContactUs: { screen: ContactUs }, // done
+    TSOM: { screen: TSOM }, // done
+    FAQ: { screen: FAQ }, // done
+    PrivacyPolicy: { screen: PrivacyPolicy }, // done
+    TermsAndConditions: { screen: TermsAndConditions }, // done
+    Alarms: { screen: Alarms }, // done
+    Reminders: { screen: Reminders }, // done
+    Settings: { screen: Settings } // done
   },
   {
     index: 0,
-    initialRouteName: "Player",
+    initialRouteName: "Settings",
     headerMode: "none"
   }
 );

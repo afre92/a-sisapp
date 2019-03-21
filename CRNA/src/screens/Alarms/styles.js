@@ -15,38 +15,11 @@ const contentMarginVertical = deviceWidth < 330
           : deviceHeight / 10 - 20
 
 export default {
-  setUpStepThree: {
-    paddingLeft: 10,
-    paddingBottom: 50,
-    paddingRight: 10,
-    marginBottom: contentMarginVertical - 20,
-  },
   background: {
     flex: 1,
     width: null,
     height: null,
     backgroundColor: primary
-  },
-  formErrorIcon: {
-    color: "#fff",
-    marginTop: 5,
-    right: 10
-  },
-  formErrorText1: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: commonColor.brandDanger,
-    textAlign: "right",
-    top: -10
-  },
-  formErrorText2: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: "transparent",
-    textAlign: "right",
-    top: -10
-  },
-  input: {
-    paddingLeft: 10,
-    color: "#FFF"
   },
   signupBtn: {
     height: 50,
@@ -55,43 +28,7 @@ export default {
     borderLeftWidth: 2,
     borderBottomWidth: 2,
     borderColor: "#FFF",
-  },
-  datePicker: {
-    marginVertical: deviceHeight / 20,
-    backgroundColor: 'white',
-    borderRadius: 20
-  },
-  buttonsContainer: {
-    // marginTop: deviceHeight / 25
-  },
-  container: {
-  },
-  progressBar: {
-    height: 8,
-    color: '#FFFFFF',
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
-    marginHorizontal: 12
- },
- currentStep: {
-    height: 8,
-    color: '#FFFFFF',
-    backgroundColor: '#FFFFFF',
-    marginHorizontal: 12
- },
-  backArrowContainer: {
-    paddingLeft: 10,
-    backgroundColor: 'transparent'
-  },
-  reminderIcon: {
-    borderColor: 'white',
-    borderTopWidth: 3,
-    borderRightWidth: 3,
-    borderLeftWidth: 3,
-    borderBottomWidth: 3,
-    borderRadius: '80%',
-    padding: '9%',
-    backgroundColor: "rgba(255,255,255,0.2)",
+    marginBottom: 30
   },
   moodContainer: {
     marginBottom: deviceHeight / 20,
@@ -106,7 +43,7 @@ export default {
     paddingVertical: deviceWidth / 10,
     backgroundColor: 'rgba(255, 255, 255, .2)'
   },
-  signupContainer: {
+  AlarmsContainer: {
     paddingLeft: 10,
     paddingRight: 10,
   },
@@ -116,12 +53,24 @@ export default {
     fontWeight: 'bold'
   },
   labelStyle: {
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: '600',
     color: '#fff', 
     paddingTop: 20, 
     paddingBottom: 10,
     width: deviceWidth / 5,
     textAlign: 'center'
+  },
+  headerText:{
+    fontWeight: 'bold',
+    paddingTop: 5
+  },
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
+  },
+  buttonText: {
+    color: "#FFF", 
+    fontWeight: 'bold'
   }
 };

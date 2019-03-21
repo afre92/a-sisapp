@@ -76,7 +76,7 @@ class Player extends Component {
               <RNView>
                 <View style={styles.slide}>
                   <ImageBackground
-                    style={styles.newsPoster}
+                    style={styles.trackArt}
                     source={require("../../../assets/NewsIcons/4.jpg")}
                   >
                   </ImageBackground>

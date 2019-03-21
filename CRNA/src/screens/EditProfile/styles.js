@@ -8,7 +8,7 @@ const deviceWidth = Dimensions.get("window").width;
 const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 export default {
-  signupContainer: {
+  editProfileContainer: {
     paddingLeft: 20,
     paddingRight: 20,
     marginTop:
@@ -20,7 +20,7 @@ export default {
           ? deviceHeight / 9 - 100
           : deviceHeight / 8 - 100
   },
-  signupHeader: {
+  editProfileHeader: {
     paddingBottom: 20,
     alignSelf: "center",
     fontSize: 18,
@@ -28,7 +28,6 @@ export default {
     fontWeight: "bold",
     color: "#FFF",
     textAlign: 'center'
-  
   },
   background: {
     flex: 1,
@@ -65,43 +64,11 @@ export default {
     paddingLeft: 10,
     color: "#FFF"
   },
-  signupBtn: {
-    height: 50,
-    marginTop: 10,
-    borderWidth: 1,
-    borderColor: "#ddd"
-  },
-  otherLinkText: {
-    alignSelf: "center",
-    opacity: 0.8,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#EFF"
-  },
-  otherLinksContainer: {
-    flexDirection: "row",
-    marginTop: 10
-  },
-  helpBtns: {
-    opacity: 0.9,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#FFF"
-  },
   imageContainer: {
     paddingTop: '5%',
     paddingBottom: '5%',
     flexDirection: "row",
     alignSelf: "center"
-  },
-  logo: {
-    flex: 1,
-    resizeMode: "contain",
-    height: deviceHeight / 4.5,
-    alignSelf: "center"
-  },
-  Content: {
-
   },
   submit: {
     height: 50,
@@ -112,5 +79,18 @@ export default {
     borderLeftWidth: 2,
     borderRightWidth: 2,
     borderColor: "#ddd"
+  },
+  headerText:{
+    fontWeight: 'bold',
+    paddingTop: 5
+  },
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
+  },
+  userAvatar: {
+    width: 100, 
+    height: 100, 
+    borderRadius: 50
   }
 };

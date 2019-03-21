@@ -7,13 +7,12 @@ const primary = require("../../theme/variables/commonColor").brandPrimary;
 const commonColor = require("../../theme/variables/commonColor");
 
 export default {
-  forgotPasswordContainer: {
+  contactUsContainer: {
     paddingLeft: 20,
     paddingRight: 20,
     marginTop: 20
   },
-  forgotPasswordHeader: {
-    // textDecorationLine: 'underline',
+  contactUsHeader: {
     alignSelf: "center",
     fontSize: 40,
     padding: 10,
@@ -28,56 +27,25 @@ export default {
     height: deviceHeight,
     backgroundColor: primary
   },
-  formErrorIcon: {
-    color: "#fff",
-    marginTop: 5,
-    right: 10
+  headerText:{
+    fontWeight: 'bold',
+    paddingTop: 5
   },
-  formErrorText1: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: commonColor.brandDanger,
-    textAlign: "right",
-    top: -10
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
   },
-  formErrorText2: {
-    fontSize: Platform.OS === "android" ? 12 : 15,
-    color: "transparent",
-    textAlign: "right",
-    top: -10
+  mainText: {
+    color: "#FFF", 
+    textAlign: 'center', 
+    paddingBottom: 20, 
+    fontWeight: '500', 
+    fontSize: 23
   },
-  inputGrp: {
-    flexDirection: "row",
-    borderRadius: 25,
-    backgroundColor: "rgba(255,255,255,0.2)",
-    marginBottom: 10,
-    borderWidth: 0,
-    borderColor: "transparent"
-  },
-  input: {
-    paddingLeft: 10,
-    color: "#FFF"
-  },
-  emailBtn: {
-    height: 50,
-    marginTop: 10,
-    borderWidth: 1,
-    borderColor: "#ddd"
-  },
-  helpBtns: {
-    opacity: 0.9,
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "#FFF"
-  },
-  submit: {
-    height: 50,
-    marginTop: deviceHeight / 30,
-    borderWidth: 1,
-    borderTopWidth: 2,
-    borderBottomWidth: 2,
-    borderLeftWidth: 2,
-    borderRightWidth: 2,
-    borderColor: "#ddd",
-    color: "#fff"
+  contactInfo: {
+    color: "#FFF",
+    textAlign: 'center',
+    paddingBottom: 20,
+    fontWeight: '500'
   }
 };

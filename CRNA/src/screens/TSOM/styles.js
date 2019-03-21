@@ -8,78 +8,15 @@ const commonColor = require("../../theme/variables/commonColor");
 
 
 export default {
-  newsContent: {
-    flexDirection: "column",
-    paddingTop: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
-    flex: 1,
-    borderTopWidth: 1,
-    borderTopColor: "#ddd"
-  },
-  newsHeader: {
-    color: "#444",
-    fontWeight: "bold"
-  },
-  newsLink: {
-    color: Platform.OS === "android" ? "#777" : "#666",
-    fontSize: 12,
-    alignSelf: "flex-start",
-    fontWeight: "bold"
-  },
-  newsTypeView: {
-    borderBottomWidth: 1,
-    borderBottomColor: Platform.OS === "android" ? "#777" : "#666",
-    alignSelf: "flex-end"
-  },
-  newsTypeText: {
-    color: Platform.OS === "android" ? "#777" : "#666",
-    fontSize: 12,
-    fontWeight: "bold",
-    paddingBottom: 2
-  },
-  newsPoster: {
+  meditationPoster: {
     height: 280,
     width: null,
     flex: 1,
     position: "relative",
     marginHorizontal: 20
   },
-  newsPosterHeader: {
+  meditationPosterHeader: {
     fontWeight: "900"
-  },
-  newsPosterLink: {
-    opacity: 0.8,
-    fontSize: 12,
-    alignSelf: "flex-start",
-    fontWeight: "bold"
-  },
-  newsPosterTypeView: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    alignSelf: "flex-end"
-  },
-  newsPosterTypeText: {
-    opacity: 0.8,
-    fontSize: 12,
-    fontWeight: "bold",
-    paddingBottom: 2
-  },
-  timeIcon: {
-    fontSize: 20,
-    marginLeft: Platform.OS === "android" ? 15 : 0,
-    paddingLeft: Platform.OS === "android" ? 0 : 20,
-    paddingRight: 5,
-    marginTop: Platform.OS === "android" ? -1 : -3,
-    color: "#666"
-  },
-  timePosterIcon: {
-    fontSize: 20,
-    marginLeft: Platform.OS === "android" ? 20 : 0,
-    paddingLeft: Platform.OS === "android" ? 0 : 20,
-    paddingRight: 5,
-    marginTop: Platform.OS === "android" ? -1 : -2,
-    color: "#fff"
   },
   slide: {
     flex: 1,
@@ -90,7 +27,8 @@ export default {
   swiperTextContent: {
     position: "absolute",
     bottom: -5,
-    padding: 20
+    padding: 20,
+    paddingBottom: 50
   },
   swiperDot: {
     backgroundColor: "rgba(0,0,0,.8)",
@@ -155,5 +93,29 @@ export default {
     width: null,
     height: deviceHeight,
     backgroundColor: primary
-  }
+  },
+  headerText:{
+    fontWeight: 'bold',
+    paddingTop: 5
+  },
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
+  },
+  mainContainer: {
+    paddingHorizontal: 30, 
+    paddingBottom: 40, 
+    paddingTop: 10
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 35,
+    textAlign: 'left'
+  },
+  subtitle: {
+    color: 'white', 
+    fontSize: 22, 
+    textAlign: 'left', 
+    paddingTop: 30
+  },
 };
