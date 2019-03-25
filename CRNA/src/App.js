@@ -39,6 +39,7 @@ import PrivacyPolicy from "./screens/PrivacyPolicy";
 import TermsAndConditions from "./screens/TermsAndConditions";
 import Alarms from "./screens/Alarms";
 import Reminders from "./screens/Reminders";
+import DailyNotification from "./screens/DailyNotification";
 
 
 
@@ -92,11 +93,12 @@ const App = createStackNavigator(
     TermsAndConditions: { screen: TermsAndConditions }, // done
     Alarms: { screen: Alarms }, // done
     Reminders: { screen: Reminders }, // done
-    Settings: { screen: Settings } // done
+    Settings: { screen: Settings }, // done
+    DailyNotification: { screen: DailyNotification }
   },
   {
     index: 0,
-    initialRouteName: "Settings",
+    initialRouteName: "Login",
     headerMode: "none"
   }
 );

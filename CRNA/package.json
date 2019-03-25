@@ -66,6 +66,7 @@
     "redux-thunk": "2.3.0",
     "remote-redux-devtools": "0.5.13",
     "remote-redux-devtools-on-debugger": "^0.8.3",
+    "toggle-switch-react-native": "^2.0.2",
     "whatwg-fetch": "^2.0.4"
   }
 }
