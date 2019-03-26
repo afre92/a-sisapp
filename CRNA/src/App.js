@@ -98,7 +98,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Login",
+    initialRouteName: "DailyNotification",
     headerMode: "none"
   }
 );

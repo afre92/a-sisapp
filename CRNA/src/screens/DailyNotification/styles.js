@@ -55,7 +55,7 @@ export default {
     borderBottomColor: 'transparent'
   },
   mainContainer: {
-   paddingVertical: contentMarginVertical + 200 
+   paddingVertical: contentMarginVertical + 50
   },
   thumbStyle: {
     width: 8,

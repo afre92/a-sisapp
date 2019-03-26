@@ -26,7 +26,8 @@ import ToggleSwitch from 'toggle-switch-react-native'
 class DailyNotification extends Component {
 
   state = {
-    value: 1
+    value: 1,
+    swichToggle: false
   };
 
   render() {
@@ -54,40 +55,57 @@ class DailyNotification extends Component {
           <Content>
             <View style={styles.mainContainer}>
               <Grid>
-                <Row>
-                  <View style={{paddingHorizontal: 20}}>
-                    <Text style={{textAlign: 'center'}} >Get Daily affirmations to keep you mindful during the day</Text>
+                <Row style={{marginVertical: 25}}>
+                  <View style={{paddingHorizontal: 30}}>
+                    <Text style={{textAlign: 'center', fontWeight: '600'}} >Get Daily affirmations to keep you mindful during the day</Text>
                   </View>
                 </Row>
-                <Row>
+                 <Row style={{marginVertical: 25}}>
                   <Col>
-                    <View style={{paddingHorizontal: 20}}>
-                      <Text>Notifications</Text>
+                    <View style={{paddingHorizontal: 30}}>
+                      <Text style={{fontWeight: '600'}}>Notifications</Text>
                     </View>
                   </Col>
                   <Col>
                     <View style={{alignItems: 'center'}}>
                       <ToggleSwitch
-                        isOn={false}
-                        onColor='white'
+                        isOn={this.state.swichToggle}
+                        onColor='rgba(255, 255, 255, .8)'
                         offColor='rgba(255, 255, 255, .2)'
-                        size='small'
-                        onToggle={ (isOn) => console.log('changed to : ', isOn) }
+                        size='medium'
+                        onToggle={(isOn) => this.setState({ swichToggle: isOn })}
                       />;
                     </View>
                   </Col>
                 </Row>
-                <Row>
-                  <View style={{paddingHorizontal: 40, width: '100%'}}>
-                    <Text style={{flex: 1, textAlign: 'center'}}> How many reminders would you like a day </Text>
+                 <Row style={{marginVertical: 25}}>
+                  <View style={{paddingHorizontal: 30, width: '100%'}}>
+                    <Text style={{textAlign: 'center',fontWeight: '600'}}> How many reminders would you like a day </Text>
                     <Slider
                       step={1}
-                      maximumValue={5}
+                      maximumValue={4}
                       value={this.state.value}
                       minimumTrackTintColor={'#fff'}
                       trackStyle={{'height': 3}}
                       thumbStyle={styles.thumbStyle}
                     />
+                    <Grid>
+                      <Col>
+                        <Text style={{fontSize: 15, fontWeight: 'bold'}}>1</Text>
+                      </Col>
+                      <Col>
+                        <Text style={{textAlign: 'left', paddingLeft: 10, fontSize: 15, fontWeight: 'bold'}}>2</Text>
+                      </Col>
+                      <Col>
+                        <Text style={{textAlign: 'center', fontSize: 15, fontWeight: 'bold'}}>3</Text>
+                      </Col>
+                      <Col>
+                        <Text style={{textAlign: 'right', paddingRight: 10, fontSize: 15, fontWeight: 'bold'}} >4</Text>
+                      </Col>
+                      <Col>
+                        <Text style={{textAlign: 'right',fontSize: 15, fontWeight: 'bold'}}>5</Text>
+                      </Col>
+                    </Grid>
                   </View>
                 </Row>
               </Grid>
