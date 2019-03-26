@@ -60,7 +60,7 @@ export default {
     paddingVertical: 20
   },
   newsPoster: {
-    height:  deviceHeight / 2.2,
+    height:  deviceHeight / 2.5,
     width: null,
     position: "relative",
     marginHorizontal: 20,

@@ -25,14 +25,38 @@ import { Field, reduxForm } from "redux-form";
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 import { Ionicons, Feather, FontAwesome } from '@expo/vector-icons';
+import { Calendar as MonthCalendar } from "react-native-calendars";
+
 const headerLogo = require("../../../assets/header-logo.png");
 
 const deviceWidth = Dimensions.get("window").width;
 
 class Dashboard extends Component {
 
-  setDate(newDate) {
-    this.setState({chosenDate: newDate});
+  // setDate(newDate) {
+  //   this.setState({chosenDate: newDate});
+  // }
+
+  state: {
+    date: Object,
+    selected: string
+  };
+  props: Props;
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      date: new Date(),
+      selected: ""
+    };
+  }
+
+  onDateChange(date: Object) {
+    this.setState({ date });
+  }
+  onDayPress(day: any) {
+    this.setState({
+      selected: day.dateString
+    });
   }
 
   render() {
@@ -82,7 +106,27 @@ class Dashboard extends Component {
               </RNView>
             </View>
             <View style={{paddingHorizontal: 20, paddingTop: 10}}>
-              <Grid>
+                      <View style={styles.bg}>
+            <MonthCalendar
+              onDayPress={e => this.onDayPress(e)}
+              disableMonthChange={true}
+              markedDates={{ [this.state.selected]: { selected: true } }}
+              theme={{
+                calendarBackground: "transparent",
+                textSectionTitleColor: "#8e2b5f",
+                selectedDayBackgroundColor: "#8e2b5f",
+                selectedDayTextColor: "#ffffff",
+                todayTextColor: "#621d42",
+                dayTextColor: "#fff",
+                textDisabledColor: "#621d42",
+                dotColor: "#00adf5",
+                selectedDotColor: "#ffffff",
+                arrowColor: "#fff",
+                monthTextColor: "#fff"
+              }}
+            />
+          </View>
+              <Grid style={{display: 'none'}}>
                 <Row style={{paddingRight: 5}}>
                 <TouchableWithoutFeedback 
                   onPress={() =>  this.props.navigation.navigate('Analytics')}

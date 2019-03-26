@@ -94,11 +94,12 @@ const App = createStackNavigator(
     Alarms: { screen: Alarms }, // done
     Reminders: { screen: Reminders }, // done
     Settings: { screen: Settings }, // done
-    DailyNotification: { screen: DailyNotification }
+    DailyNotification: { screen: DailyNotification },
+    Calendar: { screen: Calendar }
   },
   {
     index: 0,
-    initialRouteName: "Playlist",
+    initialRouteName: "Dashboard",
     headerMode: "none"
   }
 );
