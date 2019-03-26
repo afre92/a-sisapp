@@ -1,7 +1,8 @@
 const React = require("react-native");
 const {Dimensions, Platform} = React;
-
+const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
+const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 export default {
   trackContent: {
@@ -10,7 +11,10 @@ export default {
     paddingRight: 20,
     flex: 1,
     borderTopWidth: 1,
-    borderTopColor: "#ddd"
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+    borderTopColor: "#ddd",
+    backgroundColor: "transparent"
   },
   playlistPoster: {
     height: 330,
@@ -60,13 +64,20 @@ export default {
     alignItems: 'center'
   },
   trackLength: {
-    color: 'grey', 
+    color: 'white', 
     textAlign: 'right', 
     height: '100%', 
     paddingVertical: 15, 
-    fontSize: 15
+    fontSize: 15,
+    fontWeight: '600'
   },
   trackLengthContainer:{
     flexDirection: 'column'
+  },
+  background: {
+    flex: 1,
+    width: null,
+    height: deviceHeight,
+    backgroundColor: primary
   }
 };

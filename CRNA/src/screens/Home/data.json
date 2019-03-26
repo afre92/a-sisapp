@@ -40,5 +40,12 @@
 	"link": "Money.com",
 	"time": "2months ago",
 	"category": "FINANCE"
+  },
+    {
+	"id": 6,
+	"headline": "NativeBase builds a layer on top of React Native that provides, basic set of components for mobile application development.",
+	"link": "Money.com",
+	"time": "2months ago",
+	"category": "FINANCE"
   }
 ]

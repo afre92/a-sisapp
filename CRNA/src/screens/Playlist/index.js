@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
   FlatList,
+  StatusBar,
   ListItem,
   View as RNView
 } from "react-native";
@@ -28,6 +29,7 @@ import {
 import { Grid, Col, Row } from "react-native-easy-grid";
 import { itemsFetchData } from "../../actions";
 import styles from "./styles";
+import commonColor from "../../theme/variables/commonColor";
 
 const deviceWidth = Dimensions.get("window").width;
 const headerLogo = require("../../../assets/header-logo.png");
@@ -44,12 +46,12 @@ class Playlist extends Component {
           <Grid style={styles.swiperContentBox}>
             <Col>
               <Row>
-                <Text style={{color: 'black', fontWeight: '500'}}>
+                <Text style={{fontWeight: 'bold'}}>
                   Breathing 3
                 </Text>
               </Row>
               <Row>
-                <Text style={{color: 'grey', fontSize: 18}}>
+                <Text style={{fontSize: 16}}>
                   John Doe
                 </Text>
               </Row>
@@ -72,6 +74,14 @@ class Playlist extends Component {
     } else {
       return (
         <Container>
+        <StatusBar
+          backgroundColor={commonColor.statusBarColor}
+          barStyle="light-content"
+        />
+        <ImageBackground
+          source={require("../../../assets/bg-signup.png")}
+          style={styles.background}
+        >
           <Header style={styles.header}>
             <Left>
               <Button
@@ -88,10 +98,10 @@ class Playlist extends Component {
           </Header>
           <Content
             showsVerticalScrollIndicator={false}
-            style={{ backgroundColor: "#fff" }}
+            style={{ backgroundColor: "transparent" }}
           >
-            <View>
-              <RNView>
+            <View style={{paddingTop: 30}}>
+              <RNView style={{display: 'none'}}>
                 <TouchableOpacity
                   activeOpacity={1}
                   onPress={() => this.props.navigation.navigate("Player")}
@@ -108,13 +118,13 @@ class Playlist extends Component {
                 </TouchableOpacity>
               </RNView>
             </View>
-
             <FlatList
               data={this.props.items}
               renderItem={this._renderItem}
               keyExtractor={item => item.id}
             />
           </Content>
+          </ImageBackground>
         </Container>
       );
     }
@@ -122,7 +132,7 @@ class Playlist extends Component {
 }
 
 const mapStateToProps = state => ({
-  items: state.homeReducer.items,
+  items: [{},{},{},{},{},{},{},{}],
   hasErrored: state.homeReducer.hasErrored,
   isLoading: state.homeReducer.isLoading
 });

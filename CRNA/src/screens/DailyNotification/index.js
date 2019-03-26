@@ -62,8 +62,8 @@ class DailyNotification extends Component {
                 </Row>
                  <Row style={{marginVertical: 25}}>
                   <Col>
-                    <View style={{paddingHorizontal: 30}}>
-                      <Text style={{fontWeight: '600'}}>Notifications</Text>
+                    <View style={{paddingHorizontal: 35}}>
+                      <Text style={{fontWeight: '600', textAlign: 'center'}}>Notifications</Text>
                     </View>
                   </Col>
                   <Col>
@@ -79,7 +79,7 @@ class DailyNotification extends Component {
                   </Col>
                 </Row>
                  <Row style={{marginVertical: 25}}>
-                  <View style={{paddingHorizontal: 30, width: '100%'}}>
+                  <View style={{paddingHorizontal: 35, width: '100%'}}>
                     <Text style={{textAlign: 'center',fontWeight: '600'}}> How many reminders would you like a day </Text>
                     <Slider
                       step={1}

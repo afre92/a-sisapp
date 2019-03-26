@@ -28,7 +28,7 @@ import { Grid, Col } from "react-native-easy-grid";
 import Carousel from "react-native-carousel-view";
 
 import { itemsFetchData } from "../../actions";
-import datas from "./data.json";
+// import datas from "./data.json";
 
 import styles from "./styles";
 
