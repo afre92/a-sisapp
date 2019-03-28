@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from "react";
-import { Platform, TouchableOpacity } from "react-native";
+import { Platform, TouchableOpacity, Image } from "react-native";
+import { Col, Row, Grid } from "react-native-easy-grid";
 
 import {
   Container,
@@ -20,24 +21,22 @@ import styles from "./style";
 class TabOne extends Component {
   render() {
     return (
-      <Container style={{ backgroundColor: "#FFF" }}>
+      <Container style={{ backgroundColor: "transparent" }}>
         <Content showsVerticalScrollIndicator={false}>
-          <View style={{ backgroundColor: "#FFF" }}>
+          <View style={{ backgroundColor: "transparent"}}>
             <List
               dataArray={datas}
               renderRow={data =>
                 <Card style={styles.card}>
                   <CardItem style={styles.cardHeader} header>
+                    <View style={{width: '20%'}}>
                     <Thumbnail
                       small
                       source={data.image}
-                      style={
-                        Platform.OS === "android"
-                          ? { borderRadius: 40, alignSelf: "flex-start" }
-                          : { alignSelf: "flex-start" }
-                      }
+                      style={styles.profilePic}
                     />
-                    <View>
+                    </View>
+                    <View style={{width: '80%', marginLeft: 10}}>
                       <Text style={styles.commentName}>
                         {data.name}
                       </Text>
@@ -45,18 +44,17 @@ class TabOne extends Component {
                         {data.comment}
                       </Text>
                       <View style={styles.commentDateView}>
-                        <Icon name="ios-time-outline" style={styles.timeIcon} />
-                        <Text style={styles.date}>
-                          {data.time}
-                        </Text>
+                      <Grid>
+                        <Row>
+                          <Image source={require("../../../assets/NewsIcons/3.jpg")} style={{width: 50, height: 50, marginLeft: 5}}/>
+                          <Image source={require("../../../assets/NewsIcons/4.jpg")} style={{width: 50, height: 50, marginLeft: 5}}/>
+                          <Image source={require("../../../assets/NewsIcons/2.jpg")} style={{width: 50, height: 50, marginLeft: 5}}/>
+                          <Image source={require("../../../assets/NewsIcons/1.jpg")} style={{width: 50, height: 50, marginLeft: 5}}/>
+                        </Row>
+
+                      </Grid>
                       </View>
                     </View>
-                    <TouchableOpacity style={styles.commentLikeView}>
-                      <Icon name="ios-heart-outline" style={styles.likeIcon} />
-                      <Text style={styles.date}>
-                        {data.likes}
-                      </Text>
-                    </TouchableOpacity>
                   </CardItem>
                 </Card>}
             />

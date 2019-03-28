@@ -99,7 +99,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Dashboard",
+    initialRouteName: "Comments",
     headerMode: "none"
   }
 );

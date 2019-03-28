@@ -10,6 +10,8 @@ import {
   Button,
   Icon,
   Body,
+  Left,
+  Right,
   Item,
   Tabs,
   Tab,
@@ -48,38 +50,31 @@ class Comments extends Component {
   render() {
     return (
       <Container>
-        <ImageBackground source={bg} style={styles.container}>
-          <Header style={styles.headerStyle}>
-            <Body
-              style={{ flexDirection: "row", justifyContent: "space-around" }}
-            >
+                <ImageBackground
+          source={require("../../../assets/bg-signup.png")}
+          style={styles.background}
+        >
+          <Header style={styles.header}>
+            <Left style={{width: 10}}>
               <Button
                 transparent
                 onPress={() => this.props.navigation.goBack()}
               >
-                <Icon active name="arrow-back" style={styles.headerIcons} />
+                <Icon active name="arrow-back" />
               </Button>
-              <Button transparent>
-                <Icon name="chatboxes" style={styles.headerIcons} />
-              </Button>
-              <Button transparent>
-                <Text style={styles.headerTextIcon}>Aa</Text>
-              </Button>
-              <Button transparent>
-                <Icon name="bookmarks" style={styles.headerIcons} />
-              </Button>
-              <Button transparent>
-                <Icon name="download" style={styles.headerIcons} />
-              </Button>
+            </Left>
+            <Body>
+              <Text style={styles.headerText}>Featured artist</Text>
             </Body>
+            <Right style={{width: 10}}/>
           </Header>
           <Content
             scrollEnabled={false}
             extraScrollHeight={-13}
             contentContainerStyle={styles.commentHeadbg}
           >
-            <Text style={styles.commentHeader}>23 COMMENTS</Text>
-            <Tabs style={{ backgroundColor: "#fff" }}>
+            <TabOne />
+            <Tabs style={{ backgroundColor: "#fff", display: 'none' }}>
               <Tab heading="Best">
                 <TabOne />
               </Tab>
@@ -92,7 +87,7 @@ class Comments extends Component {
             </Tabs>
 
             <View style={styles.commentBox}>
-              <Item style={{ alignItems: "center" }}>
+              <Item style={{ alignItems: "center", display: 'none' }}>
                 <Icon name="ios-attach" style={styles.attachIcon} />
                 <Input
                   placeholder="Write something..."

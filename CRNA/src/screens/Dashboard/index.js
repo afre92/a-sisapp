@@ -99,14 +99,16 @@ class Dashboard extends Component {
                       </Text>
                     </View>
                     <View style={styles.shareIcon}>
-                      <Feather style={{alignSelf: 'flex-end'}} name="share" color="white" size={30}/>
+                      <View  style={{flexDirection: 'row'}}>
+                      <Ionicons style={{paddingRight: 20}} name="ios-color-palette" color="white" size={30}/><Feather name="share" color="white" size={30}/>
+                      </View>
                     </View>
                   </ImageBackground>
                 </View>
               </RNView>
             </View>
             <View style={{paddingHorizontal: 20, paddingTop: 10}}>
-                      <View style={styles.bg}>
+          <View style={{display: 'none'}}>
             <MonthCalendar
               onDayPress={e => this.onDayPress(e)}
               disableMonthChange={true}
@@ -126,17 +128,17 @@ class Dashboard extends Component {
               }}
             />
           </View>
-              <Grid style={{display: 'none'}}>
-                <Row style={{paddingRight: 5}}>
+              <Grid>
+                <Row>
                 <TouchableWithoutFeedback 
                   onPress={() =>  this.props.navigation.navigate('Analytics')}
                 >
-                  <Card style={styles.cardContainer}>
+                  <Card style={styles.statsContainer}>
                     <View style={{justifyContent: 'center'}} >
                       <Text style={styles.cardTittle}>My Stats</Text>
                     </View>
                     <Text style={styles.cardBody}>
-                      condimentum massa. Nam volutpat feugiat quam id porttitor.
+                      condimentum massa. Nam volutpat feugiat quam 
                     </Text>
                     <View>
 
@@ -144,11 +146,11 @@ class Dashboard extends Component {
                   </Card>
                 </TouchableWithoutFeedback>
                 </Row>
-                <Row style={{paddingLeft: 5}}>
+                <Row>
                 <TouchableWithoutFeedback 
                   onPress={() =>  this.props.navigation.navigate('Playlist')}
                 >
-                  <Card style={styles.cardContainer}>
+                  <Card style={styles.journeyContainer}>
                     <View style={{justifyContent: 'center'}} >
                       <Text style={styles.cardTittle}>My Journey</Text>
                     </View>

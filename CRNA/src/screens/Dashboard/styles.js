@@ -53,11 +53,10 @@ export default {
     resizeMode: "contain"
   },
   cardTittle: {
-    flex: 1,
     color: 'black',
     textAlign: 'center',
     fontWeight: 'bold',
-    paddingVertical: 20
+    paddingVertical: 5
   },
   newsPoster: {
     height:  deviceHeight / 2.5,
@@ -80,17 +79,23 @@ export default {
   },
   shareIcon: {
     paddingHorizontal: 25,
-    paddingVertical: 25
+    paddingVertical: 25,
+    alignSelf: 'flex-end'
   },
-  cardContainer: {
-    height: deviceHeight / 6.5, 
+  statsContainer: {
+    height: deviceHeight / 7, 
     marginBottom: 10,
-    borderRadius: 30
+    borderRadius: 20
+  },
+  journeyContainer: {
+    height: deviceHeight / 4.5, 
+    marginBottom: 10,
+    borderRadius: 20
   },
   cardBody: {
     color: 'black',
     textAlign: 'center',
-    paddingTop: 10,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    justifyContent: 'center'
   }
 };

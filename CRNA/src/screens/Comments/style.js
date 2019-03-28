@@ -3,6 +3,7 @@ const { Platform, Dimensions } = React;
 
 const deviceWidth = Dimensions.get("window").width;
 const commonColor = require("../../theme/variables/commonColor");
+const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 export default {
   container: {
@@ -32,21 +33,26 @@ export default {
     marginTop: Platform.OS === "android" ? -10 : 0
   },
   commentHeadbg: {
-    backgroundColor: commonColor.toolbarDefaultBg,
+    backgroundColor: "transparent",
     flex: 1
   },
   commentHeader: {
     alignSelf: "center",
-    fontWeight: "900",
-    fontSize: 20,
-    marginTop: 20
+    fontWeight: "bold",
+    fontSize: 25,
+    marginTop: 20,
   },
   channelBtn1: {
     borderWidth: 1,
     borderColor: Platform.OS === "android" ? "#ddd" : "rgba(255,255,255,0.5)"
   },
   card: {
-    backgroundColor: "#fff",
+    borderTopWidth: 0,
+    borderBottomWidth: 1,
+    borderRightWidth: 0,
+    borderLeftWidth: 0,
+    flex: 1,
+    backgroundColor: "transparent",
     marginTop: null,
     marginBottom: null,
     marginLeft: null,
@@ -55,7 +61,7 @@ export default {
   cardHeader: {
     backgroundColor: "transparent",
     borderBottomWidth: 0,
-    paddingBottom: 5
+    paddingBottom: 15,
   },
   cardItem: {
     backgroundColor: "transparent",
@@ -67,16 +73,16 @@ export default {
     width: null
   },
   date: {
-    fontWeight: "300",
+    fontWeight: "400",
     fontSize: 12,
-    color: "#666",
+    color: "#FFF",
     lineHeight: 16,
     paddingLeft: 5,
     paddingRight: 10
   },
   likeIcon: {
     fontSize: 16,
-    color: "#666",
+    color: "#FFF",
     width: null
   },
   commentBox: {
@@ -103,16 +109,15 @@ export default {
   },
   commentName: {
     fontSize: deviceWidth < 330 ? 15 : 17,
-    paddingLeft: 10,
-    color: "#444",
+    paddingLeft: 12,
+    color: "#FFF",
     fontWeight: "bold"
   },
   commentText: {
-    color: "#000",
-    paddingLeft: 10,
-    paddingTop: 5,
-    fontSize: 14,
-    marginRight: 50
+    color: "#FFF",
+    fontWeight: '400',
+    paddingHorizontal: 12,
+    fontSize: 18,
   },
   commentDateView: {
     flexDirection: "row",
@@ -124,5 +129,24 @@ export default {
     position: "absolute",
     right: 0,
     top: 17
-  }
+  },
+  headerText:{
+    fontWeight: 'bold',
+    paddingTop: 5,
+  },
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
+  },
+  background: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: primary
+  },
+  profilePic: {
+    width: 80,
+    height: 80,
+    borderRadius: 40
+  },
 };
