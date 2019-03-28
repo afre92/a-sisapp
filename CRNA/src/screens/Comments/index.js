@@ -55,18 +55,18 @@ class Comments extends Component {
           style={styles.background}
         >
           <Header style={styles.header}>
-            <Left style={{width: 10}}>
+            <View style={{width: '10%'}}>
               <Button
                 transparent
                 onPress={() => this.props.navigation.goBack()}
               >
                 <Icon active name="arrow-back" />
               </Button>
-            </Left>
-            <Body>
+            </View>
+            <Body style={{width: '80%'}}>
               <Text style={styles.headerText}>Featured artist</Text>
             </Body>
-            <Right style={{width: 10}}/>
+            <View style={{width: '10%'}}></View>
           </Header>
           <Content
             scrollEnabled={false}
