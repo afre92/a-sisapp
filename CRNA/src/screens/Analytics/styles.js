@@ -78,7 +78,7 @@ export default {
   },
   cardsContainer: {
     paddingHorizontal: 40, 
-    paddingTop: 10
+    paddingTop: deviceHeight / 20
   },
   cardBody: {
     backgroundColor: 'transparent',
@@ -87,7 +87,7 @@ export default {
   },
   card: {
     height: deviceHeight / 9,
-    borderRadius: 30
+    borderRadius: 30,
   },
   weekDay: {
     fontSize: 15,
@@ -96,4 +96,12 @@ export default {
     textAlign: 'center',
     paddingBottom: deviceWidth / 20 - 15
   },
+  disabledWeekDay: {
+    color: "rgba(255, 255, 255, .5)",
+    fontSize: 15,
+    flex: 1,
+    fontWeight: '400',
+    textAlign: 'center',
+    paddingBottom: deviceWidth / 20 - 15
+  }
 };

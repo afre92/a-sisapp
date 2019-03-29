@@ -89,34 +89,10 @@ class Analytics extends Component {
           </Header>
           <Content style={styles.container}>
             <View >
+            <Text style={{paddingVertical: 20, textAlign: 'center', fontWeight: '600'}}> Current Streak </Text>
               <RNView>
-
-                <View style={{display: 'none'}}>
-                  <ImageBackground
-                    imageStyle={{ borderRadius: 25 }}
-                    style={styles.newsPoster}
-                    source={require("../../../assets/NewsIcons/4.jpg")}
-                  >
-                  <View flex style={styles.mainTextContainer}>
-                    <Text style={{fontWeight: 'bold', fontSize: 25, paddingHorizontal: 20}}>This where the main Text is  This where the main Text is </Text>
-                  </View>
-                  <View style={styles.userInfoContianer}>
-                    <Grid style={{height: 50}} >
-                      <Col style={{height: 50, width: '80%'}}>
-                        <Text style={{ fontWeight: 'bold'}}> John Doe </Text>
-                        <Text> San Francisco, CA </Text>
-                      </Col>
-                      <Col style={{height: 50, width: '20%'}}>
-                        <Feather style={styles.shareIcon} name="share" color="white" size={30}/>
-                      </Col>
-                    </Grid>
-                  </View>
-              
-                  </ImageBackground>
-                </View>
                 <View>
-                // 
-                <Grid>
+                <Grid style={{paddingHorizontal: 40}}>
               {
             
                [1, 2, 3, 4, 5, 6].map((value, index) => {
@@ -128,15 +104,19 @@ class Analytics extends Component {
                       i++
                       return (
                         <Col>
-                          <Row>
-                            <Text style={styles.weekDay}>{i}</Text>
-                          </Row>
                           <Row style={{justifyContent: 'center'}}>
                             {i > 18 ? (
-                             <Ionicons size={25} name="ios-play" color="white" /> 
+                             <Ionicons size={25} name="ios-play" color="rgba(255, 255, 255, .5)" /> 
                             ) : (
                              <Ionicons size={25} name="ios-checkmark-circle" color="white" /> 
                                
+                            )}
+                          </Row>
+                          <Row>
+                            {i > 18 ? (
+                             <Text style={styles.disabledWeekDay}>{i}</Text>
+                            ) : (
+                             <Text style={styles.weekDay}>{i}</Text>
                             )}
                           </Row>
                         </Col>
@@ -149,223 +129,6 @@ class Analytics extends Component {
                })
               }
                 </Grid>
-
-                // 
-                <Grid style={{display: 'none'}}>
-                  <Row>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1}  />
-                      </Row>
-                    </Col>
-                    <Col style={{alignItems: 'center'}}>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                     <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                                      <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col style={{alignItems: 'center'}}>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                     <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                                      <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col style={{alignItems: 'center'}}>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                     <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                                      <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                  </Row>
-
-                                  <Row>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col style={{alignItems: 'center'}}>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                     <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                                      <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                  </Row>
-
-                                  <Row>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col style={{alignItems: 'center'}}>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                    <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checkboxSize={20} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                     <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                                      <Col>
-                      <Row>
-                        <Text style={styles.weekDay}>1</Text>
-                      </Row>
-                      <Row style={{justifyContent: 'center'}}>
-                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
-                      </Row>
-                    </Col>
-                  </Row>
-                </Grid>
-
 
                 </View>
               </RNView>
@@ -391,7 +154,7 @@ class Analytics extends Component {
                     </Card>
                   </TouchableWithoutFeedback>
                 </Row>
-                <Row>
+                <Row style={{paddingTop: 10}}>
                   <TouchableWithoutFeedback
                     onPress={() =>  this.props.navigation.navigate('Login')}
                     >
@@ -409,7 +172,7 @@ class Analytics extends Component {
                     </Card>
                   </TouchableWithoutFeedback>
                   </Row>
-                  <Row>
+                  <Row style={{display: 'none'}}>
                     <TouchableWithoutFeedback 
                       onPress={() =>  this.props.navigation.navigate('Login')}
                       >
