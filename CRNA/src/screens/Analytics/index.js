@@ -24,13 +24,46 @@ import { Field, reduxForm } from "redux-form";
 
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
-import { Ionicons, Feather } from '@expo/vector-icons';
+import { Ionicons, Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
+import CheckboxFormX from 'react-native-checkbox-form';
+const mockData = [
+    {
+        label: 'label1',
+        value: 'one'
+    },
+    {
+        label: 'label2',
+        value: 'two'
+    },
+    {
+        label: 'label3',
+        value: 'three'
+    },
+        {
+        label: 'label1',
+        value: 'one'
+    },
+    {
+        label: 'label2',
+        value: 'two'
+    }
 
+];
 const deviceWidth = Dimensions.get("window").width;
+var i = 0
 
 class Analytics extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {day1: false, day2: true, day3: false, day4: true, day5: false, day6: false, day7: true, chosenDate: new Date(), day: 1 }
+  }
+
+    _onSelect = ( item ) => {
+      console.log(item);
+    };
   render() {
     return (
+
       <Container>
         <StatusBar
           backgroundColor={commonColor.statusBarColor}
@@ -57,7 +90,8 @@ class Analytics extends Component {
           <Content style={styles.container}>
             <View >
               <RNView>
-                <View style={styles.slide} >
+
+                <View style={{display: 'none'}}>
                   <ImageBackground
                     imageStyle={{ borderRadius: 25 }}
                     style={styles.newsPoster}
@@ -79,6 +113,260 @@ class Analytics extends Component {
                   </View>
               
                   </ImageBackground>
+                </View>
+                <View>
+                // 
+                <Grid>
+              {
+            
+               [1, 2, 3, 4, 5, 6].map((value, index) => {
+                
+                return (
+                  <Row key={index}>
+                  {  
+                    [1, 2, 3, 4, 5].map((value1, index1) => {
+                      i++
+                      return (
+                        <Col>
+                          <Row>
+                            <Text style={styles.weekDay}>{i}</Text>
+                          </Row>
+                          <Row style={{justifyContent: 'center'}}>
+                            {i > 18 ? (
+                             <Ionicons size={25} name="ios-play" color="white" /> 
+                            ) : (
+                             <Ionicons size={25} name="ios-checkmark-circle" color="white" /> 
+                               
+                            )}
+                          </Row>
+                        </Col>
+                      )
+                    })
+                  }
+                  </Row>
+                )
+               
+               })
+              }
+                </Grid>
+
+                // 
+                <Grid style={{display: 'none'}}>
+                  <Row>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1}  />
+                      </Row>
+                    </Col>
+                    <Col style={{alignItems: 'center'}}>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                     <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                                      <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col style={{alignItems: 'center'}}>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                     <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                                      <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col style={{alignItems: 'center'}}>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                     <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                                      <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                  </Row>
+
+                                  <Row>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col style={{alignItems: 'center'}}>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                     <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                                      <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                  </Row>
+
+                                  <Row>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col style={{alignItems: 'center'}}>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checkboxSize={20} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                     <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                                      <Col>
+                      <Row>
+                        <Text style={styles.weekDay}>1</Text>
+                      </Row>
+                      <Row style={{justifyContent: 'center'}}>
+                        <CheckBox color="white" style={styles.checkBoxes} checked={this.state.day1} onPress={() => this.setState({ day1: !this.state.day1 })} />
+                      </Row>
+                    </Col>
+                  </Row>
+                </Grid>
+
+
                 </View>
               </RNView>
             </View>

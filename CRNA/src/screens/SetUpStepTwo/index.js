@@ -31,7 +31,7 @@ import DaysAndTime from "../../components/DaysAndTime"
 var radio_props_one = [
   {label: 'ENERGIZED', value: 0 },
   {label: ' CALM ', value: 0 },
-  {label: 'RELAXED', value: 0 }
+  {label: 'RELAXED', value: 0 },
 ];
 
 var radio_props_two = [

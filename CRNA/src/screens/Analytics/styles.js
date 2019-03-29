@@ -88,5 +88,12 @@ export default {
   card: {
     height: deviceHeight / 9,
     borderRadius: 30
-  }
+  },
+  weekDay: {
+    fontSize: 15,
+    flex: 1,
+    fontWeight: '400',
+    textAlign: 'center',
+    paddingBottom: deviceWidth / 20 - 15
+  },
 };

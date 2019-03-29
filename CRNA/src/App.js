@@ -99,7 +99,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Comments",
+    initialRouteName: "Analytics",
     headerMode: "none"
   }
 );
