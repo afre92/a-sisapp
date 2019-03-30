@@ -99,7 +99,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "Alarms",
+    initialRouteName: "Reminders",
     headerMode: "none"
   }
 );

@@ -102,7 +102,6 @@ class Alarms extends Component {
                 transparent
                 onPress={() => this.toggleEdit()}
             >
-
             { this.state.edit === false ? (
 
               <Feather color="white" name="plus" size={30}/>
@@ -112,8 +111,6 @@ class Alarms extends Component {
               )
             }
             </Button>
-            
-            
           </Right>
         </Header>
         <Content padder style={styles.container}>

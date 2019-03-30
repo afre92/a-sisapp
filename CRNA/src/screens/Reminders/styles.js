@@ -73,4 +73,22 @@ export default {
     backgroundColor: 'transparent',
     borderBottomColor: 'transparent'
   },
+  card: {
+    height: deviceHeight / 10,
+    borderRadius: 20,
+  },
+  cardTittle: {
+    fontColor: 'black',
+    color: 'black',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    paddingTop: 10
+  },
+  editSubHeader: {
+    textAlign: 'center',
+    fontSize: deviceWidth / 22,
+    fontWeight: 'bold',
+    paddingVertical: 20
+  },
 };
