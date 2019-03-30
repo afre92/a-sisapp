@@ -81,5 +81,17 @@ export default {
     textAlign: 'center',
     fontSize: deviceWidth / 22,
     fontWeight: 'bold'
-  }
+  },
+  card: {
+    height: deviceHeight / 10,
+    borderRadius: 20,
+  },
+  cardTittle: {
+    fontColor: 'black',
+    color: 'black',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    paddingTop: 10
+  },
 };

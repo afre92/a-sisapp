@@ -18,15 +18,18 @@ import {
   Footer,
   CheckBox,
   Body,
-  Radio
+  Radio,
+  CardItem,
+  Card
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
 import styles from "./styles";
 import commonColor from "../../theme/variables/commonColor";
 import DaysAndTime from "../../components/DaysAndTime"
+import { Ionicons, Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
 
-
+const primary = require("../../theme/variables/commonColor").brandPrimary;
 
 var radio_props_one = [
   {label: 'ENERGIZED', value: 0 },
@@ -44,9 +47,27 @@ const deviceWidth = Dimensions.get("window").width;
 
 class SetUpStepTwo extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {alarms: 0}
+  }
+
   setDate(newDate) {
     this.setState({chosenDate: newDate});
   }
+
+  goToTop(){
+     this.scroll.scrollTo({x: 0, y: 0, animated: true});
+  }
+
+  addAlarm() {
+    this.component._root.scrollToPosition(0, 0)
+    this.setState({
+      alarms: this.state.alarms + 1
+    });
+  }
+
+
 
   render() {
     return (
@@ -60,10 +81,41 @@ class SetUpStepTwo extends Component {
           style={styles.background}
         >
 
-        <Content padder style={styles.container}>
+        <Content padder style={styles.container} ref={c => (this.component = c)}>
           <View style={{paddingBottom: 30, alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{ fontWeight: 'bold',fontSize: 20}}> 1 of 3 </Text>
           </View>
+          { this.state.alarms > 0 ? (
+              <Card style={styles.card}>
+                      <View style={{justifyContent: 'center', display: 'none'}} >
+                        <Text style={styles.cardTittle}> 
+                          <Ionicons  size={25} name="md-stopwatch" color="grey" /> 
+                            Total Time Meditated
+                        </Text>
+                      </View>
+                      <Grid>
+                        <Col style={{}}>
+                          <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                            <Text style={{color: primary, fontSize: 18}}>7:00 AM</Text> 
+                          </View>
+                        </Col>
+                        <Col style={{flex: 1, alignItems: 'center'}}>
+                          <Row style={{ alignItems: 'center'}}>
+                            <Text style={{color: primary, fontWeight: 'bold'}}>Happy</Text>
+                          </Row>
+                          <Row style={{ alignItems: 'center'}}>
+                            <Text style={{color: primary, fontWeight: 'bold'}}>MTWTF</Text>
+                          </Row>
+                        </Col>
+                        <Col>
+                        </Col>
+                      </Grid>
+                    </Card>
+            ) : (
+            <Text> No ALarm </Text>
+          )}
+          
+
 
           <DaysAndTime />
 
@@ -97,6 +149,16 @@ class SetUpStepTwo extends Component {
               </View>
 
               <View style={styles.buttonsContainer}>
+                <Button
+                  rounded
+                  bordered
+                  block
+                  onPress={() => this.addAlarm()}
+                  style={styles.sustBtn}
+                >
+                 <Text style={{ color: "#FFF", fontWeight: 'bold' }}>Add Additional Alarm</Text>
+                </Button>
+
                 <Button
                   rounded
                   bordered

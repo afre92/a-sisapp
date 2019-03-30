@@ -87,7 +87,7 @@ export default {
   },
   card: {
     height: deviceHeight / 9,
-    borderRadius: 30,
+    borderRadius: 20,
   },
   weekDay: {
     fontSize: 15,
