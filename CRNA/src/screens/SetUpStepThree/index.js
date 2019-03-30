@@ -68,7 +68,7 @@ class SetUpStepThree extends Component {
               </Button>
             </Left>
             <Body>
-              <Text style={{fontWeight: 'bold', paddingTop: 5}}> Analytics </Text>
+              <Text style={{fontWeight: 'bold', paddingTop: 5}}></Text>
             </Body>
             <Right />
           </Header>

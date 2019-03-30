@@ -54,7 +54,7 @@ export default {
     paddingLeft: 10,
     backgroundColor: 'transparent'
   },
-    card: {
+  card: {
     height: deviceHeight / 10,
     borderRadius: 20,
   },

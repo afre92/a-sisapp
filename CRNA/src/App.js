@@ -99,7 +99,7 @@ const App = createStackNavigator(
   },
   {
     index: 0,
-    initialRouteName: "SetUpStepFour",
+    initialRouteName: "Alarms",
     headerMode: "none"
   }
 );

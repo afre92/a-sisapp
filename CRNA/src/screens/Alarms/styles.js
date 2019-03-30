@@ -52,6 +52,12 @@ export default {
     fontSize: deviceWidth / 22,
     fontWeight: 'bold'
   },
+  editSubHeader: {
+    textAlign: 'center',
+    fontSize: deviceWidth / 22,
+    fontWeight: 'bold',
+    paddingVertical: 20
+  },
   labelStyle: {
     fontSize: 13,
     fontWeight: '600',
@@ -72,5 +78,17 @@ export default {
   buttonText: {
     color: "#FFF", 
     fontWeight: 'bold'
-  }
+  },
+  card: {
+    height: deviceHeight / 10,
+    borderRadius: 20,
+  },
+  cardTittle: {
+    fontColor: 'black',
+    color: 'black',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    paddingTop: 10
+  },
 };
