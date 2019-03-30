@@ -87,7 +87,6 @@ export default {
     borderRadius: 20,
   },
   cardTittle: {
-    fontColor: 'black',
     color: 'black',
     textAlign: 'center',
     justifyContent: 'center',

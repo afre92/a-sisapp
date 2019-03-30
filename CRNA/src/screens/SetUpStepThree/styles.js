@@ -50,11 +50,24 @@ export default {
     backgroundColor: 'white',
     borderRadius: 20
   },
-  buttonsContainer: {
-    marginTop: deviceHeight / 25
-  },
   backArrowContainer: {
     paddingLeft: 10,
     backgroundColor: 'transparent'
-  }
+  },
+    card: {
+    height: deviceHeight / 10,
+    borderRadius: 20,
+  },
+  cardTittle: {
+    fontColor: 'black',
+    color: 'black',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    paddingTop: 10
+  },
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent',
+  },
 };

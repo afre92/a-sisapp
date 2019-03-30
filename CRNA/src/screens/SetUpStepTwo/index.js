@@ -56,10 +56,6 @@ class SetUpStepTwo extends Component {
     this.setState({chosenDate: newDate});
   }
 
-  goToTop(){
-     this.scroll.scrollTo({x: 0, y: 0, animated: true});
-  }
-
   addAlarm() {
     this.component._root.scrollToPosition(0, 0)
     this.setState({
@@ -87,32 +83,32 @@ class SetUpStepTwo extends Component {
           </View>
           { this.state.alarms > 0 ? (
               <Card style={styles.card}>
-                      <View style={{justifyContent: 'center', display: 'none'}} >
-                        <Text style={styles.cardTittle}> 
-                          <Ionicons  size={25} name="md-stopwatch" color="grey" /> 
-                            Total Time Meditated
-                        </Text>
-                      </View>
-                      <Grid>
-                        <Col style={{}}>
-                          <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={{color: primary, fontSize: 18}}>7:00 AM</Text> 
-                          </View>
-                        </Col>
-                        <Col style={{flex: 1, alignItems: 'center'}}>
-                          <Row style={{ alignItems: 'center'}}>
-                            <Text style={{color: primary, fontWeight: 'bold'}}>Happy</Text>
-                          </Row>
-                          <Row style={{ alignItems: 'center'}}>
-                            <Text style={{color: primary, fontWeight: 'bold'}}>MTWTF</Text>
-                          </Row>
-                        </Col>
-                        <Col>
-                        </Col>
-                      </Grid>
-                    </Card>
+                <View style={{justifyContent: 'center', display: 'none'}} >
+                  <Text style={styles.cardTittle}> 
+                    <Ionicons  size={25} name="md-stopwatch" color="grey" /> 
+                      Total Time Meditated
+                  </Text>
+                </View>
+                <Grid>
+                  <Col style={{}}>
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                      <Text style={{color: primary, fontSize: 18}}>7:00 AM</Text> 
+                    </View>
+                  </Col>
+                  <Col style={{flex: 1, alignItems: 'center'}}>
+                    <Row style={{ alignItems: 'center'}}>
+                      <Text style={{color: primary, fontWeight: 'bold'}}>Happy</Text>
+                    </Row>
+                    <Row style={{ alignItems: 'center'}}>
+                      <Text style={{color: primary, fontWeight: 'bold'}}>MTWTF</Text>
+                    </Row>
+                  </Col>
+                  <Col>
+                  </Col>
+                </Grid>
+              </Card>
             ) : (
-            <Text> No ALarm </Text>
+            <Text> </Text>
           )}
           
 

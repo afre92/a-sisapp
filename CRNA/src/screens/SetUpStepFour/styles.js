@@ -59,5 +59,9 @@ export default {
     paddingVertical: deviceHeight / 30,
     fontSize: 25,
     fontWeight: 'bold'
-  }
+  },
+  header: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent'
+  },
 };

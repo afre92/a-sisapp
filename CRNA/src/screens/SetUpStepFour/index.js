@@ -16,7 +16,8 @@ import {
   Left,
   Right,
   CheckBox,
-  Body
+  Body,
+  Header
 } from "native-base";
 import { Field, reduxForm } from "redux-form";
 
@@ -40,10 +41,22 @@ class SetUpStepFour extends Component {
           source={require("../../../assets/bg-signup.png")}
           style={styles.background}
         >
+          <Header style={styles.header}>
+            <Left>
+              <Button
+                transparent
+                onPress={() => this.props.navigation.goBack()}
+              >
+                <Icon active name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
+              <Text style={{fontWeight: 'bold', paddingTop: 5}}></Text>
+            </Body>
+            <Right />
+          </Header>
           <Content padder style={styles.container}>
-            <Button style={styles.backArrowContainer} onPress={() => this.props.navigation.goBack()}>
-               <Icon active name="arrow-back" />
-            </Button>
+
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <Text style={{ fontWeight: 'bold',fontSize: 20}}> 3 of 3 </Text>
             </View>
